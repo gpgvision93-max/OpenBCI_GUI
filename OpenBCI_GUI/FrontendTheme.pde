@@ -39,9 +39,8 @@ PFont p_8;
 PFont p_6;
 PFont p_5;
 
-//Starting to collect the GUI-wide color pallet here. Rename constants all caps later...
+// Never use Black!!! Use OPENBCI_DARKBLUE instead
 final color WHITE = color(255);
-final color BLACK = color(0);
 final color OPENBCI_DARKBLUE = color(1, 18, 41);
 final color OPENBCI_BLUE = color(31, 69, 110);
 final color OPENBCI_BLUE_ALPHA50 = color(31, 69, 110, 50);
@@ -81,11 +80,9 @@ final color SIGNAL_CHECK_YELLOW_LOWALPHA = color(221, 178, 13, 150);
 final color SIGNAL_CHECK_RED = BOLD_RED;
 final color SIGNAL_CHECK_RED_LOWALPHA = color(224, 56, 45, 150);
 public CColor dropdownColorsGlobal = new CColor();
-        
 
 //Channel Colors -- Defaulted to matching the OpenBCI electrode ribbon cable
-//Channel Colors -- Defaulted to matching the OpenBCI electrode ribbon cable
-final color[] channelColors = {
+final color[] CHANNEL_COLORS = {
     color(129, 129, 129),
     color(124, 75, 141),
     color(54, 87, 158),
@@ -135,11 +132,13 @@ class FrontendTheme {
     private final color GREY_2 = #C1C8CD;
     private final color WHITE_0 = #E3E6E8;
     private final color WHITE_1 = #FFFFFF;
-    
+
     private ColorScheme colorScheme;
+    private WidgetTheme widgetTheme;
 
     public FrontendTheme(ColorScheme colorScheme) {
         this.colorScheme = colorScheme;
+        widgetTheme = new WidgetTheme(colorScheme);
     }
 
     public ColorScheme getColorScheme() {
@@ -148,6 +147,7 @@ class FrontendTheme {
 
     public void setColorScheme(ColorScheme colorScheme) {
         this.colorScheme = colorScheme;
+        applyTheme();
     }
 
     public boolean isDarkMode() {
@@ -173,6 +173,112 @@ class FrontendTheme {
     }
 
     public void applyTheme() {
+        widgetTheme.setTheme(colorScheme);
         topNav.updateNavButtonsBasedOnColorScheme();
+    }
+
+    public WidgetTheme getWidgetTheme() {
+        return widgetTheme;
+    }
+
+    private class WidgetTheme {
+        private color backgroundColor;
+        private color textColor;
+        private color borderColor;
+        private color buttonColor;
+        private color buttonHoverColor;
+        private color buttonPressedColor;
+
+        public WidgetTheme(ColorScheme colorScheme) {
+            setTheme(colorScheme);
+        }
+
+        public void setTheme(ColorScheme colorScheme) {
+            switch (colorScheme) {
+                case LIGHT:
+                    backgroundColor = WHITE_0;
+                    textColor = GREY_1;
+                    borderColor = GREY_2;
+                    buttonColor = BLUE_4;
+                    buttonHoverColor = ORANGE_3;
+                    buttonPressedColor = ORANGE_2;
+                    break;
+                case DARK:
+                    backgroundColor = BLUE_0;
+                    textColor = WHITE_1;
+                    borderColor = GREY_0;
+                    buttonColor = BLUE_4;
+                    buttonHoverColor = ORANGE_3;
+                    buttonPressedColor = ORANGE_2;
+                    break;
+                case LEGACY:
+                default:
+                    backgroundColor = WHITE_0;
+                    textColor = GREY_1;
+                    borderColor = GREY_2;
+                    buttonColor = BLUE_4;
+                    buttonHoverColor = ORANGE_3;
+                    buttonPressedColor = ORANGE_2;
+            }
+            /*
+            switch (colorScheme) {
+                case LIGHT:
+                    backgroundColor = WHITE_0;
+                    textColor = BLACK;
+                    borderColor = GREY_1;
+                    buttonColor = BLUE_4;
+                    buttonHoverColor = BLUE_3;
+                    buttonPressedColor = BLUE_2;
+                    break;
+                case DARK:
+                    backgroundColor = BLUE_0;
+                    textColor = WHITE_1;
+                    borderColor = GREY_1;
+                    buttonColor = ORANGE_3;
+                    buttonHoverColor = ORANGE_2;
+                    buttonPressedColor = ORANGE_1;
+                    break;
+                case LEGACY:
+                default:
+                    backgroundColor = WHITE_0;
+                    textColor = BLACK;
+                    borderColor = GREY_1;
+                    buttonColor = BLUE_4;
+                    buttonHoverColor = BLUE_3;
+                    buttonPressedColor = BLUE_2;
+            }
+            */
+        }
+
+        public void apply() {
+            // Apply the theme to the widget
+            fill(backgroundColor);
+            stroke(borderColor);
+            // Other drawing code...
+        }
+
+        public color getBackgroundColor() {
+            return backgroundColor;
+        }
+
+        public color getTextColor() {
+            return textColor;
+        }
+
+        public color getBorderColor() {
+            return borderColor;
+        }
+
+        public color getButtonColor() {
+            return buttonColor;
+        }
+
+        public color getButtonHoverColor() {
+            return buttonHoverColor;
+        }
+
+        public color getButtonPressedColor() {
+            return buttonPressedColor;
+        }
     }
 }
