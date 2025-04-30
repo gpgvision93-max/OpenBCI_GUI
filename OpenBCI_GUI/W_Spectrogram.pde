@@ -70,11 +70,11 @@ class W_Spectrogram extends WidgetWithSettings {
         super.initWidgetSettings();
         widgetSettings.set(SpectrogramMaxFrequency.class, SpectrogramMaxFrequency.MAX_60)
                     .set(SpectrogramWindowSize.class, SpectrogramWindowSize.ONE_MINUTE)
-                    .set(FFTLogLin.class, FFTLogLin.LIN);
+                    .set(GraphLogLin.class, GraphLogLin.LIN);
 
         initDropdown(SpectrogramMaxFrequency.class, "spectrogramMaxFrequencyDropdown", "Max Hz");
         initDropdown(SpectrogramWindowSize.class, "spectrogramWindowDropdown", "Window");
-        initDropdown(FFTLogLin.class, "spectrogramLogLinDropdown", "Log/Lin");
+        initDropdown(GraphLogLin.class, "spectrogramLogLinDropdown", "Log/Lin");
 
         spectChanSelectTop = new DualExGChannelSelect(ourApplet, x, y, w, navH, true);
         spectChanSelectBot = new DualExGChannelSelect(ourApplet, x, y + navH, w, navH, false);
@@ -90,7 +90,7 @@ class W_Spectrogram extends WidgetWithSettings {
     protected void applySettings() {
         updateDropdownLabel(SpectrogramMaxFrequency.class, "spectrogramMaxFrequencyDropdown");
         updateDropdownLabel(SpectrogramWindowSize.class, "spectrogramWindowDropdown");
-        updateDropdownLabel(FFTLogLin.class, "spectrogramLogLinDropdown");
+        updateDropdownLabel(GraphLogLin.class, "spectrogramLogLinDropdown");
         applyMaxFrequency();
         applyWindowSize();
         applyChannelSettings();
@@ -205,7 +205,7 @@ class W_Spectrogram extends WidgetWithSettings {
     }
 
     private void drawSpectrogramPoints() {
-        FFTLogLin logLin = widgetSettings.get(FFTLogLin.class);
+        GraphLogLin logLin = widgetSettings.get(GraphLogLin.class);
         
         for (int i = 0; i <= dataImg.height/2; i++) {
             // Draw top spectrogram (left channels)
@@ -217,10 +217,10 @@ class W_Spectrogram extends WidgetWithSettings {
         }
     }
 
-    private void drawSpectrogramPoint(List<Integer> channels, int freqBand, int yPosition, FFTLogLin logLin) {
+    private void drawSpectrogramPoint(List<Integer> channels, int freqBand, int yPosition, GraphLogLin logLin) {
         float hueValue = hueLimit - map((fftAvgs(channels, freqBand)*32), 0, 256, 0, hueLimit);
         
-        if (logLin == FFTLogLin.LOG) {
+        if (logLin == GraphLogLin.LOG) {
             hueValue = map(log10(hueValue), 0, 2, 0, hueLimit);
         }
         
@@ -374,12 +374,12 @@ class W_Spectrogram extends WidgetWithSettings {
                 return;
             }
         }
-        FFTLogLin logLin = widgetSettings.get(FFTLogLin.class);
+        GraphLogLin logLin = widgetSettings.get(GraphLogLin.class);
         pushStyle();
             //draw color scale reference to the right of the spectrogram
             for (int i = 0; i < colorScaleHeight; i++) {
                 float hueValue = hueLimit - map(i * 2, 0, colorScaleHeight*2, 0, hueLimit);
-                if (logLin == FFTLogLin.LOG) {
+                if (logLin == GraphLogLin.LOG) {
                     hueValue = map(log(hueValue) / log(10), 0, 2, 0, hueLimit);
                 }
                 //println(hueValue);
@@ -481,7 +481,7 @@ class W_Spectrogram extends WidgetWithSettings {
     }
 
     public void setLogLin(int n) {
-        widgetSettings.setByIndex(FFTLogLin.class, n);
+        widgetSettings.setByIndex(GraphLogLin.class, n);
     }
 
     public void setMaxFrequency(int n) {

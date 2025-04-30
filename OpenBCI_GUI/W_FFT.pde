@@ -36,15 +36,15 @@ class W_Fft extends WidgetWithSettings {
         super.initWidgetSettings();
         widgetSettings.set(FFTMaxFrequency.class, FFTMaxFrequency.MAX_60)
                 .set(FFTVerticalScale.class, FFTVerticalScale.SCALE_100)
-                .set(FFTLogLin.class, FFTLogLin.LOG)
+                .set(GraphLogLin.class, GraphLogLin.LOG)
                 .set(FFTSmoothingFactor.class, globalFFTSettings.getSmoothingFactor())
                 .set(FFTFilteredEnum.class, globalFFTSettings.getFilteredEnum());
 
         initDropdown(FFTMaxFrequency.class, "fftMaxFrequencyDropdown", "Max Hz");
         initDropdown(FFTVerticalScale.class, "fftVerticalScaleDropdown", "Max uV");
-        initDropdown(FFTLogLin.class, "fftLogLinDropdown", "Log/Lin");
+        initDropdown(GraphLogLin.class, "GraphLogLinDropdown", "Log/Lin");
         initDropdown(FFTSmoothingFactor.class, "fftSmoothingDropdown", "Smooth");
-        initDropdown(FFTFilteredEnum.class, "fftFilteringDropdown", "Filters?");
+        initDropdown(FFTFilteredEnum.class, "fftFilteringDropdown", "Filters");
         
         fftChanSelect = new ExGChannelSelect(ourApplet, x, y, w, navH);
         fftChanSelect.activateAllButtons();
@@ -61,7 +61,7 @@ class W_Fft extends WidgetWithSettings {
     protected void applySettings() {
         updateDropdownLabel(FFTMaxFrequency.class, "fftMaxFrequencyDropdown");
         updateDropdownLabel(FFTVerticalScale.class, "fftVerticalScaleDropdown");
-        updateDropdownLabel(FFTLogLin.class, "fftLogLinDropdown");
+        updateDropdownLabel(GraphLogLin.class, "GraphLogLinDropdown");
         updateDropdownLabel(FFTSmoothingFactor.class, "fftSmoothingDropdown");
         updateDropdownLabel(FFTFilteredEnum.class, "fftFilteringDropdown");
         applyActiveChannels(fftChanSelect);
@@ -233,13 +233,13 @@ class W_Fft extends WidgetWithSettings {
     }
 
     public void setLogLin(int n) {
-        widgetSettings.setByIndex(FFTLogLin.class, n);
+        widgetSettings.setByIndex(GraphLogLin.class, n);
         setPlotLogScale();
     }
 
     private void setPlotLogScale() {
-        FFTLogLin logLin = widgetSettings.get(FFTLogLin.class);
-        if (logLin == FFTLogLin.LOG) {
+        GraphLogLin logLin = widgetSettings.get(GraphLogLin.class);
+        if (logLin == GraphLogLin.LOG) {
             fftPlot.setLogScale("y");
         } else {
             fftPlot.setLogScale("");
@@ -266,7 +266,7 @@ public void fftVerticalScaleDropdown(int n) {
     ((W_Fft) widgetManager.getWidget("W_Fft")).setVerticalScale(n);
 }
 
-public void fftLogLinDropdown(int n) {
+public void GraphLogLinDropdown(int n) {
     ((W_Fft) widgetManager.getWidget("W_Fft")).setLogLin(n);
 }
 

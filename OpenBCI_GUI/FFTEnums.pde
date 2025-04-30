@@ -132,7 +132,9 @@ public enum FFTVerticalScale implements IndexingInterface {
     SCALE_10 (0, 10, "10 uV"),
     SCALE_50 (1, 50, "50 uV"),
     SCALE_100 (2, 100, "100 uV"),
-    SCALE_1000 (3, 1000, "1000 uV");
+    SCALE_500 (3, 500, "500 uV"),
+    SCALE_1000 (3, 1000, "1000 uV"),
+    SCALE_1500 (4, 1500, "1500 uV");
 
     private int index;
     private final int value;
@@ -159,14 +161,14 @@ public enum FFTVerticalScale implements IndexingInterface {
     }
 }
 
-public enum FFTLogLin implements IndexingInterface {
+public enum GraphLogLin implements IndexingInterface {
     LOG (0, "Log"),
     LIN (1, "Linear");
 
     private int index;
     private String label;
 
-    FFTLogLin(int index, String label) {
+    GraphLogLin(int index, String label) {
         this.index = index;
         this.label = label;
     }
