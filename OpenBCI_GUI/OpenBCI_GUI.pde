@@ -121,6 +121,7 @@ String sdData_fname = "N/A"; //only used if loading input data from a sd file
 DataSource currentBoard = new BoardNull();
 
 DataLogger dataLogger = new DataLogger();
+OdfFileDuration odfFileDuration = OdfFileDuration.SIXTY_MINUTES;
 
 // Intialize interface protocols
 InterfaceSerial iSerial = new InterfaceSerial(); //This is messy, half-deprecated code. See comments in InterfaceSerial.pde - Nov. 2020
@@ -256,6 +257,8 @@ final color SIGNAL_CHECK_YELLOW = color(221, 178, 13); //Same color as yellow ch
 final color SIGNAL_CHECK_YELLOW_LOWALPHA = color(221, 178, 13, 150);
 final color SIGNAL_CHECK_RED = BOLD_RED;
 final color SIGNAL_CHECK_RED_LOWALPHA = color(224, 56, 45, 150);
+public CColor dropdownColorsGlobal = new CColor();
+        
 
 //Channel Colors -- Defaulted to matching the OpenBCI electrode ribbon cable
 //Channel Colors -- Defaulted to matching the OpenBCI electrode ribbon cable
@@ -275,12 +278,10 @@ final int COLOR_SCHEME_ALTERNATIVE_A = 2;
 // int COLOR_SCHEME_ALTERNATIVE_B = 3;
 int colorScheme = COLOR_SCHEME_ALTERNATIVE_A;
 
-WidgetManager wm;
-boolean wmVisible = true;
-CColor cp5_colors;
+WidgetManager widgetManager;
 
 //Global variable for general navigation bar height
-final int navHeight = 22;
+final int NAV_HEIGHT = 22;
 
 ButtonHelpText buttonHelpText;
 
@@ -293,19 +294,19 @@ public final static String stopButton_pressToStop_txt = "Stop Data Stream";
 public final static String stopButton_pressToStart_txt = "Start Data Stream";
 
 DirectoryManager directoryManager;
-SessionSettings settings;
+SessionSettings sessionSettings;
 GuiSettings guiSettings;
 DataProcessing dataProcessing;
 FilterSettings filterSettings;
-NetworkingUI networkUI;
 FilterUIPopup filterUI;
+NetworkingUI networkUI;
 DeveloperCommandPopup developerCommandPopup;
 
 final int navBarHeight = 32;
 TopNav topNav;
 
 ddf.minim.analysis.FFT[] fftBuff = new ddf.minim.analysis.FFT[globalChannelCount];    //from the minim library
-boolean isFFTFiltered = true; //yes by default ... this is used in dataProcessing.pde to determine which uV array feeds the FFT calculation
+GlobalFFTSettings globalFFTSettings;
 
 StringBuilder globalScreenResolution;
 StringBuilder globalScreenDPI;
@@ -342,6 +343,9 @@ void settings() {
 }
 
 void setup() {
+
+    ourApplet = this;
+
     frameRate(120);
 
     copyPaste = new CopyPaste();
@@ -377,6 +381,13 @@ void setup() {
     p_5 = createFont("fonts/OpenSans-Regular.ttf", 5);
 
     openbciLogoCog = loadImage("obci-logo-blu-cog.png");
+
+    dropdownColorsGlobal.setActive((int)BUTTON_PRESSED); //bg color of box when pressed
+    dropdownColorsGlobal.setForeground((int)BUTTON_HOVER); //when hovering over any box (primary or dropdown)
+    dropdownColorsGlobal.setBackground((int)color(255)); //bg color of boxes (including primary)
+    dropdownColorsGlobal.setCaptionLabel((int)color(1, 18, 41)); //color of text in primary box
+    // dropdownColorsGlobal.setValueLabel((int)color(1, 18, 41)); //color of text in all dropdown boxes
+    dropdownColorsGlobal.setValueLabel((int)color(100)); //color of text in all dropdown boxes
 
     // check if the current directory is writable
     File dummy = new File(sketchPath());
@@ -428,12 +439,9 @@ void setup() {
     
     // Copy sample data to the Users' Documents folder +  create Recordings folder
     directoryManager.init();
-    settings = new SessionSettings();
+    sessionSettings = new SessionSettings();
     guiSettings = new GuiSettings(directoryManager.getSettingsPath());
     userPlaybackHistoryFile = directoryManager.getSettingsPath()+"UserPlaybackHistory.json";
-
-    //open window
-    ourApplet = this;
 
     // Bug #426: If setup takes too long, JOGL will time out waiting for the GUI to draw something.
     // moving the setup to a separate thread solves this. We just have to make sure not to
@@ -445,8 +453,8 @@ void delayedSetup() {
     smooth(); //turn this off if it's too slow
 
     surface.setResizable(true);  //updated from frame.setResizable in Processing 2
-    settings.widthOfLastScreen = width; //for screen resizing (Thank's Tao)
-    settings.heightOfLastScreen = height;
+    sessionSettings.widthOfLastScreen = width; //for screen resizing (Thank's Tao)
+    sessionSettings.heightOfLastScreen = height;
 
     setupContainers();
 
@@ -533,8 +541,8 @@ synchronized void draw() {
             dataProcessing.networkingDataAccumulator.compareAndSetNetworkingFrameLocks();
         }
     } else if (systemMode == SYSTEMMODE_INTROANIMATION) {
-        if (settings.introAnimationInit == 0) {
-            settings.introAnimationInit = millis();
+        if (sessionSettings.introAnimationInit == 0) {
+            sessionSettings.introAnimationInit = millis();
         } else {
             introAnimation();
         }
@@ -743,19 +751,19 @@ void initSystem() {
     topNav.controlPanelCollapser.setOff();
 
     verbosePrint("OpenBCI_GUI: initSystem: -- Init 4 -- " + millis());
-    wm = new WidgetManager(this);
+    widgetManager = new WidgetManager();
     
     verbosePrint("OpenBCI_GUI: initSystem: -- Init 5 -- " + millis());
 
     //don't save default session settings for StreamingBoard
     if (eegDataSource != DATASOURCE_STREAMING) {
         //Init software settings: create default settings file that is datasource unique
-        settings.init();
+        sessionSettings.init();
         verbosePrint("OpenBCI_GUI: initSystem: Session settings initialized");
     }
 
     if (guiSettings.getAutoLoadSessionSettings()) {
-        settings.autoLoadSessionSettings();
+        sessionSettings.autoLoadSessionSettings();
         verbosePrint("OpenBCI_GUI: initSystem: User default session settings automatically loaded");
     }
 
@@ -803,7 +811,7 @@ public int getDownsampledBufferSize() {
 * @description Get the correct points of FFT based on sampling rate
 * @returns `int` - Points of FFT. 125Hz, 200Hz, 250Hz -> 256points. 1000Hz -> 1024points. 1600Hz -> 2048 points.
 */
-int getNfftSafe() {
+int getNumFFTPoints() {
     int sampleRate = currentBoard.getSampleRate();
     switch (sampleRate) {
         case 500:
@@ -837,15 +845,17 @@ void initCoreDataObjects() {
 
 void initFFTObjectsAndBuffer() {
     //initialize the FFT objects
-    for (int Ichan=0; Ichan < globalChannelCount; Ichan++) {
-        // verbosePrint("Init FFT Buff – " + Ichan);
-        fftBuff[Ichan] = new ddf.minim.analysis.FFT(getNfftSafe(), currentBoard.getSampleRate());
+    for (int channel = 0; channel < globalChannelCount; channel++) {
+        // verbosePrint("Init FFT Buff – " + channel);
+        fftBuff[channel] = new ddf.minim.analysis.FFT(getNumFFTPoints(), currentBoard.getSampleRate());
     }  //make the FFT objects
+
+    globalFFTSettings = new GlobalFFTSettings();
 
     //Attempt initialization. If error, print to console and exit function.
     //Fixes GUI crash when trying to load outdated recordings
     try {
-        initializeFFTObjects(fftBuff, dataProcessingRawBuffer, getNfftSafe(), currentBoard.getSampleRate());
+        initializeFFTObjects(fftBuff, dataProcessingRawBuffer, getNumFFTPoints(), currentBoard.getSampleRate());
     } catch (ArrayIndexOutOfBoundsException e) {
         e.printStackTrace();
         outputError("Playback file load error. Try using a more recent recording.");
@@ -861,8 +871,9 @@ void startRunning() {
         output("Data stream started.");
         // todo: this should really be some sort of signal that listeners can register for "OnStreamStarted"
         // close hardware settings if user starts streaming
-        if (w_timeSeries.getAdsSettingsVisible()) {
-            w_timeSeries.closeADSSettings();
+        W_TimeSeries timeSeriesWidget = widgetManager.getTimeSeriesWidget();
+        if (timeSeriesWidget.getAdsSettingsVisible()) {
+            timeSeriesWidget.closeADSSettings();
         }
         try {
             streamTimeElapsed.reset();
@@ -918,8 +929,8 @@ void haltSystem() {
         }
     }
 
-    if (w_focus != null) {
-        w_focus.endSession();
+    if (widgetManager.getWidgetExists("W_Focus")) {
+        ((W_Focus) widgetManager.getWidget("W_Focus")).endSession();
     }
 
     stopRunning();
@@ -968,10 +979,10 @@ void systemUpdate() { // for updating data values and variables
         //updates while in system control panel before START SYSTEM
         controlPanel.update();
 
-        if (settings.widthOfLastScreen != width || settings.heightOfLastScreen != height) {
+        if (sessionSettings.widthOfLastScreen != width || sessionSettings.heightOfLastScreen != height) {
             topNav.screenHasBeenResized(width, height);
-            settings.widthOfLastScreen = width;
-            settings.heightOfLastScreen = height;
+            sessionSettings.widthOfLastScreen = width;
+            sessionSettings.heightOfLastScreen = height;
             //println("W = " + width + " || H = " + height);
         }
     }
@@ -980,23 +991,23 @@ void systemUpdate() { // for updating data values and variables
         
         //alternative component listener function (line 177 mouseReleased- 187 frame.addComponentListener) for processing 3,
         //Component listener doesn't seem to work, so staying with this method for now
-        if (settings.widthOfLastScreen != width || settings.heightOfLastScreen != height) {
-            settings.screenHasBeenResized = true;
-            settings.timeOfLastScreenResize = millis();
-            settings.widthOfLastScreen = width;
-            settings.heightOfLastScreen = height;
+        if (sessionSettings.widthOfLastScreen != width || sessionSettings.heightOfLastScreen != height) {
+            sessionSettings.screenHasBeenResized = true;
+            sessionSettings.timeOfLastScreenResize = millis();
+            sessionSettings.widthOfLastScreen = width;
+            sessionSettings.heightOfLastScreen = height;
         }
 
         //re-initialize GUI if screen has been resized and it's been more than 1/2 seccond (to prevent reinitialization of GUI from happening too often)
-        if (settings.screenHasBeenResized && settings.timeOfLastScreenResize + 500 > millis()) {
+        if (sessionSettings.screenHasBeenResized && sessionSettings.timeOfLastScreenResize + 500 > millis()) {
             ourApplet = this; //reset PApplet...
             topNav.screenHasBeenResized(width, height);
-            wm.screenResized();
-            settings.screenHasBeenResized = false;
+            widgetManager.screenResized();
+            sessionSettings.screenHasBeenResized = false;
         }
 
-        if (wm.isWMInitialized) {
-            wm.update();
+        if (widgetManager != null) {
+            widgetManager.update();
         }
     }
 }
@@ -1008,7 +1019,7 @@ void systemDraw() { //for drawing to the screen
     //background(255);  //clear the screen
 
     if (systemMode >= SYSTEMMODE_POSTINIT) {
-        wm.draw();
+        widgetManager.draw();
         drawContainers();
     }
 
@@ -1062,7 +1073,6 @@ void systemInitSession() {
 //Global function to update the number of channels
 void updateGlobalChannelCount(int _channelCount) {
     globalChannelCount = _channelCount;
-    settings.sessionSettingsChannelCount = _channelCount; //used in SoftwareSettings.pde only
     fftBuff = new ddf.minim.analysis.FFT[globalChannelCount];  //reinitialize the FFT buffer
     println("OpenBCI_GUI: Channel count set to " + str(globalChannelCount));
 }
@@ -1074,8 +1084,8 @@ void introAnimation() {
     int t1 = 0;
     float transparency = 0;
 
-    if (millis() >= settings.introAnimationInit) {
-        transparency = map(millis() - settings.introAnimationInit, t1, settings.introAnimationDuration, 0, 255);
+    if (millis() >= sessionSettings.introAnimationInit) {
+        transparency = map(millis() - sessionSettings.introAnimationInit, t1, sessionSettings.INTRO_ANIMATION_DURATION, 0, 255);
         verbosePrint(String.valueOf(transparency));
         tint(255, transparency);
         //draw OpenBCI Logo Front & Center
@@ -1089,7 +1099,7 @@ void introAnimation() {
     }
 
     //Exit intro animation when the duration has expired AND the Control Panel is ready
-    if ((millis() >= settings.introAnimationInit + settings.introAnimationDuration)
+    if ((millis() >= sessionSettings.introAnimationInit + sessionSettings.INTRO_ANIMATION_DURATION)
         && controlPanel != null) {
         systemMode = SYSTEMMODE_PREINIT;
         controlPanel.open();

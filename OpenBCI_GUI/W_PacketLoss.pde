@@ -37,8 +37,9 @@ class W_PacketLoss extends Widget {
 
     private CalculationWindowSize tableWindowSize = CalculationWindowSize.SECONDS10;
 
-    W_PacketLoss(PApplet _parent){
-        super(_parent); //calls the parent CONSTRUCTOR method of Widget (DON'T REMOVE)
+    W_PacketLoss() {
+        super();
+        widgetTitle = "Packet Loss";
 
         dataGrid = new Grid(5/*numRows*/, 4/*numCols*/, CELL_HEIGHT);
         packetLossTracker = ((Board)currentBoard).getPacketLossTracker();
@@ -63,7 +64,7 @@ class W_PacketLoss extends Widget {
         tableDropdown = cp5_widget.addScrollableList("TableTimeWindow")
             .setDrawOutline(false)
             .setOpen(false)
-            .setColor(settings.dropdownColors)
+            .setColor(dropdownColorsGlobal)
             .setOutlineColor(OBJECT_BORDER_GREY)
             .setBarHeight(CELL_HEIGHT) //height of top/primary bar
             .setItemHeight(CELL_HEIGHT) //height of all item/dropdown bars
@@ -102,7 +103,7 @@ class W_PacketLoss extends Widget {
     }
 
     public void update(){
-        super.update(); //calls the parent update() method of Widget (DON'T REMOVE)
+        super.update();
 
         lastMillisPacketRecord = packetLossTracker.getCumulativePacketRecordForLast(tableWindowSize.getMilliseconds());
 
@@ -129,7 +130,7 @@ class W_PacketLoss extends Widget {
     }
 
     public void draw(){
-        super.draw(); //calls the parent draw() method of Widget (DON'T REMOVE)
+        super.draw();
 
         pushStyle();
         fill(OPENBCI_DARKBLUE);
@@ -142,17 +143,17 @@ class W_PacketLoss extends Widget {
     }
 
     public void screenResized(){
-        super.screenResized(); //calls the parent screenResized() method of Widget (DON'T REMOVE)
+        super.screenResized();
         resizeGrid();
     }
 
     public void mousePressed(){
-        super.mousePressed(); //calls the parent mousePressed() method of Widget (DON'T REMOVE)
+        super.mousePressed();
 
     }
 
     public void mouseReleased(){
-        super.mouseReleased(); //calls the parent mouseReleased() method of Widget (DON'T REMOVE)
+        super.mouseReleased();
 
     }
 

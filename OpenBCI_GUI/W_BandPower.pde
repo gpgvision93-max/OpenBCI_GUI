@@ -10,133 +10,11 @@
 //                                                                                                    //
 //    Created by: Wangshu Sun, May 2017                                                               //
 //    Modified by: Richard Waltman, March 2022                                                        //
+//    Refactored by: Richard Waltman, April 2025                                                      //
 //                                                                                                    //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-public enum BPAutoClean implements IndexingInterface
-{
-    ON (0, "On"),
-    OFF (1, "Off");
-
-    private int index;
-    private String label;
-    private static BPAutoClean[] vals = values();
-
-    BPAutoClean(int _index, String _label) {
-        this.index = _index;
-        this.label = _label;
-    }
-
-    @Override
-    public String getString() {
-        return label;
-    }
-
-    @Override
-    public int getIndex() {
-        return index;
-    }
-
-    public static List<String> getEnumStringsAsList() {
-        List<String> enumStrings = new ArrayList<String>();
-        for (IndexingInterface val : vals) {
-            enumStrings.add(val.getString());
-        }
-        return enumStrings;
-    }
-}
-
-public enum BPAutoCleanThreshold implements IndexingInterface
-{
-    FORTY (0, 40f, "40 uV"),
-    FIFTY (1, 50f, "50 uV"),
-    SIXTY (2, 60f, "60 uV"),
-    SEVENTY (3, 70f, "70 uV"),
-    EIGHTY (4, 80f, "80 uV"),
-    NINETY (5, 90f, "90 uV"),
-    ONE_HUNDRED(6, 100f, "100 uV");
-
-    private int index;
-    private float value;
-    private String label;
-    private static BPAutoCleanThreshold[] vals = values();
-
-    BPAutoCleanThreshold(int _index, float _value, String _label) {
-        this.index = _index;
-        this.value = _value;
-        this.label = _label;
-    }
-
-    public float getValue() {
-        return value;
-    }
-
-    @Override
-    public String getString() {
-        return label;
-    }
-
-    @Override
-    public int getIndex() {
-        return index;
-    }
-
-    public static List<String> getEnumStringsAsList() {
-        List<String> enumStrings = new ArrayList<String>();
-        for (IndexingInterface val : vals) {
-            enumStrings.add(val.getString());
-        }
-        return enumStrings;
-    }
-}
-
-public enum BPAutoCleanTimer implements IndexingInterface
-{
-    HALF_SECOND (0, 500, ".5 sec"),
-    ONE_SECOND (1, 1000, "1 sec"),
-    THREE_SECONDS (2, 2000, "3 sec"),
-    FIVE_SECONDS (3, 5000, "5 sec"),
-    TEN_SECONDS (4, 10000, "10 sec"),
-    TWENTY_SECONDS (5, 20000, "20 sec"),
-    THIRTY_SECONDS(6, 30000, "30 sec");
-
-    private int index;
-    private float value;
-    private String label;
-    private static BPAutoCleanTimer[] vals = values();
-
-    BPAutoCleanTimer(int _index, float _value, String _label) {
-        this.index = _index;
-        this.value = _value;
-        this.label = _label;
-    }
-
-    public float getValue() {
-        return value;
-    }
-
-    @Override
-    public String getString() {
-        return label;
-    }
-
-    @Override
-    public int getIndex() {
-        return index;
-    }
-
-    public static List<String> getEnumStringsAsList() {
-        List<String> enumStrings = new ArrayList<String>();
-        for (IndexingInterface val : vals) {
-            enumStrings.add(val.getString());
-        }
-        return enumStrings;
-    }
-}
-
-class W_BandPower extends Widget {
-
-    // indexes
+class W_BandPower extends WidgetWithSettings {
     private final int DELTA = 0; // 1-4 Hz
     private final int THETA = 1; // 4-8 Hz
     private final int ALPHA = 2; // 8-13 Hz
@@ -151,44 +29,63 @@ class W_BandPower extends Widget {
     public ExGChannelSelect bpChanSelect;
     private boolean prevChanSelectIsVisible = false;
 
-    private List<controlP5.Controller> cp5ElementsToCheck = new ArrayList<controlP5.Controller>();
+    private List<controlP5.Controller> cp5ElementsToCheck;
 
-    BPAutoClean bpAutoClean = BPAutoClean.OFF;
-    BPAutoCleanThreshold bpAutoCleanThreshold = BPAutoCleanThreshold.FIFTY;
-    BPAutoCleanTimer bpAutoCleanTimer = BPAutoCleanTimer.THREE_SECONDS;
-    int[] autoCleanTimers;
-    boolean[] previousThresholdCrossed;
+    W_BandPower() {
+        super();
+        widgetTitle = "Band Power";
 
-    W_BandPower(PApplet _parent) {
-        super(_parent); //calls the parent CONSTRUCTOR method of Widget (DON'T REMOVE)
+        createPlot();
+    }
 
-        autoCleanTimers = new int[currentBoard.getNumEXGChannels()];
-        previousThresholdCrossed = new boolean[currentBoard.getNumEXGChannels()];
-
-        //Add channel select dropdown to this widget
-        bpChanSelect = new ExGChannelSelect(pApplet, x, y, w, navH);
-        bpChanSelect.activateAllButtons();
-
-        cp5ElementsToCheck.addAll(bpChanSelect.getCp5ElementsForOverlapCheck());
+    @Override
+    protected void initWidgetSettings() {
+        super.initWidgetSettings();
+        widgetSettings.set(BPVerticalScale.class, BPVerticalScale.SCALE_100)
+                    .set(GraphLogLin.class, GraphLogLin.LOG)
+                    .set(FFTSmoothingFactor.class, globalFFTSettings.getSmoothingFactor())
+                    .set(FFTFilteredEnum.class, globalFFTSettings.getFilteredEnum());
         
-        //Add settings dropdowns
-        //Note: This is the correct way to create a dropdown using an enum -RW
-        addDropdown("bpAutoCleanDropdown", "AutoClean", bpAutoClean.getEnumStringsAsList(), bpAutoClean.getIndex());
-        addDropdown("bpAutoCleanThresholdDropdown", "Threshold", bpAutoCleanThreshold.getEnumStringsAsList(), bpAutoCleanThreshold.getIndex());
-        addDropdown("bpAutoCleanTimerDropdown", "Timer", bpAutoCleanTimer.getEnumStringsAsList(), bpAutoCleanTimer.getIndex());
-        //Note: This is a legacy way to create a dropdown which is sloppy and disorganized -RW
-        //These two dropdowns also have to mirror the settings in the FFT widget
-        addDropdown("Smoothing", "Smooth", Arrays.asList(settings.fftSmoothingArray), smoothFac_ind); //smoothFac_ind is a global variable at the top of W_HeadPlot.pde
-        addDropdown("UnfiltFilt", "Filters?", Arrays.asList(settings.fftFilterArray), settings.fftFilterSave);
+        initDropdown(BPVerticalScale.class, "bandPowerVerticalScaleDropdown", "Max uV");
+        initDropdown(GraphLogLin.class, "bandPowerLogLinDropdown", "Log/Lin");
+        initDropdown(FFTSmoothingFactor.class, "bandPowerSmoothingDropdown", "Smooth");
+        initDropdown(FFTFilteredEnum.class, "bandPowerDataFilteringDropdown", "Filters");
 
+        bpChanSelect = new ExGChannelSelect(ourApplet, x, y, w, navH);
+        bpChanSelect.activateAllButtons();
+        cp5ElementsToCheck = new ArrayList<controlP5.Controller>();
+        cp5ElementsToCheck.addAll(bpChanSelect.getCp5ElementsForOverlapCheck());
+        saveActiveChannels(bpChanSelect.getActiveChannels());
+        widgetSettings.saveDefaults();
+    }
+
+    @Override
+    protected void applySettings() {
+        updateDropdownLabel(BPVerticalScale.class, "bandPowerVerticalScaleDropdown");
+        updateDropdownLabel(GraphLogLin.class, "bandPowerLogLinDropdown");
+        updateDropdownLabel(FFTSmoothingFactor.class, "bandPowerSmoothingDropdown");
+        updateDropdownLabel(FFTFilteredEnum.class, "bandPowerDataFilteringDropdown");
+        applyActiveChannels(bpChanSelect);
+        applyVerticalScale();
+        applyPlotLogScale();
+    }
+
+    @Override
+    protected void updateChannelSettings() {
+        if (bpChanSelect != null) {
+            saveActiveChannels(bpChanSelect.getActiveChannels());
+        }
+    }
+
+    private void createPlot() {
         // Setup for the BandPower plot
-        bp_plot = new GPlot(_parent, x, y-navHeight, w, h+navHeight);
-        // bp_plot.setPos(x, y+navHeight);
+        bp_plot = new GPlot(ourApplet, x, y-NAV_HEIGHT, w, h+NAV_HEIGHT);
+        // bp_plot.setPos(x, y+NAV_HEIGHT);
         bp_plot.setDim(w, h);
         bp_plot.setLogScale("y");
-        bp_plot.setYLim(0.1, 100);
+        bp_plot.setYLim(0.1, 100); // Lower limit must be > 0 for log scale
         bp_plot.setXLim(0, 5);
-        bp_plot.getYAxis().setNTicks(9);
+        bp_plot.getYAxis().setNTicks(4);
         bp_plot.getXAxis().setNTicks(0);
         bp_plot.getTitle().setTextAlignment(LEFT);
         bp_plot.getTitle().setRelativePos(0);
@@ -221,13 +118,11 @@ class W_BandPower extends Widget {
         );
         //setting color of text label for each histogram bar on the x axis
         bp_plot.getHistogram().setFontColor(OPENBCI_DARKBLUE);
+        applyPlotLogScale();
     }
 
     public void update() {
-        super.update(); //calls the parent update() method of Widget (DON'T REMOVE)
-
-        // If enabled, automatically turn channels on or off in ExGChannelSelect for this widget
-        autoCleanByEnableDisableChannels();
+        super.update();
         
         //Update channel checkboxes and active channels
         bpChanSelect.update(x, y, w);
@@ -252,7 +147,7 @@ class W_BandPower extends Widget {
     }
 
     public void draw() {
-        super.draw(); //calls the parent draw() method of Widget (DON'T REMOVE)
+        super.draw();
         pushStyle();
 
         //remember to refer to x,y,w,h which are the positioning variables of the Widget class
@@ -268,22 +163,22 @@ class W_BandPower extends Widget {
 
         //for this widget need to redraw the grey bar, bc the FFT plot covers it up...
         fill(200, 200, 200);
-        rect(x, y - navHeight, w, navHeight); //button bar
+        rect(x, y - NAV_HEIGHT, w, NAV_HEIGHT); //button bar
 
         popStyle();
         bpChanSelect.draw();
     }
 
     public void screenResized() {
-        super.screenResized(); //calls the parent screenResized() method of Widget (DON'T REMOVE)
+        super.screenResized();
 
         flexGPlotSizeAndPosition();
 
-        bpChanSelect.screenResized(pApplet);
+        bpChanSelect.screenResized(ourApplet);
     }
 
     public void mousePressed() {
-        super.mousePressed(); //calls the parent mousePressed() method of Widget (DON'T REMOVE)
+        super.mousePressed();
         bpChanSelect.mousePressed(this.dropdownIsActive); //Calls channel select mousePressed and checks if clicked
     }
 
@@ -301,72 +196,17 @@ class W_BandPower extends Widget {
         return normalizedBandPowers;
     }
 
-    private void autoCleanByEnableDisableChannels() {
-        if (bpAutoClean == BPAutoClean.OFF) {
-            return;
-        }
-
-        int numChannels = currentBoard.getNumEXGChannels();
-        for (int i = 0; i < numChannels; i++) {
-            float uvrms = dataProcessing.data_std_uV[i];
-            boolean thresholdCrossed = uvrms > bpAutoCleanThreshold.getValue();
-
-            int currentMillis = millis();
-
-            //Check for state change. Reset timer on either state.
-            if (thresholdCrossed != previousThresholdCrossed[i]) {
-                previousThresholdCrossed[i] = thresholdCrossed;
-                autoCleanTimers[i] = currentMillis;
-            }
-            
-            //Auto-disable a channel if it's above the threshold and has been for the timer duration
-            boolean timerDurationExceeded = currentMillis - autoCleanTimers[i] > bpAutoCleanTimer.getValue();
-            if (timerDurationExceeded) {
-                boolean enableChannel = !thresholdCrossed;
-                bpChanSelect.setToggleState(i, enableChannel);
-            } 
-        }
-    }
-
-    public BPAutoClean getAutoClean() {
-        return bpAutoClean;
-    }
-
-    public BPAutoCleanThreshold getAutoCleanThreshold() {
-        return bpAutoCleanThreshold;
-    }
-
-    public BPAutoCleanTimer getAutoCleanTimer() {
-        return bpAutoCleanTimer;
-    }
-
-    public void setAutoClean(int n) {
-        bpAutoClean = bpAutoClean.values()[n];
-        Arrays.fill(previousThresholdCrossed, false);
-        Arrays.fill(autoCleanTimers, 0);
-    }
-
-    public void setAutoCleanThreshold(int n) {
-        bpAutoCleanThreshold = bpAutoCleanThreshold.values()[n];
-    }
-
-    public void setAutoCleanTimer(int n) {
-        bpAutoCleanTimer = bpAutoCleanTimer.values()[n];
-    }
     //Called in DataProcessing.pde to update data even if widget is closed
     public void updateBandPowerWidgetData() {
         float normalizingSum = 0;
 
         for (int i = 0; i < NUM_BANDS; i++) {
             float sum = 0;
-
             for (int j = 0; j < bpChanSelect.getActiveChannels().size(); j++) {
                 int chan = bpChanSelect.getActiveChannels().get(j);
                 sum += dataProcessing.avgPowerInBins[chan][i];
             }
-
             activePower[i] = sum / bpChanSelect.getActiveChannels().size();
-
             normalizingSum += activePower[i];
         }
 
@@ -374,16 +214,61 @@ class W_BandPower extends Widget {
             normalizedBandPowers[i] = activePower[i] / normalizingSum;
         }
     }
+
+    public void setVerticalScale(int n) {
+        widgetSettings.setByIndex(BPVerticalScale.class, n);
+        applyVerticalScale();
+    }
+
+    public void setLogLin(int n) {
+        widgetSettings.setByIndex(GraphLogLin.class, n);
+        applyPlotLogScale();
+    }
+
+    private void applyVerticalScale() {
+        BPVerticalScale scale = widgetSettings.get(BPVerticalScale.class);
+        int scaleValue = scale.getValue();
+        bp_plot.setYLim(0.1, scaleValue); // Lower limit must be > 0 for log scale
+    }
+
+    private void applyPlotLogScale() {
+        GraphLogLin logLin = widgetSettings.get(GraphLogLin.class);
+        if (logLin == GraphLogLin.LOG) {
+            bp_plot.setLogScale("y");
+        } else {
+            bp_plot.setLogScale("");
+        }
+    }
+
+    public void setSmoothingDropdownFrontend(FFTSmoothingFactor _smoothingFactor) {
+        widgetSettings.set(FFTSmoothingFactor.class, _smoothingFactor);
+        updateDropdownLabel(FFTSmoothingFactor.class, "bandPowerSmoothingDropdown");
+    }
+
+    public void setFilteringDropdownFrontend(FFTFilteredEnum _filteredEnum) {
+        widgetSettings.set(FFTFilteredEnum.class, _filteredEnum);
+        updateDropdownLabel(FFTFilteredEnum.class, "bandPowerDataFilteringDropdown");
+    }
 };
 
-public void bpAutoCleanDropdown(int n) {
-    w_bandPower.setAutoClean(n);
+public void bandPowerVerticalScaleDropdown(int n) {
+    ((W_BandPower) widgetManager.getWidget("W_BandPower")).setVerticalScale(n);
 }
 
-public void bpAutoCleanThresholdDropdown(int n) {
-    w_bandPower.setAutoCleanThreshold(n);
+public void bandPowerLogLinDropdown(int n) {
+    ((W_BandPower) widgetManager.getWidget("W_BandPower")).setLogLin(n);
 }
 
-public void bpAutoCleanTimerDropdown(int n) {
-    w_bandPower.setAutoCleanTimer(n);
+public void bandPowerSmoothingDropdown(int n) {
+    globalFFTSettings.setSmoothingFactor(FFTSmoothingFactor.values()[n]);
+    FFTSmoothingFactor smoothingFactor = globalFFTSettings.getSmoothingFactor();
+    ((W_BandPower) widgetManager.getWidget("W_BandPower")).setSmoothingDropdownFrontend(smoothingFactor);
+    ((W_Fft) widgetManager.getWidget("W_Fft")).setSmoothingDropdownFrontend(smoothingFactor);
+}
+
+public void bandPowerDataFilteringDropdown(int n) {
+    globalFFTSettings.setFilteredEnum(FFTFilteredEnum.values()[n]);
+    FFTFilteredEnum filteredEnum = globalFFTSettings.getFilteredEnum();
+    ((W_BandPower) widgetManager.getWidget("W_BandPower")).setFilteringDropdownFrontend(filteredEnum);
+    ((W_Fft) widgetManager.getWidget("W_Fft")).setFilteringDropdownFrontend(filteredEnum);
 }

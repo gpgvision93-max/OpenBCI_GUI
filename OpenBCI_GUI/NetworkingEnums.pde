@@ -4,21 +4,21 @@ public enum NetworkProtocol implements IndexingInterface {
     LSL (2, "LSL"),
     SERIAL (3, "Serial");
 
-    private final int INDEX;
-    private final String NAME;
+    private int index;
+    private String label;
     private static final NetworkProtocol[] VALUES = values();
 
-    NetworkProtocol(int index, String name) {
-        INDEX = index;
-        NAME = name;
+    NetworkProtocol(int index, String label) {
+        this.index = index;
+        this.label = label;
     }
 
     public int getIndex() {
-        return INDEX;
+        return index;
     }
 
     public String getString() {
-        return NAME;
+        return label;
     }
 
     public static NetworkProtocol getByIndex(int _index) {
@@ -38,15 +38,6 @@ public enum NetworkProtocol implements IndexingInterface {
         }
         return null;
     }
-
-    public static List<String> getEnumStringsAsList() {
-        List<String> enumStrings = new ArrayList<String>();
-        for (IndexingInterface val : VALUES) {
-            enumStrings.add(val.getString());
-        }
-        enumStrings.remove("Serial"); // #354
-        return enumStrings;
-    }
 }
 
 public enum NetworkDataType implements IndexingInterface {
@@ -63,33 +54,33 @@ public enum NetworkDataType implements IndexingInterface {
     EMG_JOYSTICK (9, "EMGJoystick", "emgJoystick", "emg-joystick"),
     MARKER (10, "Marker", "marker", "marker");
 
-    private final int INDEX;
-    private final String NAME;
-    private final String UDP_KEY;
-    private final String OSC_KEY;
+    private int index;
+    private String label;
+    private String udpKey;
+    private String oscKey;
     private static final NetworkDataType[] VALUES = values();
 
-    NetworkDataType(int index, String name, String udpKey, String oscKey) {
-        INDEX = index;
-        NAME = name;
-        UDP_KEY = udpKey;
-        OSC_KEY = oscKey;
+    NetworkDataType(int index, String label, String udpKey, String oscKey) {
+        this.index = index;
+        this.label = label;
+        this.udpKey = udpKey;
+        this.oscKey = oscKey;
     }
 
     public int getIndex() {
-        return INDEX;
+        return index;
     }
 
     public String getString() {
-        return NAME;
+        return label;
     }
 
     public String getUDPKey() {
-        return UDP_KEY;
+        return udpKey;
     }
 
     public String getOSCKey() {
-        return OSC_KEY;
+        return oscKey;
     }
 
     public static NetworkDataType getByString(String _name) {

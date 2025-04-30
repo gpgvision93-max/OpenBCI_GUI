@@ -10,7 +10,7 @@ class ChannelSelect {
     protected boolean channelSelectHover;
     protected boolean isVisible;
 
-    ChannelSelect(PApplet _parent, int _x, int _y, int _w, int _navH) {
+    ChannelSelect(PApplet _parentApplet, int _x, int _y, int _w, int _navH) {
         x = _x;
         y = _y;
         w = _w;
@@ -18,8 +18,8 @@ class ChannelSelect {
         navH = _navH;
 
         //setup for checkboxes
-        cp5_chanSelect = new ControlP5(_parent);
-        cp5_chanSelect.setGraphics(_parent, 0, 0);
+        cp5_chanSelect = new ControlP5(_parentApplet);
+        cp5_chanSelect.setGraphics(_parentApplet, 0, 0);
         cp5_chanSelect.setAutoDraw(false); //draw only when specified
     }
 
@@ -66,8 +66,8 @@ class ChannelSelect {
         popStyle();
     }
 
-    public void screenResized(PApplet _parent) {
-        cp5_chanSelect.setGraphics(_parent, 0, 0);
+    public void screenResized(PApplet _parentApplet) {
+        cp5_chanSelect.setGraphics(_parentApplet, 0, 0);
     }
 
     public void mousePressed(boolean dropdownIsActive) {
@@ -111,8 +111,8 @@ class ExGChannelSelect extends ChannelSelect {
     protected List<Toggle> channelButtons;
     private List<Integer> activeChannels = new ArrayList<Integer>();
 
-    ExGChannelSelect(PApplet _parent, int _x, int _y, int _w, int _navH) {
-        super(_parent, _x, _y, _w, _navH);
+    ExGChannelSelect(PApplet _parentApplet, int _x, int _y, int _w, int _navH) {
+        super(_parentApplet, _x, _y, _w, _navH);
         createButtons();
     }
 
@@ -232,6 +232,17 @@ class ExGChannelSelect extends ChannelSelect {
         return activeChannels;
     }
 
+    public void updateChannelSelection(List<Integer> channels) {
+        // First deactivate all channels
+        deactivateAllButtons();
+        
+        // Then activate only the selected channels
+        for (Integer channel : channels) {
+            if (channel >= 0 && channel < channelButtons.size()) {
+                setToggleState(channel, true);  // Changed from toggleButton
+            }
+        }
+    }
 }
 
 class DualChannelSelector {
@@ -282,8 +293,8 @@ class DualExGChannelSelect extends ExGChannelSelect {
     
     DualChannelSelector dualChannelSelector;
 
-    DualExGChannelSelect(PApplet _parent, int _x, int _y, int _w, int _navH, boolean isFirstRow) {
-        super(_parent, _x, _y, _w, _navH);
+    DualExGChannelSelect(PApplet _parentApplet, int _x, int _y, int _w, int _navH, boolean isFirstRow) {
+        super(_parentApplet, _x, _y, _w, _navH);
         dualChannelSelector = new DualChannelSelector(isFirstRow);
     }
     

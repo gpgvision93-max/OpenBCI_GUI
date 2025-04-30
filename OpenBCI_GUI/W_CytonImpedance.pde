@@ -48,7 +48,7 @@ class W_CytonImpedance extends Widget {
     private int prevMasterCheckCounter = -1;
     private int numElectrodesToMasterCheck = 0;
     private int prevMasterCheckMillis = 0; //Used for simple timer
-    public boolean isCheckingImpedanceOnAnything = false; //This is more reliable than waiting to see if the Board is checking impedance
+    private boolean isCheckingImpedanceOnAnything = false; //This is more reliable than waiting to see if the Board is checking impedance
 
     private SignalCheckThresholdUI errorThreshold;
     private SignalCheckThresholdUI warningThreshold;
@@ -56,8 +56,9 @@ class W_CytonImpedance extends Widget {
     private int thresholdTFWidth = 60; //Hard-code this value since there are deep errors with controlp5.textfield.setSize() and creating new graphics in this class - RW 12/13/2021
     
 
-    W_CytonImpedance(PApplet _parent){
-        super(_parent); //calls the parent CONSTRUCTOR method of Widget (DON'T REMOVE)
+    W_CytonImpedance() {
+        super();
+        widgetTitle = "Cyton Signal";
 
         cytonBoard = (BoardCyton) currentBoard;
 
@@ -69,10 +70,14 @@ class W_CytonImpedance extends Widget {
         threshold_ui_cp5.setGraphics(ourApplet, 0,0);
         threshold_ui_cp5.setAutoDraw(false);
 
-        addDropdown("CytonImpedance_MasterCheckInterval", "Interval", masterCheckInterval.getEnumStringsAsList(), masterCheckInterval.getIndex());
+        List<String> intervalList = EnumHelper.getEnumStrings(CytonImpedanceInterval.class);
+        List<String> labelList = EnumHelper.getEnumStrings(CytonImpedanceLabels.class);
+        List<String> modeList = EnumHelper.getEnumStrings(CytonSignalCheckMode.class);
+
+        addDropdown("CytonImpedance_MasterCheckInterval", "Interval", intervalList, masterCheckInterval.getIndex());
         dropdownWidth = 85; //Override the widget header dropdown width to fit "impedance" mode
-        addDropdown("CytonImpedance_LabelMode", "Labels", labelMode.getEnumStringsAsList(), labelMode.getIndex());
-        addDropdown("CytonImpedance_Mode", "Mode", signalCheckMode.getEnumStringsAsList(), signalCheckMode.getIndex());
+        addDropdown("CytonImpedance_LabelMode", "Labels", labelList, labelMode.getIndex());
+        addDropdown("CytonImpedance_Mode", "Mode", modeList, signalCheckMode.getIndex());
 
         footerHeight = navH/2;
         
@@ -94,14 +99,14 @@ class W_CytonImpedance extends Widget {
         //Init the electrode map and fill and create signal check buttons
         initCytonImpedanceMap();
 
-        cytonResetAllChannels = createCytonResetChannelsButton("cytonResetAllChannels", "Reset Channels", (int)(x0 + 1), (int)(y0 + navHeight + 1), 90, navHeight - 3, p5, 12, colorNotPressed, OPENBCI_DARKBLUE);
-        cytonImpedanceMasterCheck = createCytonImpMasterCheckButton("cytonImpedanceMasterCheck", "Check All Channels", (int)(x0 + 1 + padding_3 + 90), (int)(y0 + navHeight + 1), 120, navHeight - 3, p5, 12, colorNotPressed, OPENBCI_DARKBLUE);
+        cytonResetAllChannels = createCytonResetChannelsButton("cytonResetAllChannels", "Reset Channels", (int)(x0 + 1), (int)(y0 + NAV_HEIGHT + 1), 90, NAV_HEIGHT - 3, p5, 12, colorNotPressed, OPENBCI_DARKBLUE);
+        cytonImpedanceMasterCheck = createCytonImpMasterCheckButton("cytonImpedanceMasterCheck", "Check All Channels", (int)(x0 + 1 + padding_3 + 90), (int)(y0 + NAV_HEIGHT + 1), 120, NAV_HEIGHT - 3, p5, 12, colorNotPressed, OPENBCI_DARKBLUE);
         errorThreshold = new SignalCheckThresholdUI(threshold_ui_cp5, "errorThreshold", x + tableWidth + padding, y + h - navH, thresholdTFWidth, thresholdTFHeight, SIGNAL_CHECK_RED, signalCheckMode);
         warningThreshold = new SignalCheckThresholdUI(threshold_ui_cp5, "warningThreshold", x + tableWidth + padding, y + h - navH/2, thresholdTFWidth, thresholdTFHeight, SIGNAL_CHECK_YELLOW, signalCheckMode);
     }
 
     public void update(){
-        super.update(); //calls the parent update() method of Widget (DON'T REMOVE)
+        super.update();
 
         if (is_railed == null) {
             return;
@@ -131,7 +136,7 @@ class W_CytonImpedance extends Widget {
     }
 
     public void draw(){
-        super.draw(); //calls the parent draw() method of Widget (DON'T REMOVE)
+        super.draw();
 
         dataGrid.draw();
 
@@ -176,7 +181,7 @@ class W_CytonImpedance extends Widget {
     }
 
     public void screenResized(){
-        super.screenResized(); //calls the parent screenResized() method of Widget (DON'T REMOVE)
+        super.screenResized();
 
         int overrideDropdownWidth = 64;
         cp5_widget.get(ScrollableList.class, "CytonImpedance_MasterCheckInterval").setWidth(overrideDropdownWidth);
@@ -184,11 +189,11 @@ class W_CytonImpedance extends Widget {
 
         //**IMPORTANT FOR CP5**//
         //This makes the cp5 objects within the widget scale properly
-        imp_buttons_cp5.setGraphics(pApplet, 0, 0);
-        threshold_ui_cp5.setGraphics(pApplet, 0, 0);
+        imp_buttons_cp5.setGraphics(ourApplet, 0, 0);
+        threshold_ui_cp5.setGraphics(ourApplet, 0, 0);
 
-        cytonResetAllChannels.setPosition((int)(x0 + 1), (int)(y0 + navHeight + 1));
-        cytonImpedanceMasterCheck.setPosition((int)(x0 + 1 + padding_3 + 90), (int)(y0 + navHeight + 1));
+        cytonResetAllChannels.setPosition((int)(x0 + 1), (int)(y0 + NAV_HEIGHT + 1));
+        cytonImpedanceMasterCheck.setPosition((int)(x0 + 1 + padding_3 + 90), (int)(y0 + NAV_HEIGHT + 1));
 
         resizeTable();
 
@@ -242,11 +247,11 @@ class W_CytonImpedance extends Widget {
     }
 
     public void mousePressed(){
-        super.mousePressed(); //calls the parent mousePressed() method of Widget (DON'T REMOVE)
+        super.mousePressed();
     }
 
     public void mouseReleased(){
-        super.mouseReleased(); //calls the parent mouseReleased() method of Widget (DON'T REMOVE)
+        super.mouseReleased();
     }
 
     private void initCytonImpedanceMap() {
@@ -297,8 +302,9 @@ class W_CytonImpedance extends Widget {
             cytonImpedanceMasterCheck.setOff();
         } else if (signalCheckMode == CytonSignalCheckMode.IMPEDANCE) {
             //Attempt to close Hardware Settings view. Also, throws a popup if there are unsent changes.
-            if (w_timeSeries.getAdsSettingsVisible()) {
-                w_timeSeries.closeADSSettings();
+            W_TimeSeries timeSeriesWidget = widgetManager.getTimeSeriesWidget();
+            if (timeSeriesWidget.getAdsSettingsVisible()) {
+                timeSeriesWidget.closeADSSettings();
             }
             //Clear the cells and show buttons instead
             for (int i = 1; i < numTableRows; i++) {
@@ -512,8 +518,9 @@ class W_CytonImpedance extends Widget {
                                         && checkingOtherChan_isNpin.equals(e.getIsNPin())) {
                                             //println("TOGGLE OFF", e.getGUIChannelNumber(), e.getIsNPin(), "TOGGLE TO ==", false);
                                             e.overrideTestingButtonSwitch(false);
-                                            w_timeSeries.adsSettingsController.updateChanSettingsDropdowns(checkingOtherChan-1, cytonBoard.isEXGChannelActive(checkingOtherChan-1));
-                                            w_timeSeries.adsSettingsController.setHasUnappliedSettings(checkingOtherChan-1, false);
+                                            W_TimeSeries timeSeriesWidget = widgetManager.getTimeSeriesWidget();
+                                            timeSeriesWidget.adsSettingsController.updateChanSettingsDropdowns(checkingOtherChan-1, cytonBoard.isEXGChannelActive(checkingOtherChan-1));
+                                            timeSeriesWidget.adsSettingsController.setHasUnappliedSettings(checkingOtherChan-1, false);
                                     }
                                 }
 
@@ -532,8 +539,9 @@ class W_CytonImpedance extends Widget {
                             cytonImpedanceMasterCheck.setOff();
                         } else {
                             //If successful, update the front end components to reflect the new state
-                            w_timeSeries.adsSettingsController.updateChanSettingsDropdowns(checkingChanX, cytonBoard.isEXGChannelActive(checkingChanX));
-                            w_timeSeries.adsSettingsController.setHasUnappliedSettings(checkingChanX, false);
+                            W_TimeSeries timeSeriesWidget = widgetManager.getTimeSeriesWidget();
+                            timeSeriesWidget.adsSettingsController.updateChanSettingsDropdowns(checkingChanX, cytonBoard.isEXGChannelActive(checkingChanX));
+                            timeSeriesWidget.adsSettingsController.setHasUnappliedSettings(checkingChanX, false);
                         }
 
                         boolean shouldBeOn = toggle && response;
@@ -685,7 +693,7 @@ class W_CytonImpedance extends Widget {
 
         // Update ADS1299 settings to default but don't commit. Instead, sent "d" command twice.
         cytonBoard.getADS1299Settings().revertAllChannelsToDefaultValues();
-        w_timeSeries.adsSettingsController.updateAllChanSettingsDropdowns();
+        widgetManager.getTimeSeriesWidget().adsSettingsController.updateAllChanSettingsDropdowns();
 
         timeElapsed = millis() - timeElapsed;
         StringBuilder sb = new StringBuilder("Cyton Impedance Check: Hard reset to default board mode took -- ");
@@ -730,18 +738,22 @@ class W_CytonImpedance extends Widget {
             cytonElectrodeStatus[i].updateYellowThreshold(_d);
         }
     }
+
+    public boolean getIsCheckingImpedanceOnAnything() {
+        return isCheckingImpedanceOnAnything;
+    }
 };
 
 //These functions need to be global! These functions are activated when an item from the corresponding dropdown is selected
 //Update: It's not worth the trouble to implement a callback listener in the widget for this specifc kind of dropdown. Keep using this pattern for widget Nav dropdowns. - February 2021 RW
 void CytonImpedance_Mode(int n) {
-    w_cytonImpedance.setSignalCheckMode(n);
+    ((W_CytonImpedance) widgetManager.getWidget("W_CytonImpedance")).setSignalCheckMode(n);
 }
 
 void CytonImpedance_LabelMode(int n) {
-    w_cytonImpedance.setShowAnatomicalName(n);
+    ((W_CytonImpedance) widgetManager.getWidget("W_CytonImpedance")).setShowAnatomicalName(n);
 }
 
 void CytonImpedance_MasterCheckInterval(int n) {
-    w_cytonImpedance.setMasterCheckInterval(n);
+    ((W_CytonImpedance) widgetManager.getWidget("W_CytonImpedance")).setMasterCheckInterval(n);
 }

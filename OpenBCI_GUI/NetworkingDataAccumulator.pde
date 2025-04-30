@@ -294,7 +294,7 @@ public class NetworkingDataAccumulator {
     }
 
     public float[] getNormalizedBandPowerData() {
-        return w_bandPower.getNormalizedBPSelectedChannels();
+        return ((W_BandPower) widgetManager.getWidget("W_BandPower")).getNormalizedBPSelectedChannels();
     }
 
     public float[] getEmgNormalizedValues() {
@@ -302,18 +302,18 @@ public class NetworkingDataAccumulator {
     }
 
     public int getPulseSensorBPM() {
-        return w_pulseSensor.getBPM();
+        return ((W_PulseSensor) widgetManager.getWidget("W_PulseSensor")).getBPM();
     }
 
     public int getPulseSensorIBI() {
-        return w_pulseSensor.getIBI();
+        return ((W_PulseSensor) widgetManager.getWidget("W_PulseSensor")).getIBI();
     }
 
     public int getFocusValueExceedsThreshold() {
-        return w_focus.getMetricExceedsThreshold();
+        return ((W_Focus) widgetManager.getWidget("W_Focus")).getMetricExceedsThreshold();
     }
 
     public float[] getEMGJoystickXY() {
-        return w_emgJoystick.getJoystickXY();
+        return ((W_EmgJoystick) widgetManager.getWidget("W_EmgJoystick")).getJoystickXY();
     }
 }

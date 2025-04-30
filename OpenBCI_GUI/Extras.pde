@@ -416,6 +416,11 @@ void doubleToFloatArray(double[] array, float[] res) {
     }
 }
 
+public double convertByteArrayToDouble(byte[] array) {
+    ByteBuffer buffer = ByteBuffer.wrap(array);
+    return buffer.getDouble();
+}
+
 // shortens a string to a given width by adding [...] in the middle
 // make sure to pass the right font for accurate sizing
 String shortenString(String str, float maxWidth, PFont font) {

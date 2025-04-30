@@ -8,6 +8,10 @@ class DataLogger {
     public final int OUTPUT_SOURCE_ODF = 1; // The OpenBCI CSV Data Format
     public final int OUTPUT_SOURCE_BDF = 2; // The BDF data format http://www.biosemi.com/faq/file_format.htm
     private int outputDataSource;
+    private String sessionPath = "";
+    private boolean logFileIsOpen = false;
+    private long logFileStartTime;
+    private long logFileMaxDurationNano = -1;
 
     DataLogger() {
         //Default to OpenBCI CSV Data Format
@@ -33,7 +37,7 @@ class DataLogger {
     
     private void saveNewData() {
         //If data is available, save to playback file...
-        if(!settings.isLogFileOpen()) {
+        if(!isLogFileOpen()) {
             return;
         }
 
@@ -54,21 +58,21 @@ class DataLogger {
     }
 
     public void limitRecordingFileDuration() {
-        if (settings.isLogFileOpen() && outputDataSource == OUTPUT_SOURCE_ODF && settings.maxLogTimeReached()) {
+        if (isLogFileOpen() && outputDataSource == OUTPUT_SOURCE_ODF && maxLogTimeReached()) {
             println("DataLogging: Max recording duration reached for OpenBCI data format. Creating a new recording file in the session folder.");
             closeLogFile();
             openNewLogFile(directoryManager.getFileNameDateTime());
-            settings.setLogFileStartTime(System.nanoTime());
+            setLogFileStartTime(System.nanoTime());
         }
     }
 
     public void onStartStreaming() {
         if (outputDataSource > OUTPUT_SOURCE_NONE && eegDataSource != DATASOURCE_PLAYBACKFILE) {
             //open data file if it has not already been opened
-            if (!settings.isLogFileOpen()) {
+            if (!isLogFileOpen()) {
                 openNewLogFile(directoryManager.getFileNameDateTime());
             }
-            settings.setLogFileStartTime(System.nanoTime());
+            setLogFileStartTime(System.nanoTime());
         }
 
         //Print BrainFlow Streamer Info here after ODF and BDF println
@@ -111,7 +115,7 @@ class DataLogger {
                 // Do nothing...
                 break;
         }
-        settings.setLogFileIsOpen(true);
+        setLogFileIsOpen(true);
     }
 
     /**
@@ -159,7 +163,7 @@ class DataLogger {
                 // Do nothing...
                 break;
         }
-        settings.setLogFileIsOpen(false);
+        setLogFileIsOpen(false);
     }
 
     private void closeLogFileBDF() {
@@ -188,22 +192,61 @@ class DataLogger {
         sessionName = s;
     }
 
-    public final String getSessionName() {
+    public String getSessionName() {
         return sessionName;
     }
+
+    
+    public void setSessionPath (String _path) {
+        sessionPath = _path;
+    }
+
+    public String getSessionPath() {
+        return sessionPath;
+    }
+
     
     public void setBfWriterFolder(String _folderName, String _folderPath) {
         fileWriterBF.setBrainFlowStreamerFolderName(_folderName, _folderPath);
     }
 
     public void setBfWriterDefaultFolder() {
-        if (settings.getSessionPath() != "") {
-            settings.setSessionPath(directoryManager.getRecordingsPath() + "OpenBCISession_" + sessionName);
+        if (getSessionPath() != "") {
+            setSessionPath(directoryManager.getRecordingsPath() + "OpenBCISession_" + sessionName);
         }
-        fileWriterBF.setBrainFlowStreamerFolderName(sessionName, settings.getSessionPath());
+        fileWriterBF.setBrainFlowStreamerFolderName(sessionName, getSessionPath());
     }
 
     public String getBfWriterFilePath() {
         return fileWriterBF.getBrainFlowStreamerRecordingFileName();
+    }
+
+    
+    private void setLogFileIsOpen(boolean _toggle) {
+        logFileIsOpen = _toggle;
+    }
+
+    private boolean isLogFileOpen() {
+        return logFileIsOpen;
+    }
+
+    private void setLogFileStartTime(long _time) {
+        logFileStartTime = _time;
+        verbosePrint("Settings: LogFileStartTime = " + _time);
+    }
+
+    public void setLogFileDurationChoice(int n) {
+        int fileDurationMinutes = odfFileDuration.values()[n].getValue();
+        logFileMaxDurationNano = fileDurationMinutes * 1000000000L * 60;
+        println("Settings: LogFileMaxDuration = " + fileDurationMinutes + " minutes");
+    }
+
+    //Only called during live mode && using OpenBCI Data Format
+    private boolean maxLogTimeReached() {
+        if (logFileMaxDurationNano < 0) {
+            return false;
+        } else {
+            return (System.nanoTime() - logFileStartTime) > (logFileMaxDurationNano);
+        }
     }
 };

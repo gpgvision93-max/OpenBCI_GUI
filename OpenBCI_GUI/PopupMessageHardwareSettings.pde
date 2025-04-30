@@ -92,7 +92,7 @@ class PopupMessageHardwareSettings extends PopupMessage {
         myButton.onPress(new CallbackListener() {
             public void controlEvent(CallbackEvent theEvent) {
                 topNav.dataStreamTogglePressed();
-                w_timeSeries.setAdsSettingsVisible(true);
+                widgetManager.getTimeSeriesWidget().setAdsSettingsVisible(true);
                 Frame frame = ( (PSurfaceAWT.SmoothCanvas) ((PSurfaceAWT)surface).getNative()).getFrame();
                 frame.dispose();
                 exit();

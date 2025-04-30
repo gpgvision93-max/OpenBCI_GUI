@@ -563,10 +563,10 @@ class TopNav {
     public void dataStreamTogglePressed() {
 
         //Exit method if doing Cyton impedance check. Avoids a BrainFlow error.
-        if (currentBoard instanceof BoardCyton && w_cytonImpedance != null) {
+        if (currentBoard instanceof BoardCyton && widgetManager.getWidgetExists("W_CytonImpedance")) {
             Integer checkingImpOnChan = ((ImpedanceSettingsBoard)currentBoard).isCheckingImpedanceOnChannel();
-            //println("isCheckingImpedanceOnAnythingEZCHECK==",w_cytonImpedance.isCheckingImpedanceOnAnything);
-            if (checkingImpOnChan != null || w_cytonImpedance.cytonMasterImpedanceCheckIsActive() || w_cytonImpedance.isCheckingImpedanceOnAnything) {
+            W_CytonImpedance cytonImpedanceWidget = (W_CytonImpedance) widgetManager.getWidget("W_CytonImpedance");
+            if (checkingImpOnChan != null || cytonImpedanceWidget.cytonMasterImpedanceCheckIsActive() || cytonImpedanceWidget.getIsCheckingImpedanceOnAnything()) {
                 PopupMessage msg = new PopupMessage("Busy Checking Impedance", "Please turn off impedance check to begin recording the data stream.");
                 println("OpenBCI_GUI::Cyton: Please turn off impedance check to begin recording the data stream.");
                 return;
@@ -696,20 +696,8 @@ class LayoutSelector {
 
     void toggleVisibility() {
         isVisible = !isVisible;
-        if (isVisible) {
-            //the very convoluted way of locking all controllers of a single controlP5 instance...
-            for (int i = 0; i < wm.widgets.size(); i++) {
-                for (int j = 0; j < wm.widgets.get(i).cp5_widget.getAll().size(); j++) {
-                    wm.widgets.get(i).cp5_widget.getController(wm.widgets.get(i).cp5_widget.getAll().get(j).getAddress()).lock();
-                }
-            }
-        } else {
-            //the very convoluted way of unlocking all controllers of a single controlP5 instance...
-            for (int i = 0; i < wm.widgets.size(); i++) {
-                for (int j = 0; j < wm.widgets.get(i).cp5_widget.getAll().size(); j++) {
-                    wm.widgets.get(i).cp5_widget.getController(wm.widgets.get(i).cp5_widget.getAll().get(j).getAddress()).unlock();
-                }
-            }
+        if (widgetManager != null) {
+            widgetManager.lockCp5ObjectsInAllWidgets(isVisible);
         }
     }
 
@@ -728,8 +716,8 @@ class LayoutSelector {
                 public void controlEvent(CallbackEvent theEvent) {
                     output("Layout [" + (layoutNumber) + "] selected.");
                     toggleVisibility(); //shut layoutSelector if something is selected
-                    wm.setNewContainerLayout(layoutNumber); //have WidgetManager update Layout and active widgets
-                    settings.currentLayout = layoutNumber; //copy this value to be used when saving Layout setting
+                    widgetManager.setNewContainerLayout(layoutNumber); //have WidgetManager update Layout and active widgets
+                    sessionSettings.currentLayout = layoutNumber; //copy this value to be used when saving Layout setting
                 }
             });
             layoutOptions.add(tempLayoutButton);
@@ -880,23 +868,9 @@ class ConfigSelector {
 
     void toggleVisibility() {
         isVisible = !isVisible;
-        if (systemMode >= SYSTEMMODE_POSTINIT) {
-            if (isVisible) {
-                //the very convoluted way of locking all controllers of a single controlP5 instance...
-                for (int i = 0; i < wm.widgets.size(); i++) {
-                    for (int j = 0; j < wm.widgets.get(i).cp5_widget.getAll().size(); j++) {
-                        wm.widgets.get(i).cp5_widget.getController(wm.widgets.get(i).cp5_widget.getAll().get(j).getAddress()).lock();
-                    }
-                }
-                clearAllSettingsPressed = false;
-            } else {
-                //the very convoluted way of unlocking all controllers of a single controlP5 instance...
-                for (int i = 0; i < wm.widgets.size(); i++) {
-                    for (int j = 0; j < wm.widgets.get(i).cp5_widget.getAll().size(); j++) {
-                        wm.widgets.get(i).cp5_widget.getController(wm.widgets.get(i).cp5_widget.getAll().get(j).getAddress()).unlock();
-                    }
-                }
-            }
+        if (widgetManager != null) {
+            widgetManager.lockCp5ObjectsInAllWidgets(isVisible);
+            clearAllSettingsPressed = !isVisible;
         }
 
         //When closed by any means and confirmation buttons are open...
@@ -980,7 +954,7 @@ class ConfigSelector {
         saveSessionSettings.onRelease(new CallbackListener() {
             public void controlEvent(CallbackEvent theEvent) {
                 toggleVisibility();
-                settings.saveButtonPressed();
+                sessionSettings.saveButtonPressed();
             }
         });
         saveSessionSettings.setDescription("Expert Mode enables advanced keyboard shortcuts and access to all GUI features.");
@@ -991,7 +965,7 @@ class ConfigSelector {
         loadSessionSettings.onRelease(new CallbackListener() {
             public void controlEvent(CallbackEvent theEvent) {
                 toggleVisibility();
-                settings.loadButtonPressed();
+                sessionSettings.loadButtonPressed();
             }
         });
         loadSessionSettings.setDescription("Expert Mode enables advanced keyboard shortcuts and access to all GUI features.");
@@ -1002,7 +976,7 @@ class ConfigSelector {
         defaultSessionSettings.onRelease(new CallbackListener() {
             public void controlEvent(CallbackEvent theEvent) {
                 toggleVisibility();
-                settings.defaultButtonPressed();
+                sessionSettings.defaultButtonPressed();
             }
         });
         defaultSessionSettings.setDescription("Expert Mode enables advanced keyboard shortcuts and access to all GUI features.");
@@ -1043,7 +1017,7 @@ class ConfigSelector {
                 //Shorten height of this box
                 h -= margin*4 + b_h*3;
                 //User has selected Are You Sure?->Yes
-                settings.clearAll();
+                sessionSettings.clearAll();
                 guiSettings.resetAllSettings();
                 clearAllSettingsPressed = false;
                 //Stop the system if the user clears all settings
@@ -1188,22 +1162,8 @@ class TutorialSelector {
 
     void toggleVisibility() {
         isVisible = !isVisible;
-        if (systemMode >= SYSTEMMODE_POSTINIT) {
-            if (isVisible) {
-                //the very convoluted way of locking all controllers of a single controlP5 instance...
-                for (int i = 0; i < wm.widgets.size(); i++) {
-                    for (int j = 0; j < wm.widgets.get(i).cp5_widget.getAll().size(); j++) {
-                        wm.widgets.get(i).cp5_widget.getController(wm.widgets.get(i).cp5_widget.getAll().get(j).getAddress()).lock();
-                    }
-                }
-            } else {
-                //the very convoluted way of unlocking all controllers of a single controlP5 instance...
-                for (int i = 0; i < wm.widgets.size(); i++) {
-                    for (int j = 0; j < wm.widgets.get(i).cp5_widget.getAll().size(); j++) {
-                        wm.widgets.get(i).cp5_widget.getController(wm.widgets.get(i).cp5_widget.getAll().get(j).getAddress()).unlock();
-                    }
-                }
-            }
+        if (widgetManager != null) {
+            widgetManager.lockCp5ObjectsInAllWidgets(isVisible);
         }
     }
 

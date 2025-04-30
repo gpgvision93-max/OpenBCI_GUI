@@ -7,8 +7,8 @@ public class DataWriterODF {
     protected String headerFirstLineString = "%OpenBCI Raw EXG Data";
 
     DataWriterODF(String _sessionName, String _fileName) {
-        settings.setSessionPath(directoryManager.getRecordingsPath() + "OpenBCISession_" + _sessionName + File.separator);
-        fname = settings.getSessionPath();
+        dataLogger.setSessionPath(directoryManager.getRecordingsPath() + "OpenBCISession_" + _sessionName + File.separator);
+        fname = dataLogger.getSessionPath();
         fname += fileNamePrependString;
         fname += _fileName;
         fname += ".txt";
@@ -21,8 +21,8 @@ public class DataWriterODF {
     DataWriterODF(String _sessionName, String _fileName, String _fileNamePrependString, String _headerFirstLineString) {
         fileNamePrependString = _fileNamePrependString;
         headerFirstLineString = _headerFirstLineString;
-        settings.setSessionPath(directoryManager.getRecordingsPath() + "OpenBCISession_" + _sessionName + File.separator);
-        fname = settings.getSessionPath();
+        dataLogger.setSessionPath(directoryManager.getRecordingsPath() + "OpenBCISession_" + _sessionName + File.separator);
+        fname = dataLogger.getSessionPath();
         fname += fileNamePrependString;
         fname += _fileName;
         fname += ".txt";

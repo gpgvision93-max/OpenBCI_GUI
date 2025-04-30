@@ -2,7 +2,7 @@ import org.apache.commons.lang3.tuple.Pair;
 
 
 class ADS1299SettingsController {
-    private PApplet _parentApplet;
+    private PApplet parentApplet;
     private boolean isVisible = false;
     protected int x, y, w, h;
     protected final int PADDING_3 = 3;
@@ -64,16 +64,16 @@ class ADS1299SettingsController {
     protected int channelCount;
     protected List<Integer> activeChannels;
 
-    ADS1299SettingsController(PApplet _parent, List<Integer> _activeChannels, int _x, int _y, int _w, int _h, int _channelBarHeight) {
+    ADS1299SettingsController(PApplet _parentApplet, List<Integer> _activeChannels, int _x, int _y, int _w, int _h, int _channelBarHeight) {
         x = _x;
         y = _y;
         w = _w;
         h = _h;
         channelBarHeight = _channelBarHeight;
         
-        _parentApplet = _parent;
-        hwsCp5 = new ControlP5(_parentApplet);
-        hwsCp5.setGraphics(_parentApplet, 0,0);
+        this.parentApplet = _parentApplet;
+        hwsCp5 = new ControlP5(parentApplet);
+        hwsCp5.setGraphics(parentApplet, 0,0);
         hwsCp5.setAutoDraw(false);
         
         int colOffset = (w / CONTROL_BUTTON_COUNT) / 2;
@@ -180,7 +180,7 @@ class ADS1299SettingsController {
             toggleWidthAndHeight = DEFAULT_TOGGLE_WIDTH;
         }
 
-        hwsCp5.setGraphics(_parentApplet, 0, 0);
+        hwsCp5.setGraphics(parentApplet, 0, 0);
 
         int colOffset = (w / CONTROL_BUTTON_COUNT) / 2;
         int button_y = y + h + PADDING_3;
@@ -233,7 +233,7 @@ class ADS1299SettingsController {
             dropdownY = int(y + (channelBarHeight * rowCount) + ((channelBarHeight - dropdownH) / 2));
             final int buttonXIncrement = spaceBetweenButtons + dropdownW;
 
-            int toggleX = dropdownX + (dropdownW / 2) - (toggleWidthAndHeight);
+            int toggleX = dropdownX + (dropdownW / 2) - (toggleWidthAndHeight / 2);
             channelSelectToggles[i].setPosition(toggleX, dropdownY);
             channelSelectToggles[i].setSize(toggleWidthAndHeight, toggleWidthAndHeight);
 
@@ -750,8 +750,9 @@ void loadHardwareSettings(File selection) {
             if (((ADS1299SettingsBoard)currentBoard).getADS1299Settings().loadSettingsValues(selection.getAbsolutePath())) {
                 outputSuccess("Hardware Settings Loaded!");
                 for (int i = 0; i < globalChannelCount; i++) {
-                    w_timeSeries.adsSettingsController.updateChanSettingsDropdowns(i, currentBoard.isEXGChannelActive(i));
-                    w_timeSeries.adsSettingsController.updateHasUnappliedSettings(i);
+                    W_TimeSeries timeSeriesWidget = widgetManager.getTimeSeriesWidget();
+                    timeSeriesWidget.adsSettingsController.updateChanSettingsDropdowns(i, currentBoard.isEXGChannelActive(i));
+                    timeSeriesWidget.adsSettingsController.updateHasUnappliedSettings(i);
                 }
             } else {
                 outputError("Failed to load Hardware Settings.");

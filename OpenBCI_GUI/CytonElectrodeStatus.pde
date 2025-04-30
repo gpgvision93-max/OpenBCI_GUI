@@ -346,7 +346,8 @@ class CytonElectrodeStatus {
                 final int _chan = channelNumber - 1;
                 final int curMillis = millis();
                 println("CytonElectrodeTestButton: Toggling Impedance on ~~ " + electrodeLocation);
-                w_cytonImpedance.toggleImpedanceOnElectrode(!cytonBoard.isCheckingImpedanceNorP(_chan, is_N_Pin), _chan, is_N_Pin, curMillis);
+                W_CytonImpedance cytonImpedanceWidget = (W_CytonImpedance) widgetManager.getWidget("W_CytonImpedance");
+                cytonImpedanceWidget.toggleImpedanceOnElectrode(!cytonBoard.isCheckingImpedanceNorP(_chan, is_N_Pin), _chan, is_N_Pin, curMillis);
             }
         });
         testing_button.setDescription("Click to toggle impedance check for this ADS pin.");

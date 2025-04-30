@@ -13,27 +13,16 @@
 //  TODO: Add dynamic threshold functionality
 ////////////////////////////////////////////////////////////////////////////////
 
-class W_emg extends Widget {
-    PApplet parent;
-
+class W_Emg extends WidgetWithSettings {
     private ControlP5 emgCp5;
     private Button emgSettingsButton;
     private final int EMG_SETTINGS_BUTTON_WIDTH = 125;
     private List<controlP5.Controller> cp5ElementsToCheck;
-
     public ExGChannelSelect emgChannelSelect;
 
-    W_emg (PApplet _parent) {
-        super(_parent); //calls the parent CONSTRUCTOR method of Widget (DON'T REMOVE)
-        parent = _parent;
-
-        cp5ElementsToCheck = new ArrayList<controlP5.Controller>();
-
-        //Add channel select dropdown to this widget
-        emgChannelSelect = new ExGChannelSelect(pApplet, x, y, w, navH);
-        emgChannelSelect.activateAllButtons();
-        
-        cp5ElementsToCheck.addAll(emgChannelSelect.getCp5ElementsForOverlapCheck());
+    W_Emg () {
+        super();
+        widgetTitle = "EMG";
 
         emgCp5 = new ControlP5(ourApplet);
         emgCp5.setGraphics(ourApplet, 0,0);
@@ -43,8 +32,31 @@ class W_emg extends Widget {
         cp5ElementsToCheck.add((controlP5.Controller) emgSettingsButton);
     }
 
+    @Override
+    protected void initWidgetSettings() {
+        super.initWidgetSettings();
+        emgChannelSelect = new ExGChannelSelect(ourApplet, x, y, w, navH);
+        emgChannelSelect.activateAllButtons();
+        cp5ElementsToCheck = new ArrayList<controlP5.Controller>();
+        cp5ElementsToCheck.addAll(emgChannelSelect.getCp5ElementsForOverlapCheck());
+        saveActiveChannels(emgChannelSelect.getActiveChannels());
+        widgetSettings.saveDefaults();
+    }
+
+    @Override
+    protected void applySettings() {
+        applyActiveChannels(emgChannelSelect);
+    }
+
+    @Override
+    protected void updateChannelSettings() {
+        if (emgChannelSelect != null) {
+            saveActiveChannels(emgChannelSelect.getActiveChannels());
+        }
+    }
+
     public void update() {
-        super.update(); //calls the parent update() method of Widget (DON'T REMOVE)
+        super.update();
         lockElementsOnOverlapCheck(cp5ElementsToCheck);
 
         //Update channel checkboxes and active channels
@@ -60,7 +72,7 @@ class W_emg extends Widget {
     }
 
     public void draw() {
-        super.draw(); //calls the parent draw() method of Widget (DON'T REMOVE)
+        super.draw();
 
         drawEmgVisualizations();
 
@@ -71,14 +83,14 @@ class W_emg extends Widget {
     }
 
     public void screenResized() {
-        super.screenResized(); //calls the parent screenResized() method of Widget (DON'T REMOVE)
+        super.screenResized();
         emgCp5.setGraphics(ourApplet, 0, 0);
         emgSettingsButton.setPosition(x0 + w - EMG_SETTINGS_BUTTON_WIDTH - 2, y0 + navH + 1);
-        emgChannelSelect.screenResized(pApplet);
+        emgChannelSelect.screenResized(ourApplet);
     }
 
     public void mousePressed() {
-        super.mousePressed(); //calls the parent mousePressed() method of Widget (DON'T REMOVE)
+        super.mousePressed();
         //Calls channel select mousePressed and checks if clicked
         emgChannelSelect.mousePressed(this.dropdownIsActive);
     }

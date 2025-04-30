@@ -7,29 +7,21 @@
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//Used for Widget Dropdown Enums
-interface IndexingInterface {
-    public int getIndex();
-    public String getString();
-}
-
-class Widget{
-
-    protected PApplet pApplet;
+class Widget {
+    protected String widgetTitle = "Widget"; //default name of the widget
 
     protected int x0, y0, w0, h0; //true x,y,w,h of container
     protected int x, y, w, h; //adjusted x,y,w,h of white space `blank rectangle` under the nav...
 
     private int currentContainer; //this determines where the widget is located ... based on the x/y/w/h of the parent container
 
+    protected ControlP5 cp5_widget;
+    private ArrayList<NavBarDropdown> dropdowns;
     protected boolean dropdownIsActive = false;
     private boolean previousDropdownIsActive = false;
     private boolean previousTopNavDropdownMenuIsOpen = false;
     private boolean widgetSelectorIsActive = false;
 
-    private ArrayList<NavBarDropdown> dropdowns;
-    protected ControlP5 cp5_widget;
-    protected String widgetTitle = "No Title Set";
     //used to limit the size of the widget selector, forces a scroll bar to show and allows us to add even more widgets in the future
     private final float widgetDropdownScaling = .90;
     private boolean isWidgetActive = false;
@@ -41,16 +33,17 @@ class Widget{
     protected int dropdownWidth = 64;
     private boolean initialResize = false; //used to properly resize the widgetSelector when loading default settings
 
-    Widget(PApplet _parent){
-        pApplet = _parent;
-        cp5_widget = new ControlP5(pApplet);
+    Widget() {
+        cp5_widget = new ControlP5(ourApplet);
         cp5_widget.setAutoDraw(false); //this prevents the cp5 object from drawing automatically (if it is set to true it will be drawn last, on top of all other GUI stuff... not good)
         dropdowns = new ArrayList<NavBarDropdown>();
-        //setup dropdown menus
 
         currentContainer = 5; //central container by default
         mapToCurrentContainer();
+    }
 
+    public String getWidgetTitle() {
+        return widgetTitle;
     }
 
     public boolean getIsActive() {
@@ -88,12 +81,12 @@ class Widget{
     }
 
     public void setupWidgetSelectorDropdown(ArrayList<String> _widgetOptions){
-        cp5_widget.setColor(settings.dropdownColors);
+        cp5_widget.setColor(dropdownColorsGlobal);
         ScrollableList scrollList = cp5_widget.addScrollableList("WidgetSelector")
             .setPosition(x0+2, y0+2) //upper left corner
             // .setFont(h2)
             .setOpen(false)
-            .setColor(settings.dropdownColors)
+            .setColor(dropdownColorsGlobal)
             .setOutlineColor(OBJECT_BORDER_GREY)
             //.setSize(widgetSelectorWidth, int(h0 * widgetDropdownScaling) )// + maxFreqList.size())
             //.setSize(widgetSelectorWidth, (NUM_WIDGETS_TO_SHOW+1)*(navH-4) )// + maxFreqList.size())
@@ -123,7 +116,7 @@ class Widget{
     }
 
     public void setupNavDropdowns(){
-        cp5_widget.setColor(settings.dropdownColors);
+        cp5_widget.setColor(dropdownColorsGlobal);
         // println("Setting up dropdowns...");
         for(int i = 0; i < dropdowns.size(); i++){
             int dropdownPos = dropdowns.size() - i;
@@ -132,7 +125,7 @@ class Widget{
                 .setPosition(x0+w0-(dropdownWidth*(dropdownPos))-(2*(dropdownPos)), y0 + navH + 2) //float right
                 .setFont(h5)
                 .setOpen(false)
-                .setColor(settings.dropdownColors)
+                .setColor(dropdownColorsGlobal)
                 .setOutlineColor(OBJECT_BORDER_GREY)
                 .setSize(dropdownWidth, (dropdowns.get(i).items.size()+1)*(navH-4) )// + maxFreqList.size())
                 .setBarHeight(navH-4)
@@ -219,10 +212,6 @@ class Widget{
         mapToCurrentContainer();
     }
 
-    public void setTitle(String _widgetTitle){
-        widgetTitle = _widgetTitle;
-    }
-
     public void setContainer(int _currentContainer){
         currentContainer = _currentContainer;
         mapToCurrentContainer();
@@ -233,8 +222,8 @@ class Widget{
     private void resizeWidgetSelector() {
         int dropdownsItemsToShow = int((h0 * widgetDropdownScaling) / (navH - 4));
         widgetSelectorHeight = (dropdownsItemsToShow + 1) * (navH - 4);
-        if (wm != null) {
-            int maxDropdownHeight = (wm.widgetOptions.size() + 1) * (navH - 4);
+        if (widgetManager != null) {
+            int maxDropdownHeight = (widgetManager.getWidgetCount() + 1) * (navH - 4);
             if (widgetSelectorHeight > maxDropdownHeight) widgetSelectorHeight = maxDropdownHeight;
         }
 
@@ -258,7 +247,7 @@ class Widget{
         h = h0 - navH*2;
 
         //This line resets the origin for all cp5 elements under "cp5_widget" when the screen is resized, otherwise there will be drawing errors
-        cp5_widget.setGraphics(pApplet, 0, 0);
+        cp5_widget.setGraphics(ourApplet, 0, 0);
 
         if (cp5_widget.getController("WidgetSelector") != null) {
             resizeWidgetSelector();
@@ -268,7 +257,7 @@ class Widget{
         for(int i = 0; i < dropdowns.size(); i++){
             int dropdownPos = dropdowns.size() - i;
             cp5_widget.getController(dropdowns.get(i).id)
-                //.setPosition(w-(dropdownWidth*dropdownPos)-(2*(dropdownPos+1)), navHeight+(y+2)) // float left
+                //.setPosition(w-(dropdownWidth*dropdownPos)-(2*(dropdownPos+1)), NAV_HEIGHT+(y+2)) // float left
                 .setPosition(x0+w0-(dropdownWidth*(dropdownPos))-(2*(dropdownPos)), navH +(y0+2)) //float right
                 //.setSize(dropdownWidth, (maxFreqList.size()+1)*(navBarHeight-4))
                 ;
@@ -317,6 +306,190 @@ class Widget{
         }
     }
 }; //end of base Widget class
+
+abstract class WidgetWithSettings extends Widget {
+    protected WidgetSettings widgetSettings;
+    
+    WidgetWithSettings() {
+        super();
+        // Create settings with the widget's title
+        widgetSettings = new WidgetSettings(getWidgetTitle());
+        // Initialize settings with default values
+        initWidgetSettings();
+    }
+    
+    /**
+     * Initialize widget settings with default values
+     * Override this method in widget subclasses to set custom defaults
+     */
+    protected void initWidgetSettings() {
+        // Default implementation is empty
+        // Child classes should override this to add their specific settings
+    }
+
+    /**
+     * Apply current settings to the widget UI
+     * Override this method in subclasses to update UI elements based on settings
+     */
+    protected abstract void applySettings();
+    
+    /**
+     * Get the settings object for this widget
+     * @return WidgetSettings object for this widget
+     */
+    public WidgetSettings getSettings() {
+        return widgetSettings;
+    }
+    
+    /**
+     * Convert widget settings to JSON string
+     * @return JSON representation of settings
+     */
+    public String settingsToJSON() {
+        // Call saveSettings to ensure all widget settings are up-to-date before serializing
+        saveSettings();
+        return widgetSettings.toJSON();
+    }
+    
+    /**
+     * Load settings from JSON string
+     * @param jsonString JSON string containing settings
+     * @return true if settings were loaded successfully, false otherwise
+     */
+    public boolean loadSettingsFromJSON(String jsonString) {
+        boolean success = widgetSettings.loadFromJSON(jsonString);
+        if (success) {
+            applySettings();
+        }
+        return success;
+    }
+    
+    /**
+     * Helper method to initialize a dropdown with values from an enum
+     * @param enumClass Enum class to get values from
+     * @param id ID for the dropdown controller
+     * @param label Label to display above the dropdown
+     */
+    protected <T extends Enum<T> & IndexingInterface> void initDropdown(Class<T> enumClass, String id, String label) {
+        T currentValue = widgetSettings.get(enumClass);
+        int currentIndex = currentValue != null ? currentValue.getIndex() : 0;
+        List<String> options = EnumHelper.getEnumStrings(enumClass);
+        addDropdown(id, label, options, currentIndex);
+    }
+
+    /**
+     * Helper method to update a dropdown label with current setting value
+     * @param enumClass Enum class to get the current value from
+     * @param controllerId ID of the controller to update
+     */
+    protected <T extends Enum<T> & IndexingInterface> void updateDropdownLabel(Class<T> enumClass, String controllerId) {
+        T currentValue = widgetSettings.get(enumClass);
+        if (currentValue != null) {
+            String value = currentValue.getString();
+            cp5_widget.getController(controllerId).getCaptionLabel().setText(value);
+        }
+    }
+
+    /**
+     * Save active channel selection to widget settings
+     * @param channels List of selected channel indices
+     */
+    protected void saveActiveChannels(List<Integer> channels) {
+        widgetSettings.setActiveChannels(channels);
+        println(widgetTitle + ": Saved " + channels.size() + " active channels");
+    }
+
+    /**
+     * Apply saved active channel selection to a channel select component
+     * @param channelSelect The channel select component to update
+     * @return true if channels were loaded and applied, false otherwise
+     */
+    protected boolean applyActiveChannels(ExGChannelSelect channelSelect) {
+        List<Integer> savedChannels = widgetSettings.getActiveChannels();
+        if (!savedChannels.isEmpty()) {
+            channelSelect.updateChannelSelection(savedChannels);
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Get the list of active channels from settings
+     * @return List of active channel indices, or empty list if none are saved
+     */
+    protected List<Integer> getActiveChannels() {
+        return widgetSettings.getActiveChannels();
+    }
+
+    /**
+     * Check if active channels are defined in settings
+     * @return true if active channels are defined, false otherwise
+     */
+    protected boolean hasActiveChannels() {
+        return widgetSettings.hasActiveChannels();
+    }
+
+    /**
+     * Update channel settings from any channel selectors before saving
+     * Each widget class should override this if it has channel selectors
+     */
+    protected void updateChannelSettings() {
+        // Default implementation does nothing
+        // Override in widgets that have channel selectors
+    }
+
+    /**
+     * Save active channel selection to widget settings with a specific name
+     * @param name Identifier for this channel selection (e.g., "top", "bottom")
+     * @param channels List of selected channel indices
+     */
+    protected void saveNamedChannels(String name, List<Integer> channels) {
+        widgetSettings.setNamedChannels(name, channels);
+        println(widgetTitle + ": Saved " + channels.size() + " channels for " + name);
+    }
+
+    /**
+     * Apply saved named channel selection to a channel select component
+     * @param name Identifier for the channel selection
+     * @param channelSelect The channel select component to update
+     * @return true if channels were loaded and applied, false otherwise
+     */
+    protected boolean applyNamedChannels(String name, ExGChannelSelect channelSelect) {
+        List<Integer> savedChannels = widgetSettings.getNamedChannels(name);
+        if (!savedChannels.isEmpty()) {
+            channelSelect.updateChannelSelection(savedChannels);
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Get the list of active channels for a named selection from settings
+     * @param name Identifier for the channel selection
+     * @return List of active channel indices, or empty list if none are saved
+     */
+    protected List<Integer> getNamedChannels(String name) {
+        return widgetSettings.getNamedChannels(name);
+    }
+
+    /**
+     * Check if a named channel selection is defined in settings
+     * @param name Identifier for the channel selection
+     * @return true if the named channel selection is defined, false otherwise
+     */
+    protected boolean hasNamedChannels(String name) {
+        return widgetSettings.hasNamedChannels(name);
+    }
+
+    /**
+     * Save settings before serializing to JSON
+     * Default implementation - for channels only
+     * Child classes can override this to save additional settings
+     */
+    protected void saveSettings() {
+        updateChannelSettings();
+    }
+}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
@@ -367,23 +540,23 @@ class NavBarDropdown{
 void WidgetSelector(int n){
     println("New widget [" + n + "] selected for container...");
     //find out if the widget you selected is already active
-    boolean isSelectedWidgetActive = wm.widgets.get(n).getIsActive();
+    boolean isSelectedWidgetActive = widgetManager.widgets.get(n).getIsActive();
 
     //find out which widget & container you are currently in...
     int theContainer = -1;
-    for(int i = 0; i < wm.widgets.size(); i++){
-        if(wm.widgets.get(i).isMouseHere()){
-            theContainer = wm.widgets.get(i).currentContainer; //keep track of current container (where mouse is...)
+    for(int i = 0; i < widgetManager.widgets.size(); i++){
+        if(widgetManager.widgets.get(i).isMouseHere()){
+            theContainer = widgetManager.widgets.get(i).currentContainer; //keep track of current container (where mouse is...)
             if(isSelectedWidgetActive){ //if the selected widget was already active
-                wm.widgets.get(i).setContainer(wm.widgets.get(n).currentContainer); //just switch the widget locations (ie swap containers)
+                widgetManager.widgets.get(i).setContainer(widgetManager.widgets.get(n).currentContainer); //just switch the widget locations (ie swap containers)
             } else{
-                wm.widgets.get(i).setIsActive(false);   //deactivate the current widget (if it is different than the one selected)
+                widgetManager.widgets.get(i).setIsActive(false);   //deactivate the current widget (if it is different than the one selected)
             }
         }
     }
 
-    wm.widgets.get(n).setIsActive(true);//activate the new widget
-    wm.widgets.get(n).setContainer(theContainer);//map it to the current container
+    widgetManager.widgets.get(n).setIsActive(true);//activate the new widget
+    widgetManager.widgets.get(n).setContainer(theContainer);//map it to the current container
 }
 
 

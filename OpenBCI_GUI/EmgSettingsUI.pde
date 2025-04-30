@@ -27,11 +27,6 @@ class EmgSettingsUI extends PApplet implements Runnable {
     private boolean isFixedHeight;
     private int fixedHeight;
     private int[] dropdownYPositions;
-    private final int NUM_FOOTER_OBJECTS = 3;
-    private final int FOOTER_OBJECT_WIDTH = 45;
-    private final int FOOTER_OBJECT_HEIGHT = 26;
-    private int footerObjY;
-    private int[] footerObjX = new int[NUM_FOOTER_OBJECTS];
 
     private final color HEADER_COLOR = OPENBCI_BLUE;
     private final color BACKGROUND_COLOR = GREY_235;
@@ -60,10 +55,6 @@ class EmgSettingsUI extends PApplet implements Runnable {
     private int channelCount;
 
     private String[] channelLabels;
-
-    private Button saveButton;
-    private Button loadButton;
-    private Button defaultButton;
 
     @Override
     public void run() {
@@ -235,17 +226,6 @@ class EmgSettingsUI extends PApplet implements Runnable {
     }
 
     private void createAllUIObjects() {
-        final int HALF_FOOTER_HEIGHT = (FOOTER_PADDING + (DROPDOWN_SPACER * 2)) / 2;
-        footerObjY = y + h - HALF_FOOTER_HEIGHT - (FOOTER_OBJECT_HEIGHT / 2);
-        int middle = x + w / 2;
-        int halfObjWidth = FOOTER_OBJECT_WIDTH / 2;
-        footerObjX[0] = middle - halfObjWidth - PADDING_12 - FOOTER_OBJECT_WIDTH;
-        footerObjX[1] = middle - halfObjWidth;
-        footerObjX[2] = middle + halfObjWidth + PADDING_12;
-        createEmgSettingsSaveButton("saveEmgSettingsButton", "Save", footerObjX[0], footerObjY, FOOTER_OBJECT_WIDTH, FOOTER_OBJECT_HEIGHT);
-        createEmgSettingsLoadButton("loadEmgSettingsButton", "Load", footerObjX[1], footerObjY, FOOTER_OBJECT_WIDTH, FOOTER_OBJECT_HEIGHT);
-        createEmgSettingsDefaultButton("defaultEmgSettingsButton", "Reset", footerObjX[2], footerObjY, FOOTER_OBJECT_WIDTH, FOOTER_OBJECT_HEIGHT);
-
         channelLabels = new String[channelCount];
         for (int i = 0; i < channelCount; i++) {
             channelLabels[i] = "Channel " + (i+1);
@@ -367,36 +347,6 @@ class EmgSettingsUI extends PApplet implements Runnable {
                 }
             }
         }
-    }
-
-    private void createEmgSettingsSaveButton(String name, String text, int _x, int _y, int _w, int _h) {
-        saveButton = createButton(emgCp5, name, text, _x, _y, _w, _h, h5, 12, colorNotPressed, OPENBCI_DARKBLUE);
-        saveButton.setBorderColor(OBJECT_BORDER_GREY);
-        saveButton.onClick(new CallbackListener() {
-            public void controlEvent(CallbackEvent theEvent) {
-                dataProcessing.emgSettings.storeSettings();
-            }
-        });
-    }
-
-    private void createEmgSettingsLoadButton(String name, String text, int _x, int _y, int _w, int _h) {
-        loadButton = createButton(emgCp5, name, text, _x, _y, _w, _h, h5, 12, colorNotPressed, OPENBCI_DARKBLUE);
-        loadButton.setBorderColor(OBJECT_BORDER_GREY);
-        loadButton.onClick(new CallbackListener() {
-            public void controlEvent(CallbackEvent theEvent) {
-                dataProcessing.emgSettings.loadSettings();
-            }
-        });
-    }
-
-    private void createEmgSettingsDefaultButton(String name, String text, int _x, int _y, int _w, int _h) {
-        defaultButton = createButton(emgCp5, name, text, _x, _y, _w, _h, h5, 12, colorNotPressed, OPENBCI_DARKBLUE);
-        defaultButton.setBorderColor(OBJECT_BORDER_GREY);
-        defaultButton.onClick(new CallbackListener() {
-            public void controlEvent(CallbackEvent theEvent) {
-                dataProcessing.emgSettings.revertAllChannelsToDefaultValues();
-            }
-        });
     }
 
     private void updateCp5Objects() {

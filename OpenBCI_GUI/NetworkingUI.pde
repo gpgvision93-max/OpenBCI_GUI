@@ -490,6 +490,7 @@ class NetworkingUI extends PApplet implements Runnable {
     }
 
     private void createProtocolDropdown() {
+        List<String> protocolList = EnumHelper.getEnumStrings(NetworkProtocol.class);
         protocolDropdown = nwCp5.addScrollableList("networkingProtocolDropdown")
                 .setOpen(false)
                 .setOutlineColor(OPENBCI_DARKBLUE)
@@ -499,10 +500,10 @@ class NetworkingUI extends PApplet implements Runnable {
                 .setColorForeground(color(125)) // border color when not selected
                 .setColorActive(BUTTON_PRESSED) // border color when selected
                 // .setColorCursor(color(26,26,26))
-                .setSize(TEXTFIELD_WIDTH, (NetworkProtocol.getEnumStringsAsList().size() + 1) * (ITEM_HEIGHT))// + maxFreqList.size())
+                .setSize(TEXTFIELD_WIDTH, (protocolList.size() + 1) * (ITEM_HEIGHT))// + maxFreqList.size())
                 .setBarHeight(ITEM_HEIGHT) // height of top/primary bar
                 .setItemHeight(ITEM_HEIGHT) // height of all item/dropdown bars
-                .addItems(NetworkProtocol.getEnumStringsAsList()) // used to be .addItems(maxFreqList)
+                .addItems(protocolList) // used to be .addItems(maxFreqList)
                 .setVisible(true);
         protocolDropdown.getCaptionLabel() // the caption label is the text object in the primary bar
                 .toUpperCase(false) // DO NOT AUTOSET TO UPPERCASE!!!

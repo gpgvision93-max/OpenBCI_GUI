@@ -25,7 +25,7 @@ class FifoChannelBar {
 
     private GPlotAutoscaler gplotAutoscaler = new GPlotAutoscaler();
 
-    FifoChannelBar(PApplet _parent, String yAxisLabel, int xLimit, float yLimit, int _x, int _y, int _w, int _h, color lineColor, int _layerCount, int _samplingRate, int _totalBufferSeconds) {
+    FifoChannelBar(PApplet _parentApplet, String yAxisLabel, int xLimit, float yLimit, int _x, int _y, int _w, int _h, color lineColor, int _layerCount, int _samplingRate, int _totalBufferSeconds) {
         x = _x;
         y = _y;
         w = _w;
@@ -42,7 +42,7 @@ class FifoChannelBar {
             isOpenness = true;
         }
 
-        plot = new GPlot(_parent);
+        plot = new GPlot(_parentApplet);
         plot.setPos(x + 36 + 4 + xOffset, y);
         plot.setDim(w - 36 - 4 - xOffset, h);
         plot.setMar(0f, 0f, 0f, 0f);
@@ -77,12 +77,12 @@ class FifoChannelBar {
         valueTextBox.setVisible(false);
     }
 
-    FifoChannelBar(PApplet _parent, String yAxisLabel, int xLimit, int _x, int _y, int _w, int _h, color lineColor, int layerCount, int _totalBufferSeconds) {
-        this(_parent, yAxisLabel, xLimit, 1, _x, _y, _w, _h, lineColor, layerCount, 200, _totalBufferSeconds);
+    FifoChannelBar(PApplet _parentApplet, String yAxisLabel, int xLimit, int _x, int _y, int _w, int _h, color lineColor, int layerCount, int _totalBufferSeconds) {
+        this(_parentApplet, yAxisLabel, xLimit, 1, _x, _y, _w, _h, lineColor, layerCount, 200, _totalBufferSeconds);
     }
 
-    FifoChannelBar(PApplet _parent, String yAxisLabel, int xLimit, float yLimit, int _x, int _y, int _w, int _h, color lineColor, int _totalBufferSeconds) {
-        this(_parent, yAxisLabel, xLimit, yLimit, _x, _y, _w, _h, lineColor, 1, 200, _totalBufferSeconds);
+    FifoChannelBar(PApplet _parentApplet, String yAxisLabel, int xLimit, float yLimit, int _x, int _y, int _w, int _h, color lineColor, int _totalBufferSeconds) {
+        this(_parentApplet, yAxisLabel, xLimit, yLimit, _x, _y, _w, _h, lineColor, 1, 200, _totalBufferSeconds);
     }
 
     private void initArrays() {

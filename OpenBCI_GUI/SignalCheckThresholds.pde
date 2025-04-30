@@ -127,10 +127,11 @@ class SignalCheckThresholdUI {
             valuePercentage = val;
         } else {
             if (currentBoard instanceof BoardCyton) {
+                W_CytonImpedance cytonImpedanceWidget = (W_CytonImpedance) widgetManager.getWidget("W_CytonImpedance");
                 if (name == "errorThreshold") {
-                    w_cytonImpedance.updateElectrodeStatusYellowThreshold((double)val);
+                    cytonImpedanceWidget.updateElectrodeStatusYellowThreshold((double)val);
                 } else {
-                    w_cytonImpedance.updateElectrodeStatusGreenThreshold((double)val);
+                    cytonImpedanceWidget.updateElectrodeStatusGreenThreshold((double)val);
                 }
             }
             valuekOhms = val;

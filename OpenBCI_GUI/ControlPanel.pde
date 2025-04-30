@@ -266,7 +266,7 @@ class ControlPanel {
         sb.append("OpenBCISession_");
         sb.append(dataLogger.getSessionName());
         sb.append(File.separator);
-        settings.setSessionPath(sb.toString());
+        dataLogger.setSessionPath(sb.toString());
     }
 
     public void setBrainFlowStreamerOutput() {
@@ -364,7 +364,7 @@ class DataSourceBox {
                     Map bob = sourceList.getItem(int(sourceList.getValue()));
                     String str = (String)bob.get("headline"); // Get the text displayed in the MenuList
                     int newDataSource = (int)bob.get("value");
-                    settings.controlEventDataSource = str; //Used for output message on system start
+                    sessionSettings.controlEventDataSource = str; //Used for output message on system start
                     eegDataSource = newDataSource;
 
                     //Reset protocol
@@ -910,10 +910,8 @@ class SessionDataBox {
         createODFButton("odfButton", "OpenBCI", dataLogger.getDataLoggerOutputFormat(), x + padding, y + padding*2 + 18 + 58, (w-padding*3)/2, 24);
         createBDFButton("bdfButton", "BDF+", dataLogger.getDataLoggerOutputFormat(), x + padding*2 + (w-padding*3)/2, y + padding*2 + 18 + 58, (w-padding*3)/2, 24);
 
-        createMaxDurationDropdown("maxFileDuration", Arrays.asList(settings.fileDurations));
-
-        
-        
+        List<String> fileDurationList = EnumHelper.getEnumStrings(OdfFileDuration.class);
+        createMaxDurationDropdown("maxFileDuration", fileDurationList, odfFileDuration);
     }
 
     public void update() {
@@ -1012,10 +1010,10 @@ class SessionDataBox {
         });
     }
 
-    private void createMaxDurationDropdown(String name, List<String> _items){
+    private void createMaxDurationDropdown(String name, List<String> _items, OdfFileDuration defaultValue) {
         maxDurationDropdown = sessionData_cp5.addScrollableList(name)
             .setOpen(false)
-            .setColor(settings.dropdownColors)
+            .setColor(dropdownColorsGlobal)
             .setOutlineColor(150)
             //.setColorBackground(OPENBCI_BLUE) // text field bg color
             .setColorValueLabel(OPENBCI_DARKBLUE)       // text color
@@ -1033,7 +1031,7 @@ class SessionDataBox {
         maxDurationDropdown
             .getCaptionLabel() //the caption label is the text object in the primary bar
             .toUpperCase(false) //DO NOT AUTOSET TO UPPERCASE!!!
-            .setText(settings.fileDurations[settings.defaultOBCIMaxFileSize])
+            .setText(defaultValue.getString())
             .setFont(p4)
             .setSize(14)
             .getStyle() //need to grab style before affecting the paddingTop
@@ -1042,7 +1040,7 @@ class SessionDataBox {
         maxDurationDropdown
             .getValueLabel() //the value label is connected to the text objects in the dropdown item bars
             .toUpperCase(false) //DO NOT AUTOSET TO UPPERCASE!!!
-            .setText(settings.fileDurations[settings.defaultOBCIMaxFileSize])
+            .setText(defaultValue.getString())
             .setFont(h5)
             .setSize(12) //set the font size of the item bars to 14pt
             .getStyle() //need to grab style before affecting the paddingTop
@@ -1052,7 +1050,7 @@ class SessionDataBox {
             public void controlEvent(CallbackEvent theEvent) {    
                 if (theEvent.getAction() == ControlP5.ACTION_BROADCAST) {
                     int n = (int)(theEvent.getController()).getValue();
-                    settings.setLogFileDurationChoice(n);
+                    dataLogger.setLogFileDurationChoice(n);
                     println("ControlPanel: Chosen Recording Duration: " + n);
                 } else if (theEvent.getAction() == ControlP5.ACTION_ENTER) {
                     lockOutsideElements(true);
@@ -1775,7 +1773,7 @@ class BrainFlowStreamerBox {
     private void createDropdown(String name){
         bfFileSaveOption = bfStreamerCp5.addScrollableList(name)
             .setOpen(false)
-            .setColor(settings.dropdownColors)
+            .setColor(dropdownColorsGlobal)
             .setOutlineColor(150)
             .setSize(167, (dataWriterBfEnum.values().length + 1) * 24)
             .setBarHeight(24) //height of top/primary bar
@@ -2164,7 +2162,7 @@ class SDBox {
 
         sdList = cp5_sdBox.addScrollableList(name)
             .setOpen(false)
-            .setColor(settings.dropdownColors)
+            .setColor(dropdownColorsGlobal)
             .setOutlineColor(150)
             .setSize(w - padding*2, 2*24)//temporary size
             .setBarHeight(24) //height of top/primary bar
@@ -2506,10 +2504,12 @@ class InitBox {
             //creates new data file name so that you don't accidentally overwrite the old one
             controlPanel.dataLogBoxCyton.setSessionTextfieldText(directoryManager.getFileNameDateTime());
             controlPanel.dataLogBoxGanglion.setSessionTextfieldText(directoryManager.getFileNameDateTime());
-            w_focus.killAuditoryFeedback();
-            w_marker.disposeUdpMarkerReceiver();
+            W_Focus focusWidget = (W_Focus) widgetManager.getWidget("W_Focus");
+            W_Marker markerWidget = (W_Marker) widgetManager.getWidget("W_Marker");
+            focusWidget.killAuditoryFeedback();
+            markerWidget.disposeUdpMarkerReceiver();
             haltSystem();
-            wm.setAllWidgetsNull();
+            widgetManager.setAllWidgetsNull();
         }
     }
 

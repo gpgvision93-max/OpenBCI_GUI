@@ -25,12 +25,9 @@ class FilterUIPopup extends PApplet implements Runnable {
     private final int HALF_OBJ_WIDTH = HEADER_OBJ_WIDTH/2;
     private final int NUM_HEADER_OBJECTS = 4;
     private final int NUM_COLUMNS = 5;
-    private final int NUM_FOOTER_OBJECTS = 3;
     private int[] headerObjX = new int[NUM_HEADER_OBJECTS];
     private final int HEADER_OBJ_Y = SM_SPACER;
     private int[] columnObjX = new int[NUM_COLUMNS];
-    private int footerObjY = 0;
-    private int[] footerObjX = new int[NUM_FOOTER_OBJECTS];
 
     private String message = "Sample text string";
     private String headerMessage = "Filters";
@@ -50,9 +47,6 @@ class FilterUIPopup extends PApplet implements Runnable {
 
     private ScrollableList bfGlobalFilterDropdown;
     private ScrollableList bfEnvironmentalNoiseDropdown;
-    private Button saveButton;
-    private Button loadButton;
-    private Button defaultButton;
 
     private Button masterOnOffButton;
     private Textfield masterFirstColumnTextfield;
@@ -116,7 +110,7 @@ class FilterUIPopup extends PApplet implements Runnable {
         filterSettingsWereModifiedFadeCounter = new int[numChans];
 
         fixedWidth = (HEADER_OBJ_WIDTH * 6) + SM_SPACER*5;
-        maxHeight = HEADER_HEIGHT*3 + SM_SPACER*(numChans+5) + uiObjectHeight*(numChans+2) + EXPANDER_HEIGHT;
+        maxHeight = HEADER_HEIGHT*3 + SM_SPACER*(numChans+5) + uiObjectHeight*(numChans+1) + EXPANDER_HEIGHT;
         shortHeight = HEADER_HEIGHT*2 + SM_SPACER*(1+5) + uiObjectHeight*(1+2) + LG_SPACER + EXPANDER_HEIGHT;
         variableHeight = maxHeight;
         //Include spacer on the outside left and right of all columns. Used to draw visual feedback
@@ -307,11 +301,7 @@ class FilterUIPopup extends PApplet implements Runnable {
     }
 
     private void createAllCp5Objects() {
-        calculateXYForHeaderColumnsAndFooter();
-        
-        createFilterSettingsSaveButton("saveFilterSettingsButton", "Save", footerObjX[0], footerObjY, HEADER_OBJ_WIDTH, uiObjectHeight);
-        createFilterSettingsLoadButton("loadFilterSettingsButton", "Load", footerObjX[1], footerObjY, HEADER_OBJ_WIDTH, uiObjectHeight);
-        createFilterSettingsDefaultButton("defaultFilterSettingsButton", "Reset", footerObjX[2], footerObjY, HEADER_OBJ_WIDTH, uiObjectHeight);
+        calculateXYForHeaderColumns();
         
         createOnOffButtons();
         createTextfields();
@@ -334,7 +324,7 @@ class FilterUIPopup extends PApplet implements Runnable {
         bfEnvironmentalNoiseDropdown.getCaptionLabel().setText(filterSettings.values.globalEnvFilter.getString());
     }
 
-    private void calculateXYForHeaderColumnsAndFooter() {
+    private void calculateXYForHeaderColumns() {
         middle = width / 2;
 
         headerObjX[0] = middle - SM_SPACER*2 - HEADER_OBJ_WIDTH*2;
@@ -348,17 +338,12 @@ class FilterUIPopup extends PApplet implements Runnable {
         columnObjX[3] = middle + HALF_OBJ_WIDTH + LG_SPACER;
         columnObjX[4] = middle + HALF_OBJ_WIDTH + LG_SPACER*2 + HEADER_OBJ_WIDTH;
 
-        footerObjX[0] = middle - HALF_OBJ_WIDTH - LG_SPACER - HEADER_OBJ_WIDTH;
-        footerObjX[1] = middle - HALF_OBJ_WIDTH;
-        footerObjX[2] = middle + HALF_OBJ_WIDTH + LG_SPACER;
-        setFooterObjYPosition(filterSettings.values.filterChannelSelect);
-
         expanderLineOneEnd = middle - expanderBreakMiddle/2;
         expanderLineTwoStart = middle + expanderBreakMiddle/2;
     }
 
     public void arrangeAllObjectsXY() {
-        calculateXYForHeaderColumnsAndFooter();
+        calculateXYForHeaderColumns();
 
         bfGlobalFilterDropdown.setPosition(headerObjX[1], HEADER_OBJ_Y);
         bfEnvironmentalNoiseDropdown.setPosition(headerObjX[3], HEADER_OBJ_Y);
@@ -400,10 +385,6 @@ class FilterUIPopup extends PApplet implements Runnable {
             filterTypeDropdowns[chan].setPosition(columnObjX[3], rowY);
             filterOrderDropdowns[chan].setPosition(filterOrderDropdownNewX, rowY);
         }
-
-        saveButton.setPosition(footerObjX[0], footerObjY);
-        loadButton.setPosition(footerObjX[1], footerObjY);
-        defaultButton.setPosition(footerObjX[2], footerObjY);
     }
 
     // Master method to update objects from the FilterSettings Class
@@ -920,37 +901,6 @@ class FilterUIPopup extends PApplet implements Runnable {
         cp5ElementsToCheck.add(masterFilterOrderDropdown);
     }
 
-    private void createFilterSettingsSaveButton(String name, String text, int _x, int _y, int _w, int _h) {
-        saveButton = createButton(cp5, name, text, _x, _y, _w, _h, h5, 12, colorNotPressed, OPENBCI_DARKBLUE);
-        saveButton.setBorderColor(OBJECT_BORDER_GREY);
-        saveButton.onClick(new CallbackListener() {
-            public void controlEvent(CallbackEvent theEvent) {
-                filterSettings.storeSettings();
-            }
-        });
-    }
-
-    private void createFilterSettingsLoadButton(String name, String text, int _x, int _y, int _w, int _h) {
-        loadButton = createButton(cp5, name, text, _x, _y, _w, _h, h5, 12, colorNotPressed, OPENBCI_DARKBLUE);
-        loadButton.setBorderColor(OBJECT_BORDER_GREY);
-        loadButton.onClick(new CallbackListener() {
-            public void controlEvent(CallbackEvent theEvent) {
-                filterSettings.loadSettings();
-            }
-        });
-    }
-
-    private void createFilterSettingsDefaultButton(String name, String text, int _x, int _y, int _w, int _h) {
-        defaultButton = createButton(cp5, name, text, _x, _y, _w, _h, h5, 12, colorNotPressed, OPENBCI_DARKBLUE);
-        defaultButton.setBorderColor(OBJECT_BORDER_GREY);
-        defaultButton.onClick(new CallbackListener() {
-            public void controlEvent(CallbackEvent theEvent) {
-                filterSettings.revertAllChannelsToDefaultValues();
-                filterSettingsWereLoadedFromFile = true;
-            }
-        });
-    }
-
     private void createMasterOnOffButton(String name, final String text, int _x, int _y, int _w, int _h) {
         masterOnOffButton = createButton(cp5, name, text, _x, _y, _w, _h, 0, h2, 16, SUBNAV_LIGHTBLUE, WHITE, BUTTON_HOVER, BUTTON_PRESSED, (Integer) null, -2);
         masterOnOffButton.setCircularButton(true);
@@ -1002,23 +952,7 @@ class FilterUIPopup extends PApplet implements Runnable {
             filterOrderDropdowns[chan].setVisible(showAllChannels);
         }
 
-        setFooterObjYPosition(myEnum);
-        saveButton.setPosition(footerObjX[0], footerObjY);
-        loadButton.setPosition(footerObjX[1], footerObjY);
-
         needToResizePopup = true;
-    }
-
-    private void setFooterObjYPosition(FilterChannelSelect myEnum) {
-        boolean showAllChannels = myEnum == FilterChannelSelect.CUSTOM_CHANNELS;
-        int numChans = filterSettings.getChannelCount();
-        int footerMaxHeightY = HEADER_HEIGHT*2 + SM_SPACER*(numChans+4) + uiObjectHeight*(numChans+1) + LG_SPACER*2 + EXPANDER_HEIGHT;
-        int footerMinHeightY = HEADER_HEIGHT*2 + SM_SPACER*4 + uiObjectHeight + LG_SPACER + EXPANDER_HEIGHT;
-        footerObjY = showAllChannels ? footerMaxHeightY : footerMinHeightY;
-
-        if (!EXPANDER_IS_USED) {
-            footerObjY -= EXPANDER_HEIGHT + SM_SPACER;
-        }
     }
 
     private void filterSettingWasModifiedOnChannel(int chan) {

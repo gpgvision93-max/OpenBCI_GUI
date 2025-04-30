@@ -8,8 +8,7 @@
 //                                                  //
 //////////////////////////////////////////////////////
 
-class W_Marker extends Widget {
-
+class W_Marker extends WidgetWithSettings {
     private ControlP5 localCP5;
     private List<controlP5.Controller> cp5ElementsToCheckForOverlap;
 
@@ -25,8 +24,10 @@ class W_Marker extends Widget {
 
     private Textfield markerReceiveIPTextfield;
     private Textfield markerReceivePortTextfield;
-    private String markerReceiveIP = "127.0.0.1";
-    private int markerReceivePort = 12340;
+    private final String KEY_MARKER_RECEIVE_IP = "markerReceiveIPTextfield";
+    private final String KEY_MARKER_RECEIVE_PORT = "markerReceivePortTextfield";
+    private final String DEFAULT_RECEIVER_IP = "127.0.0.1";
+    private final int DEFAULT_RECEIVER_PORT = 12340;
     private final int MARKER_RECEIVE_TEXTFIELD_WIDTH = 108;
     private final int MARKER_RECEIVE_TEXTFIELD_HEIGHT = 22;
 
@@ -42,11 +43,9 @@ class W_Marker extends Widget {
     private int PAD_FIVE = 5;
     private int GRAPH_PADDING = 30;
 
-    private MarkerVertScale markerVertScale = MarkerVertScale.EIGHT;
-    private MarkerWindow markerWindow = MarkerWindow.FIVE;
-
-    W_Marker(PApplet _parent){
-        super(_parent);
+    W_Marker() {
+        super();
+        widgetTitle = "Marker";
 
         //Instantiate local cp5 for this box. This allows extra control of drawing cp5 elements specifically inside this class.
         localCP5 = new ControlP5(ourApplet);
@@ -54,12 +53,11 @@ class W_Marker extends Widget {
         localCP5.setAutoDraw(false);
 
         createMarkerButtons();
-
-        addDropdown("markerVertScaleDropdown", "Vert Scale", markerVertScale.getEnumStringsAsList(), markerVertScale.getIndex());
-        addDropdown("markerWindowDropdown", "Window", markerWindow.getEnumStringsAsList(), markerWindow.getIndex());
         
         updateGraphDims();
-        markerBar = new MarkerBar(_parent, MAX_NUMBER_OF_MARKER_BUTTONS, markerWindow.getValue(), markerVertScale.getValue(), graphX, graphY, graphW, graphH);
+        MarkerWindow markerWindow = widgetSettings.get(MarkerWindow.class);
+        MarkerVertScale markerVertScale = widgetSettings.get(MarkerVertScale.class);
+        markerBar = new MarkerBar(ourApplet, MAX_NUMBER_OF_MARKER_BUTTONS, markerWindow.getValue(), markerVertScale.getValue(), graphX, graphY, graphW, graphH);
 
         grid = new Grid(MARKER_UI_GRID_ROWS, MARKER_UI_GRID_COLUMNS, MARKER_UI_GRID_CELL_HEIGHT);
         grid.setDrawTableBorder(false);
@@ -80,6 +78,57 @@ class W_Marker extends Widget {
         cp5ElementsToCheckForOverlap.add(markerReceiveToggle);
     }
 
+    @Override
+    protected void initWidgetSettings() {
+        super.initWidgetSettings();
+        widgetSettings.set(MarkerVertScale.class, MarkerVertScale.EIGHT)
+                    .set(MarkerWindow.class, MarkerWindow.FIVE)
+                    .setObject(KEY_MARKER_RECEIVE_IP, DEFAULT_RECEIVER_IP)
+                    .setObject(KEY_MARKER_RECEIVE_PORT, DEFAULT_RECEIVER_PORT)
+                    .saveDefaults();
+        
+        initDropdown(MarkerVertScale.class, "markerVerticalScaleDropdown", "Vert Scale");
+        initDropdown(MarkerWindow.class, "markerWindowDropdown", "Window");
+    }
+
+    @Override
+    protected void applySettings() {
+        updateDropdownLabel(MarkerVertScale.class, "markerVerticalScaleDropdown");
+        updateDropdownLabel(MarkerWindow.class, "markerWindowDropdown");
+
+        applyVerticalScale();
+        applyWindow();
+
+        String ipValue = widgetSettings.getObject(KEY_MARKER_RECEIVE_IP, DEFAULT_RECEIVER_IP).toString();
+        String portValue = widgetSettings.getObject(KEY_MARKER_RECEIVE_PORT, DEFAULT_RECEIVER_PORT).toString();
+
+        markerReceiveIPTextfield.setText(ipValue);
+        markerReceivePortTextfield.setText(portValue);
+    }
+
+    @Override
+    protected void saveSettings() {
+        // Call the parent method to handle default saving behavior
+        super.saveSettings();
+        
+        // Save our marker-specific settings
+        saveMarkerSettings();
+    }
+
+    private void saveMarkerSettings() {
+        // Get the current values from textfields
+        String currentIP = markerReceiveIPTextfield.getText();
+        String currentPort = markerReceivePortTextfield.getText();
+        
+        // Clean up the values
+        currentIP = getIpAddrFromStr(currentIP);
+        Integer currentPortInt = Integer.parseInt(dropNonPrintableChars(currentPort));
+        
+        // Save values to widget settings
+        widgetSettings.setObject(KEY_MARKER_RECEIVE_IP, currentIP);
+        widgetSettings.setObject(KEY_MARKER_RECEIVE_PORT, currentPortInt);
+    }
+
     public void update(){
         super.update();
         markerBar.update();
@@ -88,7 +137,6 @@ class W_Marker extends Widget {
         textfieldUpdateHelper.checkTextfield(markerReceivePortTextfield);
 
         lockElementsOnOverlapCheck(cp5ElementsToCheckForOverlap);
-
     }
 
     public void draw(){
@@ -207,8 +255,8 @@ class W_Marker extends Widget {
     }
 
     private void createMarkerReceiveUI() {
-        markerReceiveIPTextfield = createTextfield("markerReceiveIPTextfield", markerReceiveIP);
-        markerReceivePortTextfield = createTextfield("markerReceivePortTextfield", Integer.toString(markerReceivePort));
+        markerReceiveIPTextfield = createTextfield(KEY_MARKER_RECEIVE_IP, DEFAULT_RECEIVER_IP);
+        markerReceivePortTextfield = createTextfield(KEY_MARKER_RECEIVE_PORT, Integer.toString(DEFAULT_RECEIVER_PORT));
         createMarkerReceiveToggle();
     }
 
@@ -241,6 +289,8 @@ class W_Marker extends Widget {
             public void controlEvent(CallbackEvent theEvent) {
                 if (theEvent.getAction() == ControlP5.ACTION_BROADCAST && myTextfield.getText().equals("")) {
                     resetMarkerReceiveTextfield(myTextfield);
+                } else if (theEvent.getAction() == ControlP5.ACTION_BROADCAST) {
+                    saveMarkerSettings();
                 }
             }
         });
@@ -250,16 +300,17 @@ class W_Marker extends Widget {
                 if (!myTextfield.isActive() && myTextfield.getText().equals("")) {
                     resetMarkerReceiveTextfield(myTextfield);
                 }
+                saveMarkerSettings();
             }
         });
         return myTextfield;
     }
 
     private void resetMarkerReceiveTextfield(Textfield tf) {
-        if (tf.getName().equals("markerReceiveIPTextfield")) {
-            tf.setText(markerReceiveIP);
-        } else if (tf.getName().equals("markerReceivePortTextfield")) {
-            tf.setText(Integer.toString(markerReceivePort));
+        if (tf.getName().equals(KEY_MARKER_RECEIVE_IP)) {
+            tf.setText(DEFAULT_RECEIVER_IP);
+        } else if (tf.getName().equals(KEY_MARKER_RECEIVE_PORT)) {
+            tf.setText(Integer.toString(DEFAULT_RECEIVER_PORT));
         }
     }
 
@@ -288,24 +339,24 @@ class W_Marker extends Widget {
     }
 
     private void initUdpMarkerReceiver() {
-        markerReceiveIP = getIpAddrFromStr(markerReceiveIPTextfield.getText());
-        markerReceivePort = Integer.parseInt(dropNonPrintableChars(markerReceivePortTextfield.getText()));
+        String currentIP = getIpAddrFromStr(markerReceiveIPTextfield.getText());
+        Integer currentPort = Integer.parseInt(dropNonPrintableChars(markerReceivePortTextfield.getText()));
         
         disposeUdpMarkerReceiver();
         
-        udpReceiver = new UDP(ourApplet, markerReceivePort, markerReceiveIP);
+        udpReceiver = new UDP(ourApplet, currentPort, currentIP);
         udpReceiver.listen(true);
         udpReceiver.broadcast(false);
         udpReceiver.log(false);
         udpReceiver.setReceiveHandler("receiveMarkerViaUdp");
-        outputSuccess("Marker Widget: Listening for markers on " + markerReceiveIP + ":" + markerReceivePort);
+        outputSuccess("Marker Widget: Listening for markers on " + currentIP + ":" + currentPort);
     }
 
     public void disposeUdpMarkerReceiver() {
         if (udpReceiver != null) {
             udpReceiver.close();
             udpReceiver.dispose();
-            println("Marker Widget: Stopped listening for markers on " + markerReceiveIP + ":" + markerReceivePort);
+            println("Marker Widget: Stopped listening for markers");
         }
     }
 
@@ -330,32 +381,46 @@ class W_Marker extends Widget {
     }
 
     public void setMarkerWindow(int n) {
-        markerWindow = markerWindow.values()[n];
-        markerBar.adjustTimeAxis(markerWindow.getValue());
+        widgetSettings.setByIndex(MarkerWindow.class, n);
+        applyWindow();
     }
 
-    public void setMarkerVertScale(int n) {
-        markerVertScale = markerVertScale.values()[n];
-        markerBar.adjustYAxis(markerVertScale.getValue());
+    public void setMarkerVerticalScale(int n) {
+        widgetSettings.setByIndex(MarkerVertScale.class, n);
+        applyVerticalScale();
     }
 
-    public MarkerWindow getMarkerWindow() {
-        return markerWindow;
+    private void applyWindow() {
+        int markerWindowValue = widgetSettings.get(MarkerWindow.class).getValue();
+        markerBar.adjustTimeAxis(markerWindowValue);
     }
 
-    public MarkerVertScale getMarkerVertScale() {
-        return markerVertScale;
+    private void applyVerticalScale() {
+        int markerVertScaleValue = widgetSettings.get(MarkerVertScale.class).getValue();
+        markerBar.adjustYAxis(markerVertScaleValue);
     }
-
-    public String getMarkerReceiveIP() {
-        return getIpAddrFromStr(markerReceiveIPTextfield.getText());
-    }
-
-    public String getMarkerReceivePort() {
-        return dropNonPrintableChars(markerReceivePortTextfield.getText());
-    }
-
 };
+
+
+//The following global functions are used by the Marker widget dropdowns. This method is the least amount of code.
+public void markerWindowDropdown(int n) {
+    W_Marker markerWidget = (W_Marker) widgetManager.getWidget("W_Marker");
+    markerWidget.setMarkerWindow(n);
+}
+
+public void markerVerticalScaleDropdown(int n) {
+    W_Marker markerWidget = (W_Marker) widgetManager.getWidget("W_Marker");
+    markerWidget.setMarkerVerticalScale(n);
+}
+
+//Custom UDP receive handler for receiving markers from external sources
+public void receiveMarkerViaUdp( byte[] data, String ip, int port ) {
+    double markerValue = convertByteArrayToDouble(data);
+    //String message = Double.toString(markerValue);
+    //println( "received: \""+message+"\" from "+ip+" on port "+port );
+    W_Marker markerWidget = (W_Marker) widgetManager.getWidget("W_Marker");
+    markerWidget.insertMarkerFromExternal(markerValue);
+}
 
 //This class contains the time series plot for displaying the markers over time
 class MarkerBar {
@@ -383,7 +448,7 @@ class MarkerBar {
     private float autoscaleMax;
     private int previousMillis = 0;
 
-    MarkerBar(PApplet _parent, int _yAxisMax, int markerWindow, float yLimit, int _x, int _y, int _w, int _h) { //channel number, x/y location, height, width
+    MarkerBar(PApplet _parentApplet, int _yAxisMax, int markerWindow, float yLimit, int _x, int _y, int _w, int _h) { //channel number, x/y location, height, width
         
         yAxisMax = _yAxisMax;
         numSeconds = markerWindow;
@@ -395,7 +460,7 @@ class MarkerBar {
         w = _w;
         h = _h;
 
-        plot = new GPlot(_parent);
+        plot = new GPlot(_parentApplet);
         plot.setPos(x + 36 + 4, y); //match marker plot position with Time Series
         plot.setDim(w - 36 - 4, h);
         plot.setMar(0f, 0f, 0f, 0f);
@@ -510,107 +575,3 @@ class MarkerBar {
     }
 };
 
-public enum MarkerWindow implements IndexingInterface
-{
-    FIVE (0, 5, "5 sec"),
-    TEN (1, 10, "10 sec"),
-    TWENTY (2, 20, "20 sec");
-
-    private int index;
-    private int value;
-    private String label;
-    private static MarkerWindow[] vals = values();
-
-    MarkerWindow(int _index, int _value, String _label) {
-        this.index = _index;
-        this.value = _value;
-        this.label = _label;
-    }
-
-    public int getValue() {
-        return value;
-    }
-
-    @Override
-    public String getString() {
-        return label;
-    }
-
-    @Override
-    public int getIndex() {
-        return index;
-    }
-
-    public static List<String> getEnumStringsAsList() {
-        List<String> enumStrings = new ArrayList<String>();
-        for (IndexingInterface val : vals) {
-            enumStrings.add(val.getString());
-        }
-        return enumStrings;
-    }
-}
-
-public enum MarkerVertScale implements IndexingInterface
-{
-    AUTO (0, 0, "Auto"),
-    TWO (1, 2, "2"),
-    FOUR (2, 4, "4"),
-    EIGHT (3, 8, "8"),
-    TEN (4, 10, "10"),
-    TWENTY (6, 20, "20");
-
-    private int index;
-    private int value;
-    private String label;
-    private static MarkerVertScale[] vals = values();
-
-    MarkerVertScale(int _index, int _value, String _label) {
-        this.index = _index;
-        this.value = _value;
-        this.label = _label;
-    }
-
-    public int getValue() {
-        return value;
-    }
-
-    @Override
-    public String getString() {
-        return label;
-    }
-
-    @Override
-    public int getIndex() {
-        return index;
-    }
-
-    public static List<String> getEnumStringsAsList() {
-        List<String> enumStrings = new ArrayList<String>();
-        for (IndexingInterface val : vals) {
-            enumStrings.add(val.getString());
-        }
-        return enumStrings;
-    }
-}
-
-//The following global functions are used by the Marker widget dropdowns. This method is the least amount of code.
-public void markerWindowDropdown(int n) {
-    w_marker.setMarkerWindow(n);
-}
-
-public void markerVertScaleDropdown(int n) {
-    w_marker.setMarkerVertScale(n);
-}
-
-//Custom UDP receive handler for receiving markers from external sources
-public void receiveMarkerViaUdp( byte[] data, String ip, int port ) {
-    double markerValue = convertByteArrayToDouble(data);
-    //String message = Double.toString(markerValue);
-    //println( "received: \""+message+"\" from "+ip+" on port "+port );
-    w_marker.insertMarkerFromExternal(markerValue);
-}
-
-public double convertByteArrayToDouble(byte[] array) {
-    ByteBuffer buffer = ByteBuffer.wrap(array);
-    return buffer.getDouble();
-}
