@@ -144,3 +144,4 @@ MIT
 - [Cyton+Daisy Boards](https://shop.openbci.com/collections/frontpage/products/cyton-daisy-biosensing-boards-16-channel)
 - [GUI Widget Tutorial](https://docs.openbci.com/Software/OpenBCISoftware/GUIWidgets/#custom-widget)
 - [Run GUI from Processing IDE](https://docs.openbci.com/Software/OpenBCISoftware/GUIDocs/#running-the-openbci-gui-from-the-processing-ide)
+https://shop.openbci.com/collections/frontpage/products/pre-order-ganglion-board
