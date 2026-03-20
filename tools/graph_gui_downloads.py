@@ -28,7 +28,7 @@ for release in data:
     
     for asset in assets:
         if "mac" in asset["name"].lower():
-            download_count_mac[release_date] = download_count_mac.get(release_date, 0) + asset["download_count"]
+            download_count_mac[release_date] = download_count_mac.get(release_date, 0) + asset["download_count"] # type: ignore
         elif "linux" in asset["name"].lower():
             download_count_linux[release_date] = download_count_linux.get(release_date, 0) + asset["download_count"]
         elif "win" in asset["name"].lower():
