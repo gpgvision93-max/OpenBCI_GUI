@@ -4,6 +4,7 @@
 # This test accepts a stream from the Synthetic mode in the OpenBCI GUI.
 
 import time
+from dataclasses import dataclass
 from brainflow.board_shim import (
     BoardShim,
     BrainFlowInputParams,

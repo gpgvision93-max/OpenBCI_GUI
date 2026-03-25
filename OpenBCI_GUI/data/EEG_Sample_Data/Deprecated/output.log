@@ -1,0 +1,648 @@
+2026-03-21 19:02:54.652 [info] [MCP Gateway] [McpGatewayService] Initialized
+2026-03-21 19:02:54.718 [info] [Main] update#setState idle
+2026-03-21 19:02:59.063 [info] [Settings Sync] [AutoSync] Using settings sync service https://vscode-sync.trafficmanager.net/
+2026-03-21 19:02:59.064 [info] [Settings Sync] [AutoSync] Disabled.
+2026-03-21 19:03:04.617 [info] [Cloud Changes] Prompting to enable cloud changes, has application previously launched from Continue On flow: false
+2026-03-21 19:03:05.172 [info] [Remote Tunnel Service] No other tunnel running
+2026-03-21 19:03:24.913 [info] [Main] update#setState checking for updates
+2026-03-21 19:03:25.172 [info] [Main] update#setState idle
+2026-03-21 19:08:31.759 [error] [Window] Error: The editor could not be opened because the file was not found.
+    at BQ.handleSetInputError (vscode-file://vscode-app/c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/07ff9d6178/resources/app/out/vs/workbench/workbench.desktop.main.js:3696:92292)
+    at async BQ.setInput (vscode-file://vscode-app/c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/07ff9d6178/resources/app/out/vs/workbench/workbench.desktop.main.js:3696:91301)
+    at async WDe.doSetInput (vscode-file://vscode-app/c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/07ff9d6178/resources/app/out/vs/workbench/workbench.desktop.main.js:1137:33637)
+    at async WDe.doOpenEditor (vscode-file://vscode-app/c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/07ff9d6178/resources/app/out/vs/workbench/workbench.desktop.main.js:1137:31423)
+    at async WDe.openEditor (vscode-file://vscode-app/c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/07ff9d6178/resources/app/out/vs/workbench/workbench.desktop.main.js:1137:30372)
+    at async vscode-file://vscode-app/c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/07ff9d6178/resources/app/out/vs/workbench/workbench.desktop.main.js:1249:31271
+2026-03-21 19:08:32.519 [info] [Window] [ChatSessionsService] registerContribution called for type='claude-code', canDelegate=true, when='config.github.copilot.chat.claudeAgent.enabled', extension='GitHub.copilot-chat'
+2026-03-21 19:08:32.520 [info] [Window] [ChatSessionsService] _enableContribution: type='claude-code', canDelegate=true
+2026-03-21 19:08:32.524 [info] [Window] [ChatSessionsService] registerContribution called for type='copilotcli', canDelegate=true, when='config.github.copilot.chat.backgroundAgent.enabled', extension='GitHub.copilot-chat'
+2026-03-21 19:08:32.526 [info] [Window] [ChatSessionsService] _enableContribution: type='copilotcli', canDelegate=true
+2026-03-21 19:08:32.530 [info] [Window] [ChatSessionsService] registerContribution called for type='copilot-cloud-agent', canDelegate=true, when='config.github.copilot.chat.cloudAgent.enabled', extension='GitHub.copilot-chat'
+2026-03-21 19:08:32.531 [info] [Window] [ChatSessionsService] _enableContribution: type='copilot-cloud-agent', canDelegate=true
+2026-03-21 19:08:32.713 [info] [Window] Started local extension host with pid 1400.
+2026-03-21 19:08:34.438 [info] [Extension Host] Extension host with pid 1400 started
+2026-03-21 19:08:34.438 [info] [Extension Host] Skipping acquiring lock for c:\Users\ASUS\AppData\Roaming\Code\User\workspaceStorage\c260837ebcb404070f6c25e2b648405c.
+2026-03-21 19:08:34.741 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2026-03-21 19:08:34.873 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2026-03-21 19:08:35.040 [info] [Extension Host] ExtensionService#_doActivateExtension GitHub.copilot-chat, startup: false, activationEvent: 'onChatParticipant:github.copilot.editsAgent'
+2026-03-21 19:08:37.110 [info] [Window] MCP Registry configured: https://api.mcp.github.com
+2026-03-21 19:08:37.575 [info] [Window] Settings Sync: Account status changed from uninitialized to unavailable
+2026-03-21 19:08:37.835 [info] [Cloud Changes] Prompting to enable cloud changes, has application previously launched from Continue On flow: false
+2026-03-21 19:08:38.416 [info] [Window] Extension host (LocalProcess pid: 1400) is unresponsive.
+2026-03-21 19:08:38.583 [error] [Window] [Extension Host] (node:1400) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `code --trace-deprecation ...` to show where the warning was created)
+2026-03-21 19:08:38.644 [error] [Window] [Extension Host] (node:1400) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+2026-03-21 19:08:38.722 [info] [Window] Extension host (LocalProcess pid: 1400) is responsive.
+2026-03-21 19:08:38.866 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2026-03-21 19:08:38.955 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:jsonc'
+2026-03-21 19:08:39.005 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2026-03-21 19:08:39.497 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2026-03-21 19:08:39.797 [info] [Extension Host] ExtensionService#_doActivateExtension ms-edgedevtools.vscode-edge-devtools, startup: false, activationEvent: 'onLanguage:jsonc'
+2026-03-21 19:08:40.000 [warning] [Window] MCP migration: Failed to parse MCP config from vscode-userdata:/c%3A/Users/ASUS/AppData/Roaming/Code/User/settings.json: Unexpected token '}', ..."e": 
+    }
+}" is not valid JSON
+2026-03-21 19:08:40.082 [error] [Window] [Extension Host] Failed to load message bundle for file c:\Users\ASUS\.vscode\extensions\ms-edgedevtools.vscode-edge-devtools-2.1.10\out\extension
+2026-03-21 19:08:40.136 [error] [Window] [Extension Host] Failed to load message bundle for file c:\Users\ASUS\.vscode\extensions\ms-edgedevtools.vscode-edge-devtools-2.1.10\out\extension
+2026-03-21 19:08:40.137 [error] [Window] [Extension Host] Failed to load message bundle for file c:\Users\ASUS\.vscode\extensions\ms-edgedevtools.vscode-edge-devtools-2.1.10\out\extension
+2026-03-21 19:08:40.138 [error] [Window] [Extension Host] Failed to load message bundle for file c:\Users\ASUS\.vscode\extensions\ms-edgedevtools.vscode-edge-devtools-2.1.10\out\extension
+2026-03-21 19:08:40.139 [error] [Window] [Extension Host] Failed to load message bundle for file c:\Users\ASUS\.vscode\extensions\ms-edgedevtools.vscode-edge-devtools-2.1.10\out\extension
+2026-03-21 19:08:40.140 [error] [Window] [Extension Host] Failed to load message bundle for file c:\Users\ASUS\.vscode\extensions\ms-edgedevtools.vscode-edge-devtools-2.1.10\out\extension
+2026-03-21 19:08:40.141 [error] [Window] [Extension Host] Failed to load message bundle for file c:\Users\ASUS\.vscode\extensions\ms-edgedevtools.vscode-edge-devtools-2.1.10\out\extension
+2026-03-21 19:08:40.142 [error] [Window] [Extension Host] Failed to load message bundle for file c:\Users\ASUS\.vscode\extensions\ms-edgedevtools.vscode-edge-devtools-2.1.10\out\extension
+2026-03-21 19:08:40.163 [info] [Window] [perf] Render performance baseline is 56ms
+2026-03-21 19:08:40.313 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.microsoft-authentication, startup: false, activationEvent: 'onAuthenticationRequest:microsoft'
+2026-03-21 19:08:40.698 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2026-03-21 19:08:40.894 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2026-03-21 19:08:40.940 [info] [Extension Host] ExtensionService#_doActivateExtension github.vscode-github-actions, startup: true, activationEvent: 'workspaceContains:**/.github/workflows/**,**/action.yml,**/action.yaml'
+2026-03-21 19:08:41.590 [info] [GitHub Copilot Chat] [GitExtensionServiceImpl] Initializing Git extension service.
+2026-03-21 19:08:41.591 [info] [GitHub Authentication] Reading sessions from keychain...
+2026-03-21 19:08:41.592 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:08:41.592 [info] [GitHub Authentication] Got stored sessions!
+2026-03-21 19:08:41.592 [info] [GitHub Authentication] Got 4 verified sessions.
+2026-03-21 19:08:41.592 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:08:41.592 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:08:41.592 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:08:41.592 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:08:41.592 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:08:41.592 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:08:41.593 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:08:41.593 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:08:41.593 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:08:41.593 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:08:41.593 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:08:41.593 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:08:41.593 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:08:41.593 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:08:41.593 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:08:41.593 [info] [GitHub Authentication] Getting sessions for read:user,repo,user:email,workflow...
+2026-03-21 19:08:41.593 [info] [GitHub Authentication] Got 1 sessions for read:user,repo,user:email,workflow...
+2026-03-21 19:08:41.593 [info] [GitHub Authentication] Getting sessions for repo,workflow...
+2026-03-21 19:08:41.593 [info] [GitHub Authentication] Got 1 sessions for repo,workflow...
+2026-03-21 19:08:41.633 [info] [GitHub Authentication] Getting sessions for repo,workflow...
+2026-03-21 19:08:41.633 [info] [GitHub Authentication] Got 1 sessions for repo,workflow...
+2026-03-21 19:08:41.640 [info] [Microsoft Authentication] [aebc6443-996d-45c2-90f0-388ff96faa56] Native Broker enabled: true
+2026-03-21 19:08:41.656 [info] [Git] [main] Log level: Info
+2026-03-21 19:08:41.656 [info] [Git] [main] Validating found git in: "C:\Program Files\Git\cmd\git.exe"
+2026-03-21 19:08:41.657 [info] [Git] [main] Validating found git in: "C:\Program Files (x86)\Git\cmd\git.exe"
+2026-03-21 19:08:41.657 [info] [Git] [main] Validating found git in: "C:\Program Files\Git\cmd\git.exe"
+2026-03-21 19:08:41.657 [info] [Git] [main] Validating found git in: "C:\Users\ASUS\AppData\Local\Programs\Git\cmd\git.exe"
+2026-03-21 19:08:41.686 [warning] [Microsoft Authentication] [Sat, 21 Mar 2026 17:08:41 GMT] : [aebc6443-996d-45c2-90f0-388ff96faa56] : @azure/msal-node-extensions@1.5.25 : Warning - [MSAL:0002]	WARNING	LogAccountInfoNoThrow:90	Log MSAL Account:
+2026-03-21 19:08:41.687 [warning] [Microsoft Authentication] [Sat, 21 Mar 2026 17:08:41 GMT] : [aebc6443-996d-45c2-90f0-388ff96faa56] : @azure/msal-node-extensions@1.5.25 : Warning - [MSAL:0002]	WARNING	LogAccountInfoNoThrow:100	MSAL Account JSON chunk 1/6: {"ageGroup":3,"aio":"DnVwCTkzOhlXi8neL9FrdewPub!LW5rnzaE89izUIi1UhdqL2jwXRTMNE0Shb78mUoGFnxlBmqPVtltnv0JiEOIa3D!ifyj6oDwsENhQVFHqdYAYlsw8opGbjw309eMUqDaf8K9oXi1LXyihgMzR!Pt2m9VXLI48HZoLn!xvu*wrrtZrifF!rT2wS5I8O6tivw$$","alternative_account_id":"","at_hash":"RAFTND9ikAQAQn-c8G49ZA","aud":"82864fa0-ed49-4711-8395-a0e6003dca1f","authority_type":"MSSTS","birthdate":"1990-06-10","client_info":"eyJ2ZXIiOiIxLjAiLCJzdWIiOiJBQUFBQUFBQUFBQUFBQUFBQUFBQUFEOEpjREt6MVZkaHpmc1ZUV3JGLW9BIiwibmFtZSI6IlZpbiBDbG9l
+2026-03-21 19:08:41.687 [warning] [Microsoft Authentication] [Sat, 21 Mar 2026 17:08:41 GMT] : [aebc6443-996d-45c2-90f0-388ff96faa56] : @azure/msal-node-extensions@1.5.25 : Warning - [MSAL:0002]	WARNING	LogAccountInfoNoThrow:100	MSAL Account JSON chunk 2/6: dGUiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJjbG9ldGV2aW5jZTk5QGdtYWlsLmNvbSIsIm9pZCI6IjAwMDAwMDAwLTAwMDAtMDAwMC01YWYzLTZhNGM0NDgxYmVkYyIsImVtYWlsIjoiY2xvZXRldmluY2U5OUBnbWFpbC5jb20iLCJ0aWQiOiI5MTg4MDQwZC02YzY3LTRjNWItYjExMi0zNmEzMDRiNjZkYWQiLCJob21lX29pZCI6IjAwMDAwMDAwLTAwMDAtMDAwMC01YWYzLTZhNGM0NDgxYmVkYyIsInVpZCI6IjAwMDAwMDAwLTAwMDAtMDAwMC01YWYzLTZhNGM0NDgxYmVkYyIsInV0aWQiOiI5MTg4MDQwZC02YzY3LTRjNWItYjExMi0zNmEzMDRiNjZkYWQifQ","ctry":"ZA","debug_info":"Account from: cache_token_response, correlation_id
+2026-03-21 19:08:41.687 [warning] [Microsoft Authentication] [Sat, 21 Mar 2026 17:08:41 GMT] : [aebc6443-996d-45c2-90f0-388ff96faa56] : @azure/msal-node-extensions@1.5.25 : Warning - [MSAL:0002]	WARNING	LogAccountInfoNoThrow:100	MSAL Account JSON chunk 3/6: : beb6af0c-2610-4a90-96db-a0d79142e2dc, timestamp: 2026-03-14T16:40:27.000Z","email":"cloetevince99@gmail.com","environment":"login.windows.net","exp":1773592825,"family_name":"Cloete","given_name":"Vin","home_account_id":"00000000-0000-0000-5af3-6a4c4481bedc.9188040d-6c67-4c5b-b112-36a304b66dad","home_environment":"","iat":1773506125,"idtyp":"user","iss":"https://login.microsoftonline.com/9188040d-6c67-4c5b-b112-36a304b66dad/v2.0","local_account_id":"00000000-0000-0000-5af3-6a4c4481bedc","login
+2026-03-21 19:08:41.687 [warning] [Microsoft Authentication] [Sat, 21 Mar 2026 17:08:41 GMT] : [aebc6443-996d-45c2-90f0-388ff96faa56] : @azure/msal-node-extensions@1.5.25 : Warning - [MSAL:0002]	WARNING	LogAccountInfoNoThrow:100	MSAL Account JSON chunk 4/6: _hint":"M$EjN4nOO49Wz14yMrFty_wygknpyTn1qSWpaZl5xqaemQnpuYmaOXnJ8rcWlH5z8WALfBEy8","middle_name":"","name":"Vin Cloete","nbf":1773506125,"oid":"00000000-0000-0000-5af3-6a4c4481bedc","password_change_url":"","password_expiry":0,"preferred_username":"cloetevince99@gmail.com","puid":"00037FFF9D8C92E8","realm":"9188040d-6c67-4c5b-b112-36a304b66dad","sub":"AAAAAAAAAAAAAAAAAAAAAD8JcDKz1VdhzfsVTWrF-oA","tid":"9188040d-6c67-4c5b-b112-36a304b66dad","username":"cloetevince99@gmail.com","ver":"2.0","wam_ac
+2026-03-21 19:08:41.687 [warning] [Microsoft Authentication] [Sat, 21 Mar 2026 17:08:41 GMT] : [aebc6443-996d-45c2-90f0-388ff96faa56] : @azure/msal-node-extensions@1.5.25 : Warning - [MSAL:0002]	WARNING	LogAccountInfoNoThrow:100	MSAL Account JSON chunk 5/6: count_ids":"{\"0ec893e0-5785-4de6-99da-4ed124e5296c\":\"00037FFF9D8C92E8\",\"15ddab63-ba81-45db-9bb6-6f8bc445c459\":\"00037FFF9D8C92E8\",\"5d661950-3475-41cd-a2c3-d671a3162bc1\":\"00037FFF9D8C92E8\",\"82864fa0-ed49-4711-8395-a0e6003dca1f\":\"00037FFF9D8C92E8\",\"bed12bc0-3a62-470d-998c-e47546e7b039\":\"00037FFF9D8C92E8\",\"d7b530a4-7680-4c23-a8bf-c52c121d2e87\":\"00037FFF9D8C92E8\",\"e2ef5054-0287-4db6-afa3-013d96881fd3\":\"00037FFF9D8C92E8\",\"f3222e55-ab35-49de-81f3-88a3be08cf77\":\"00037FFF9D
+2026-03-21 19:08:41.688 [warning] [Microsoft Authentication] [Sat, 21 Mar 2026 17:08:41 GMT] : [aebc6443-996d-45c2-90f0-388ff96faa56] : @azure/msal-node-extensions@1.5.25 : Warning - [MSAL:0002]	WARNING	LogAccountInfoNoThrow:100	MSAL Account JSON chunk 6/6: 8C92E8\"}","xms_idrel":"3 0"}
+2026-03-21 19:08:41.688 [warning] [Microsoft Authentication] [Sat, 21 Mar 2026 17:08:41 GMT] : [aebc6443-996d-45c2-90f0-388ff96faa56] : @azure/msal-node-extensions@1.5.25 : Warning - [MSAL:0002]	WARNING	LogAccountInfoNoThrow:90	Log MSAL Account:
+2026-03-21 19:08:41.688 [warning] [Microsoft Authentication] [Sat, 21 Mar 2026 17:08:41 GMT] : [aebc6443-996d-45c2-90f0-388ff96faa56] : @azure/msal-node-extensions@1.5.25 : Warning - [MSAL:0002]	WARNING	LogAccountInfoNoThrow:100	MSAL Account JSON chunk 1/6: {"ageGroup":3,"aio":"DhlP0s7a1IlnQeCKFvW7VWKnaDnbPJJt8VJjUc3IYVZHyP0kJtN667pgSuPzXyw6ldO9tNCtSMzQ4Bh46OiNCeJ5I1Sp1IUFqSIWSoYdWXaxdn3casxxMzfRxAju2IK8OiJuhlyFDO!F*Tg7VKPhfxHHBYr1qwx49!F0zSp7UPCtSmcA4LnnKs6YGMSTtBSzUA$$","alternative_account_id":"","at_hash":"SgCI5m53X_mAAtF7uKbGeQ","aud":"e2ef5054-0287-4db6-afa3-013d96881fd3","authority_type":"MSSTS","birthdate":"1993-07-16","client_info":"eyJ2ZXIiOiIxLjAiLCJzdWIiOiJBQUFBQUFBQUFBQUFBQUFBQUFBQUFBd1oxTGpsSVZPQ0Z2Sll6UFNkSHo4IiwibmFtZSI6InZpbmNlIGNs
+2026-03-21 19:08:41.688 [warning] [Microsoft Authentication] [Sat, 21 Mar 2026 17:08:41 GMT] : [aebc6443-996d-45c2-90f0-388ff96faa56] : @azure/msal-node-extensions@1.5.25 : Warning - [MSAL:0002]	WARNING	LogAccountInfoNoThrow:100	MSAL Account JSON chunk 2/6: b2V0ZSIsInByZWZlcnJlZF91c2VybmFtZSI6ImdwZ3Zpc2lvbjkzQGdtYWlsLmNvbSIsIm9pZCI6IjAwMDAwMDAwLTAwMDAtMDAwMC1iNTE3LTE2ZDg2OTRlNGM0NiIsInRpZCI6IjkxODgwNDBkLTZjNjctNGM1Yi1iMTEyLTM2YTMwNGI2NmRhZCIsImhvbWVfb2lkIjoiMDAwMDAwMDAtMDAwMC0wMDAwLWI1MTctMTZkODY5NGU0YzQ2IiwidWlkIjoiMDAwMDAwMDAtMDAwMC0wMDAwLWI1MTctMTZkODY5NGU0YzQ2IiwidXRpZCI6IjkxODgwNDBkLTZjNjctNGM1Yi1iMTEyLTM2YTMwNGI2NmRhZCJ9","ctry":"ZA","debug_info":"Account from: cache_token_response, correlation_id: 2d71018a-fe9f-447b-8a9c-e84ac4577edb, timest
+2026-03-21 19:08:41.688 [warning] [Microsoft Authentication] [Sat, 21 Mar 2026 17:08:41 GMT] : [aebc6443-996d-45c2-90f0-388ff96faa56] : @azure/msal-node-extensions@1.5.25 : Warning - [MSAL:0002]	WARNING	LogAccountInfoNoThrow:100	MSAL Account JSON chunk 3/6: amp: 2026-03-21T16:59:54.000Z","email":"gpgvision93@gmail.com","environment":"login.windows.net","exp":1774198788,"family_name":"","given_name":"","home_account_id":"00000000-0000-0000-b517-16d8694e4c46.9188040d-6c67-4c5b-b112-36a304b66dad","home_environment":"","iat":1774112088,"idtyp":"user","iss":"https://login.microsoftonline.com/9188040d-6c67-4c5b-b112-36a304b66dad/v2.0","local_account_id":"00000000-0000-0000-b517-16d8694e4c46","login_hint":"M$EjN4nOPYuv7GgblnJy9zExJNL0gvyyzOzM-zNHZIz03MzNF
+2026-03-21 19:08:41.688 [warning] [Microsoft Authentication] [Sat, 21 Mar 2026 17:08:41 GMT] : [aebc6443-996d-45c2-90f0-388ff96faa56] : @azure/msal-node-extensions@1.5.25 : Warning - [MSAL:0002]	WARNING	LogAccountInfoNoThrow:100	MSAL Account JSON chunk 4/6: Lzs-VaJr5_Nt_EGAEAM3fFho","middle_name":"","name":"vince cloete","nbf":1774112088,"oid":"00000000-0000-0000-b517-16d8694e4c46","password_change_url":"","password_expiry":0,"preferred_username":"gpgvision93@gmail.com","puid":"00037FFF95DA9C91","realm":"9188040d-6c67-4c5b-b112-36a304b66dad","sub":"AAAAAAAAAAAAAAAAAAAAAAwZ1LjlIVOCFvJYzPSdHz8","tid":"9188040d-6c67-4c5b-b112-36a304b66dad","username":"gpgvision93@gmail.com","ver":"2.0","wam_account_ids":"{\"0ec893e0-5785-4de6-99da-4ed124e5296c\":\"000
+2026-03-21 19:08:41.688 [warning] [Microsoft Authentication] [Sat, 21 Mar 2026 17:08:41 GMT] : [aebc6443-996d-45c2-90f0-388ff96faa56] : @azure/msal-node-extensions@1.5.25 : Warning - [MSAL:0002]	WARNING	LogAccountInfoNoThrow:100	MSAL Account JSON chunk 5/6: 37FFF95DA9C91\",\"14638111-3389-403d-b206-a6a71d9f8f16\":\"00037FFF95DA9C91\",\"15ddab63-ba81-45db-9bb6-6f8bc445c459\":\"00037FFF95DA9C91\",\"1f7f6f43-2f81-429c-8499-293566d0ab0c\":\"00037FFF95DA9C91\",\"5d661950-3475-41cd-a2c3-d671a3162bc1\":\"00037FFF95DA9C91\",\"82864fa0-ed49-4711-8395-a0e6003dca1f\":\"00037FFF95DA9C91\",\"bed12bc0-3a62-470d-998c-e47546e7b039\":\"00037FFF95DA9C91\",\"d7b530a4-7680-4c23-a8bf-c52c121d2e87\":\"00037FFF95DA9C91\",\"e2ef5054-0287-4db6-afa3-013d96881fd3\":\"00037FF
+2026-03-21 19:08:41.688 [warning] [Microsoft Authentication] [Sat, 21 Mar 2026 17:08:41 GMT] : [aebc6443-996d-45c2-90f0-388ff96faa56] : @azure/msal-node-extensions@1.5.25 : Warning - [MSAL:0002]	WARNING	LogAccountInfoNoThrow:100	MSAL Account JSON chunk 6/6: F95DA9C91\",\"f3222e55-ab35-49de-81f3-88a3be08cf77\":\"00037FFF95DA9C91\"}","xms_idrel":"3 0"}
+2026-03-21 19:08:41.696 [info] [GitHub] Log level: Info
+2026-03-21 19:08:41.701 [info] [Microsoft Authentication] [getSessions] [all] starting
+2026-03-21 19:08:41.701 [info] [Microsoft Authentication] [getSessions] [all] returned 0 session(s)
+2026-03-21 19:08:41.702 [info] [Microsoft Authentication] [getSessions] [all] starting
+2026-03-21 19:08:41.702 [info] [Microsoft Authentication] [getSessions] [all] returned 0 session(s)
+2026-03-21 19:08:41.702 [info] [Microsoft Authentication] [getSessions] [all] starting
+2026-03-21 19:08:41.703 [info] [Microsoft Authentication] [getSessions] [all] returned 0 session(s)
+2026-03-21 19:08:41.705 [info] [Microsoft Authentication] [getSessions] [499b84ac-1321-427f-aa17-267ca6975798/.default offline_access] starting
+2026-03-21 19:08:41.705 [info] [Microsoft Authentication] [aebc6443-996d-45c2-90f0-388ff96faa56] Native Broker enabled: true
+2026-03-21 19:08:41.786 [warning] [Git] Unable to find git. Error: not found: git.exe
+2026-03-21 19:08:41.791 [warning] [Git] [main] Failed to create model: Error: Git installation not found.
+2026-03-21 19:08:41.792 [info] [GitHub Copilot Chat] [GitExtensionServiceImpl] Successfully activated the vscode.git extension.
+2026-03-21 19:08:41.793 [info] [GitHub Copilot Chat] [GitExtensionServiceImpl] Enablement state of the vscode.git extension: false.
+2026-03-21 19:08:41.795 [info] [Microsoft Authentication] [getSessions] [499b84ac-1321-427f-aa17-267ca6975798/.default offline_access] returned 0 session(s)
+2026-03-21 19:08:41.821 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:08:41.821 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:08:41.974 [info] [GitHub Copilot Chat] ConversationFeature: Waiting for copilot token to activate conversation feature
+2026-03-21 19:08:42.152 [info] [GitHub Authentication] Getting sessions for read:user,repo,user:email,workflow...
+2026-03-21 19:08:42.152 [info] [GitHub Authentication] Got 1 sessions for read:user,repo,user:email,workflow...
+2026-03-21 19:08:42.153 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:08:42.153 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:08:42.154 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:08:42.154 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:08:42.179 [info] [GitHub Copilot Chat] [CopilotCLI] MCP server started. Lock file: C:\Users\ASUS\.copilot\ide\b26baf99-5078-477b-822f-1bdeab91c4e4.lock
+2026-03-21 19:08:42.179 [info] [GitHub Copilot Chat] [CopilotCLI] Server URI: pipe:%5C%5C.%5Cpipe%5Cmcp-56bf5629-c5c8-4e36-a734-3a0f87570b8d.sock#%2Fmcp
+2026-03-21 19:08:42.700 [info] [GitHub Copilot Chat] Logged in as gpgvision93-max
+2026-03-21 19:08:42.710 [info] [GitHub Copilot Chat] Using the Electron fetcher.
+2026-03-21 19:08:42.736 [info] [GitHub Authentication] Getting sessions for repo,workflow...
+2026-03-21 19:08:42.736 [info] [GitHub Authentication] Got 1 sessions for repo,workflow...
+2026-03-21 19:08:42.739 [info] [GitHub Authentication] Getting sessions for read:user,repo,user:email,workflow...
+2026-03-21 19:08:42.739 [info] [GitHub Authentication] Got 1 sessions for read:user,repo,user:email,workflow...
+2026-03-21 19:08:42.750 [error] [Extension Host] Activating extension github.vscode-github-actions failed due to an error:
+2026-03-21 19:08:42.750 [error] [Extension Host] Error: Git model not found
+	at Cs.getAPI (c:\Users\ASUS\AppData\Local\Programs\Microsoft VS Code\07ff9d6178\resources\app\extensions\git\dist\main.js:115:32452)
+	at be (c:\Users\ASUS\.vscode\extensions\github.vscode-github-actions-0.31.2\dist\extension-node.js:1:1150531)
+	at De (c:\Users\ASUS\.vscode\extensions\github.vscode-github-actions-0.31.2\dist\extension-node.js:1:1150946)
+	at async gs (c:\Users\ASUS\.vscode\extensions\github.vscode-github-actions-0.31.2\dist\extension-node.js:1:1340119)
+	at async eb._activate (file:///c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/07ff9d6178/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:494:15965)
+	at async eb._waitForDepsThenActivate (file:///c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/07ff9d6178/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:494:15907)
+	at async eb._initialize (file:///c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/07ff9d6178/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:494:15274)
+2026-03-21 19:08:42.751 [info] [Extension Host] Eager extensions activated
+2026-03-21 19:08:43.378 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2026-03-21 19:08:43.388 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2026-03-21 19:08:43.435 [info] [Extension Host] ExtensionService#_doActivateExtension eamodio.gitlens, startup: false, activationEvent: 'onStartupFinished'
+2026-03-21 19:08:43.661 [info] [GitHub Copilot Chat] Got Copilot token for gpgvision93-max
+2026-03-21 19:08:43.661 [info] [GitHub Copilot Chat] Copilot Chat: 0.40.1, VS Code: 1.112.0
+2026-03-21 19:08:43.688 [info] [GitHub Copilot Chat] [context keys] Setting context key: github.copilot-chat.activated
+2026-03-21 19:08:43.691 [info] [GitHub Copilot Chat] activationBlocker from 'languageModelAccess' took for 1805ms
+2026-03-21 19:08:43.713 [info] [GitHub Authentication] FetcherService: Node fetch failed with status: 429 Too Many Requests
+2026-03-21 19:08:43.716 [info] [GitHub Authentication] Unable to resolve optional EDU details. Status: 429 Too Many Requests
+2026-03-21 19:08:44.079 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:08:44.079 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:08:44.079 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:08:44.080 [info] [Microsoft Authentication] [getSessions] [499b84ac-1321-427f-aa17-267ca6975798/.default offline_access] starting
+2026-03-21 19:08:44.080 [info] [Microsoft Authentication] [getSessions] [499b84ac-1321-427f-aa17-267ca6975798/.default offline_access] returned 0 session(s)
+2026-03-21 19:08:44.080 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:08:44.201 [info] [GitHub Authentication] Getting sessions for read:user,repo,user:email...
+2026-03-21 19:08:44.202 [info] [GitHub Authentication] Got 0 sessions for read:user,repo,user:email...
+2026-03-21 19:08:44.202 [info] [GitHub Authentication] Getting sessions for read:user,repo,user:email,workflow...
+2026-03-21 19:08:44.202 [info] [GitHub Authentication] Got 1 sessions for read:user,repo,user:email,workflow...
+2026-03-21 19:08:44.204 [info] [GitLens] To enable debug logging, run "GitLens: Enable Debug Logging" or "Developer: Set Log Level..." from the Command Palette
+2026-03-21 19:08:44.204 [error] [GitLens]   [            1] GitLens v17.11.1  activating in Visual Studio Code (1.112.0) on the desktop; mode=production,language='en', logLevel='info', defaultDateLocale='null' (vscode|16616c989fe2bdeea3b3d883af87fede70de4c72d5658c2817023aebc0fb5ee3|95e5a6aa-24dd-45e7-9134-9c52af99a3581774112910742)
+2026-03-21 19:08:44.204 [error] [GitLens]   [            1] GitLens v17.11.1 activated [176ms]
+2026-03-21 19:08:44.205 [error] [GitLens] Error: AggregateError(2)
+	Error: Unable to find git
+	Error: Unable to find git   [   6f →    70] LocalGitProvider.findGit — failed [110ms]
+2026-03-21 19:08:44.205 [error] [GitLens] Error: AggregateError(2)
+	Error: Unable to find git
+	Error: Unable to find git   [   6e →    6f] LocalGitProvider.discoverRepositories — failed [111ms]
+2026-03-21 19:08:44.205 [error] [GitLens] Error: AggregateError(2)
+	Error: Unable to find git
+	Error: Unable to find git   [   6d →    6e] GitProviderService.discoverRepositoriesCore Git Provider(git) failed discovering repositories in file:///c:/Users/ASUS/Documents/GitHub/OpenBCI_GUI
+2026-03-21 19:08:44.205 [info] [GitLens]    [IPC          ] Server started on http://127.0.0.1:56052
+2026-03-21 19:08:44.388 [info] [GitHub Copilot Chat] AuthenticationService: firing onDidAuthenticationChange from handleAuthChangeEvent. Has token: true
+2026-03-21 19:08:44.388 [info] [GitHub Copilot Chat] copilot token sku: free_limited_copilot
+2026-03-21 19:08:44.388 [info] [GitHub Copilot Chat] ConversationFeature: Activating contributions
+2026-03-21 19:08:44.388 [info] [GitHub Copilot Chat] GitHub.vscode-pull-request-github extension is not yet activated.
+2026-03-21 19:08:44.423 [info] [GitHub Copilot Chat] Registering default platform agent...
+2026-03-21 19:08:44.425 [info] [GitHub Copilot Chat] ConversationFeature: onDidAuthenticationChange has token: true
+2026-03-21 19:08:44.427 [info] [GitHub Copilot Chat] [code-referencing] Public code references are enabled.
+2026-03-21 19:08:44.430 [info] [GitHub Copilot Chat] activationBlocker from 'conversationFeature' took for 2563ms
+2026-03-21 19:08:44.481 [info] [GitHub Copilot Chat] GithubAvailableEmbeddingTypesManager: Got embeddings. Primary: metis-1024-I16-Binary. Deprecated: 
+2026-03-21 19:08:44.489 [info] [GitHub Copilot Chat] WorkspaceChunkSearchService: using embedding type metis-1024-I16-Binary
+2026-03-21 19:08:44.519 [warning] [GitLens] [    a →     b] ServerConnection.fetch(url=https://configs.gitkraken.dev/gitlens/product.json, options=undefined) completed [*759ms] (slow)
+2026-03-21 19:08:44.520 [warning] [GitLens] [    9 →     a] ServerConnection.fetchGkConfig(path=product.json, options=undefined) completed [*760ms] (slow)
+2026-03-21 19:08:44.600 [info] [GitHub Copilot Chat] Fetched model metadata in 2673ms edb58fe0-216e-44b7-8992-1105242fa3c1
+2026-03-21 19:08:44.685 [warning] [GitLens] [   75 →    94] GitHubIntegration.isConnected returned false [*750ms] (slow)
+2026-03-21 19:08:44.871 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:08:44.871 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:08:44.883 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:08:44.883 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:08:44.884 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:08:44.884 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:08:44.945 [info] [GitHub Copilot Chat] BYOK: Copilot Chat known models list fetched successfully.
+2026-03-21 19:08:44.955 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:08:44.955 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:08:44.968 [info] [GitHub Copilot Chat] Latest entry: ccreq:latest.copilotmd
+2026-03-21 19:08:44.970 [info] [GitHub Copilot Chat] ccreq:d5672b84.copilotmd | markdown
+2026-03-21 19:08:45.236 [info] [GitHub Authentication] Getting sessions for read:user,repo,user:email,workflow...
+2026-03-21 19:08:45.236 [info] [GitHub Authentication] Got 1 sessions for read:user,repo,user:email,workflow...
+2026-03-21 19:08:46.387 [warning] [GitLens] [   75 →    a1] GkCliIntegrationProvider.checkCliUpdateRequired completed [*2354ms] (slow)
+2026-03-21 19:08:46.387 [info] [GitLens]    [CLI          ] CLI core version is 3.1.54
+2026-03-21 19:08:47.272 [warning] [GitLens] [   c4 →    cd] Storage.deleteWorkspace(e=connected:azureDevOps) completed [*1713ms] (slow)
+2026-03-21 19:08:47.272 [warning] [GitLens] [   87 →    c4] AzureDevOpsIntegration.isConnected returned false [*2128ms] (slow)
+2026-03-21 19:08:47.789 [warning] [GitLens] [   db →    dc] Storage.getSecret completed [*515ms] (slow)
+2026-03-21 19:08:47.837 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:08:47.837 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:08:47.840 [warning] [GitLens] [   d9 →    db] BitbucketAuthenticationProvider.getSession(e={"domain":"bitbucket.org","scopes":["account:read","repository:read","pullrequest:read","issue:read"]}, t={"createIfNeeded":false,"source":"integrations"}) completed [*565ms] (slow)
+2026-03-21 19:08:47.846 [warning] [GitLens] [   87 →    d9] BitbucketIntegration.isConnected returned false [*573ms] (slow)
+2026-03-21 19:08:47.849 [info] [GitHub Authentication] Getting sessions for read:user,repo,user:email,workflow...
+2026-03-21 19:08:47.849 [info] [GitHub Authentication] Got 1 sessions for read:user,repo,user:email,workflow...
+2026-03-21 19:08:48.938 [warning] [GitLens] [   b9 →    ba] VSCodeGkMcpProvider.getMcpConfigurationFromCLICore completed [*4190ms] (slow)
+2026-03-21 19:08:48.938 [warning] [GitLens] [   b8 →    b9] VSCodeGkMcpProvider.getMcpConfigurationFromCLI completed [*4190ms] (slow)
+2026-03-21 19:08:48.939 [warning] [GitLens] [   87 →    b8] VSCodeGkMcpProvider.provideMcpServerDefinitions({"isCancellationRequested":false}) returned [{"label":"GitKraken","command":"c:\\Users\\ASUS\\AppData\\Roaming\\Code\\User\\globalStorage\\eamodio.gitlens\\gk.exe","args":["mcp","--host=vscode","--source=gitlens","--scheme=vscode"],"env":{"GK_GL_PATH":"C:\\Users\\ASUS\\AppData\\Local\\Temp\\gitkraken\\gitlens\\gitlens-ipc-server-25248-56052.json"},"version":"3.1.54"}] [*4191ms] (slow)
+2026-03-21 19:10:11.260 [warning] [GitLens] [gate] findRepositoryUri has been pending for 90+ seconds (possible deadlock) — prop=$gate$findRepositoryUri$[{"$mid":1,"fsPath":"c:\\Users\\ASUS\\Documents\\GitHub\\OpenBCI_GUI\\OpenBCI_GUI\\data\\EEG_Sample_Data\\OpenBCI_GUI-v6-meditation.txt","_sep":1,"external":"file:///c%3A/Users/ASUS/Documents/GitHub/OpenBCI_GUI/OpenBCI_GUI/data/EEG_Sample_Data/OpenBCI_GUI-v6-meditation.txt","path":"/C:/Users/ASUS/Documents/GitHub/OpenBCI_GUI/OpenBCI_GUI/data/EEG_Sample_Data/OpenBCI_GUI-v6-meditation.txt","scheme":"file"},null]
+2026-03-21 19:11:41.263 [warning] [GitLens] [gate] findRepositoryUri has been pending for 180+ seconds (possible deadlock) — prop=$gate$findRepositoryUri$[{"$mid":1,"fsPath":"c:\\Users\\ASUS\\Documents\\GitHub\\OpenBCI_GUI\\OpenBCI_GUI\\data\\EEG_Sample_Data\\OpenBCI_GUI-v6-meditation.txt","_sep":1,"external":"file:///c%3A/Users/ASUS/Documents/GitHub/OpenBCI_GUI/OpenBCI_GUI/data/EEG_Sample_Data/OpenBCI_GUI-v6-meditation.txt","path":"/C:/Users/ASUS/Documents/GitHub/OpenBCI_GUI/OpenBCI_GUI/data/EEG_Sample_Data/OpenBCI_GUI-v6-meditation.txt","scheme":"file"},null]
+2026-03-21 19:12:59.944 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:12:59.944 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:12:59.971 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:12:59.971 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:13:41.255 [warning] [GitLens] [gate] findRepositoryUri timeout after 300000ms, forcing gate clear — prop=$gate$findRepositoryUri$[{"$mid":1,"fsPath":"c:\\Users\\ASUS\\Documents\\GitHub\\OpenBCI_GUI\\OpenBCI_GUI\\data\\EEG_Sample_Data\\OpenBCI_GUI-v6-meditation.txt","_sep":1,"external":"file:///c%3A/Users/ASUS/Documents/GitHub/OpenBCI_GUI/OpenBCI_GUI/data/EEG_Sample_Data/OpenBCI_GUI-v6-meditation.txt","path":"/C:/Users/ASUS/Documents/GitHub/OpenBCI_GUI/OpenBCI_GUI/data/EEG_Sample_Data/OpenBCI_GUI-v6-meditation.txt","scheme":"file"},null]
+2026-03-21 19:13:41.255 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [   d1 →    d2] GitProviderService.getOrOpenRepository 
+2026-03-21 19:13:41.255 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [   d1 →    d2] GitProviderService.getOrOpenRepository — failed [300012ms]
+2026-03-21 19:13:41.255 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [   d0 →    d1] GitUri.fromUri — failed [300012ms]
+2026-03-21 19:13:41.256 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [   cf →    d0] TrackedGitDocument(TextDocument(plaintext, dirty=false, file:///c:/Users/ASUS/Documents/GitHub/OpenBCI_GUI/OpenBCI_GUI/data/EEG_Sample_Data/OpenBCI_GUI-v6-meditation.txt)).initialize — failed [300012ms]
+2026-03-21 19:13:41.256 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [   dd →    de] GitDocumentTracker.get — failed [299446ms]
+2026-03-21 19:13:41.256 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [   ea →    eb] GitDocumentTracker.get — failed [295145ms]
+2026-03-21 19:13:41.256 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [   f1 →    f2] GitDocumentTracker.get — failed [281339ms]
+2026-03-21 19:13:41.256 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [   f7 →    f8] GitDocumentTracker.get — failed [277472ms]
+2026-03-21 19:13:41.256 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [           cf] GitDocumentTracker.addCore — failed [300012ms]
+2026-03-21 19:13:41.257 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [           dd] LineTracker.updateState — failed [299447ms]
+2026-03-21 19:13:41.257 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [           ea] LineTracker.updateState — failed [295146ms]
+2026-03-21 19:13:41.257 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [           f1] LineTracker.updateState — failed [281340ms]
+2026-03-21 19:13:41.257 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [           f7] LineTracker.updateState — failed [277473ms]
+2026-03-21 19:14:30.994 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:14:30.994 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:14:31.012 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:14:31.013 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:14:35.403 [warning] [GitLens] [gate] findRepositoryUri has been pending for 90+ seconds (possible deadlock) — prop=$gate$findRepositoryUri$[{"$mid":1,"fsPath":"c:\\Users\\ASUS\\Documents\\GitHub\\OpenBCI_GUI\\OpenBCI_GUI\\data\\EEG_Sample_Data\\OpenBCI_GUI-v6-blinks-jawClench-alpha.txt","_sep":1,"external":"file:///c%3A/Users/ASUS/Documents/GitHub/OpenBCI_GUI/OpenBCI_GUI/data/EEG_Sample_Data/OpenBCI_GUI-v6-blinks-jawClench-alpha.txt","path":"/c:/Users/ASUS/Documents/GitHub/OpenBCI_GUI/OpenBCI_GUI/data/EEG_Sample_Data/OpenBCI_GUI-v6-blinks-jawClench-alpha.txt","scheme":"file"},null]
+2026-03-21 19:15:56.489 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:15:56.489 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:15:56.491 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.debug-server-ready, startup: false, activationEvent: 'onDebugResolve'
+2026-03-21 19:15:56.545 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:15:56.546 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:15:57.273 [error] [Network] #23: https://marketplace.visualstudio.com/_apis/public/gallery/vscode/davidanson/vscode-markdownlint/latest - error GET Canceled
+2026-03-21 19:15:57.274 [error] [Network] #24: https://marketplace.visualstudio.com/_apis/public/gallery/vscode/donjayamanne/githistory/latest - error GET Canceled
+2026-03-21 19:15:57.275 [error] [Network] #25: https://marketplace.visualstudio.com/_apis/public/gallery/vscode/ms-azuretools/vscode-containers/latest - error GET Canceled
+2026-03-21 19:15:57.276 [error] [Network] #26: https://marketplace.visualstudio.com/_apis/public/gallery/vscode/github/copilot/latest - error GET Canceled
+2026-03-21 19:15:57.276 [error] [Network] #27: https://marketplace.visualstudio.com/_apis/public/gallery/vscode/dotjoshjohnson/xml/latest - error GET Canceled
+2026-03-21 19:15:57.277 [error] [Network] #28: https://marketplace.visualstudio.com/_apis/public/gallery/vscode/firefox-devtools/vscode-firefox-debug/latest - error GET Canceled
+2026-03-21 19:15:57.278 [error] [Network] #29: https://marketplace.visualstudio.com/_apis/public/gallery/vscode/dbaeumer/vscode-eslint/latest - error GET Canceled
+2026-03-21 19:15:57.278 [error] [Network] #30: https://marketplace.visualstudio.com/_apis/public/gallery/vscode/github/vscode-pull-request-github/latest - error GET Canceled
+2026-03-21 19:15:57.280 [error] [Window] Cancelled: Canceled: Canceled
+    at jXe.getLatestRawGalleryExtension (vscode-file://vscode-app/c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/07ff9d6178/resources/app/out/vs/workbench/workbench.desktop.main.js:1758:51955)
+    at async jXe.getLatestRawGalleryExtensionWithFallback (vscode-file://vscode-app/c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/07ff9d6178/resources/app/out/vs/workbench/workbench.desktop.main.js:1758:50459)
+    at async jXe.getLatestGalleryExtension (vscode-file://vscode-app/c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/07ff9d6178/resources/app/out/vs/workbench/workbench.desktop.main.js:1758:38875)
+    at async vscode-file://vscode-app/c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/07ff9d6178/resources/app/out/vs/workbench/workbench.desktop.main.js:1758:38132
+    at async Promise.all (index 0)
+    at async jXe.getExtensionsUsingResourceApi (vscode-file://vscode-app/c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/07ff9d6178/resources/app/out/vs/workbench/workbench.desktop.main.js:1758:38086)
+    at async jXe.getExtensions (vscode-file://vscode-app/c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/07ff9d6178/resources/app/out/vs/workbench/workbench.desktop.main.js:1758:36548)
+    at async nQ.getExtensions (vscode-file://vscode-app/c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/07ff9d6178/resources/app/out/vs/workbench/workbench.desktop.main.js:3320:21090)
+    at async x2t.getInstallableRecommendations (vscode-file://vscode-app/c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/07ff9d6178/resources/app/out/vs/workbench/workbench.desktop.main.js:3316:20963)
+    at async x2t.getAllRecommendationsModel (vscode-file://vscode-app/c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/07ff9d6178/resources/app/out/vs/workbench/workbench.desktop.main.js:3316:24604)
+    at async x2t.queryGallery (vscode-file://vscode-app/c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/07ff9d6178/resources/app/out/vs/workbench/workbench.desktop.main.js:3316:16684)
+    at async vscode-file://vscode-app/c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/07ff9d6178/resources/app/out/vs/workbench/workbench.desktop.main.js:3316:5963
+2026-03-21 19:16:05.418 [warning] [GitLens] [gate] findRepositoryUri has been pending for 180+ seconds (possible deadlock) — prop=$gate$findRepositoryUri$[{"$mid":1,"fsPath":"c:\\Users\\ASUS\\Documents\\GitHub\\OpenBCI_GUI\\OpenBCI_GUI\\data\\EEG_Sample_Data\\OpenBCI_GUI-v6-blinks-jawClench-alpha.txt","_sep":1,"external":"file:///c%3A/Users/ASUS/Documents/GitHub/OpenBCI_GUI/OpenBCI_GUI/data/EEG_Sample_Data/OpenBCI_GUI-v6-blinks-jawClench-alpha.txt","path":"/c:/Users/ASUS/Documents/GitHub/OpenBCI_GUI/OpenBCI_GUI/data/EEG_Sample_Data/OpenBCI_GUI-v6-blinks-jawClench-alpha.txt","scheme":"file"},null]
+2026-03-21 19:16:17.817 [warning] [GitLens] [gate] findRepositoryUri has been pending for 90+ seconds (possible deadlock) — prop=$gate$findRepositoryUri$[{"$mid":1,"fsPath":"c:\\Users\\ASUS\\Documents\\GitHub\\OpenBCI_GUI\\OpenBCI_GUI\\data\\EEG_Sample_Data\\Deprecated\\openBCI_2013-12-24_meditation.txt","_sep":1,"external":"file:///c%3A/Users/ASUS/Documents/GitHub/OpenBCI_GUI/OpenBCI_GUI/data/EEG_Sample_Data/Deprecated/openBCI_2013-12-24_meditation.txt","path":"/C:/Users/ASUS/Documents/GitHub/OpenBCI_GUI/OpenBCI_GUI/data/EEG_Sample_Data/Deprecated/openBCI_2013-12-24_meditation.txt","scheme":"file"},null]
+2026-03-21 19:16:32.860 [info] [GitHub Copilot Chat] Request ID for failed request: 510c49b3-7d50-4314-ba38-5a07a0fe1e7c
+2026-03-21 19:16:32.861 [error] [GitHub Copilot Chat] Server error: 402 {"error":{"message":"You have no quota","code":"quota_exceeded"}}
+2026-03-21 19:16:32.867 [info] [GitHub Copilot Chat] ccreq:8665cda2.copilotmd | quotaExceeded | gpt-4o-mini-2024-07-18 | 304ms | [intentDetection]
+2026-03-21 19:16:50.678 [info] [Window] Extension host (LocalProcess pid: 1400) is unresponsive.
+2026-03-21 19:16:54.977 [info] [Window] UNRESPONSIVE extension host: starting to profile NOW
+2026-03-21 19:17:00.182 [warning] [Window] UNRESPONSIVE extension host: 'github.copilot-chat' took 84.82392663784363% of 4254.484ms, saved PROFILE here: 'file:///c%3A/Users/ASUS/AppData/Local/Temp/exthost-75621c.cpuprofile'
+2026-03-21 19:19:35.948 [warning] [GitLens] [gate] findRepositoryUri has been pending for 180+ seconds (possible deadlock) — prop=$gate$findRepositoryUri$[{"$mid":1,"fsPath":"c:\\Users\\ASUS\\Documents\\GitHub\\OpenBCI_GUI\\OpenBCI_GUI\\data\\EEG_Sample_Data\\Deprecated\\openBCI_2013-12-24_meditation.txt","_sep":1,"external":"file:///c%3A/Users/ASUS/Documents/GitHub/OpenBCI_GUI/OpenBCI_GUI/data/EEG_Sample_Data/Deprecated/openBCI_2013-12-24_meditation.txt","path":"/C:/Users/ASUS/Documents/GitHub/OpenBCI_GUI/OpenBCI_GUI/data/EEG_Sample_Data/Deprecated/openBCI_2013-12-24_meditation.txt","scheme":"file"},null]
+2026-03-21 19:19:35.948 [warning] [GitLens] [gate] findRepositoryUri timeout after 300000ms, forcing gate clear — prop=$gate$findRepositoryUri$[{"$mid":1,"fsPath":"c:\\Users\\ASUS\\Documents\\GitHub\\OpenBCI_GUI\\OpenBCI_GUI\\data\\EEG_Sample_Data\\OpenBCI_GUI-v6-blinks-jawClench-alpha.txt","_sep":1,"external":"file:///c%3A/Users/ASUS/Documents/GitHub/OpenBCI_GUI/OpenBCI_GUI/data/EEG_Sample_Data/OpenBCI_GUI-v6-blinks-jawClench-alpha.txt","path":"/c:/Users/ASUS/Documents/GitHub/OpenBCI_GUI/OpenBCI_GUI/data/EEG_Sample_Data/OpenBCI_GUI-v6-blinks-jawClench-alpha.txt","scheme":"file"},null]
+2026-03-21 19:19:35.949 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  114 →   115] GitProviderService.getOrOpenRepository 
+2026-03-21 19:19:35.949 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  114 →   115] GitProviderService.getOrOpenRepository — failed [390547ms]
+2026-03-21 19:19:35.949 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  113 →   114] GitUri.fromUri — failed [390548ms]
+2026-03-21 19:19:35.949 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  112 →   113] TrackedGitDocument(TextDocument(plaintext, dirty=false, file:///c:/Users/ASUS/Documents/GitHub/OpenBCI_GUI/OpenBCI_GUI/data/EEG_Sample_Data/OpenBCI_GUI-v6-blinks-jawClench-alpha.txt)).initialize — failed [390548ms]
+2026-03-21 19:19:35.949 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  11c →   11d] GitDocumentTracker.get — failed [390259ms]
+2026-03-21 19:19:35.950 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  11e →   11f] GitDocumentTracker.get — failed [390227ms]
+2026-03-21 19:19:35.950 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  124 →   125] GitDocumentTracker.get — failed [352050ms]
+2026-03-21 19:19:35.950 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  126 →   127] GitDocumentTracker.get — failed [347898ms]
+2026-03-21 19:19:35.950 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  12a →   12b] GitDocumentTracker.get — failed [304838ms]
+2026-03-21 19:19:35.950 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [          112] GitDocumentTracker.addCore — failed [390548ms]
+2026-03-21 19:19:35.951 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [          11c] LineTracker.updateState — failed [390261ms]
+2026-03-21 19:19:35.951 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  11e →   124] LineTracker.updateState — failed [352052ms]
+2026-03-21 19:19:35.957 [info] [Window] Extension host (LocalProcess pid: 1400) is responsive.
+2026-03-21 19:19:40.019 [info] [Window] Extension host (LocalProcess pid: 1400) is unresponsive.
+2026-03-21 19:19:42.258 [info] [Window] UNRESPONSIVE extension host: starting to profile NOW
+2026-03-21 19:19:47.401 [warning] [Window] UNRESPONSIVE extension host: 'github.copilot-chat' took 83.37640383186762% of 4178.451ms, saved PROFILE here: 'file:///c%3A/Users/ASUS/AppData/Local/Temp/exthost-a71994.cpuprofile'
+2026-03-21 19:22:09.198 [warning] [GitLens] [gate] findRepositoryUri timeout after 300000ms, forcing gate clear — prop=$gate$findRepositoryUri$[{"$mid":1,"fsPath":"c:\\Users\\ASUS\\Documents\\GitHub\\OpenBCI_GUI\\OpenBCI_GUI\\data\\EEG_Sample_Data\\Deprecated\\openBCI_2013-12-24_meditation.txt","_sep":1,"external":"file:///c%3A/Users/ASUS/Documents/GitHub/OpenBCI_GUI/OpenBCI_GUI/data/EEG_Sample_Data/Deprecated/openBCI_2013-12-24_meditation.txt","path":"/C:/Users/ASUS/Documents/GitHub/OpenBCI_GUI/OpenBCI_GUI/data/EEG_Sample_Data/Deprecated/openBCI_2013-12-24_meditation.txt","scheme":"file"},null]
+2026-03-21 19:22:09.199 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  14f →   150] GitProviderService.getOrOpenRepository 
+2026-03-21 19:22:09.199 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  14f →   150] GitProviderService.getOrOpenRepository — failed [441390ms]
+2026-03-21 19:22:09.199 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  14e →   14f] GitUri.fromUri — failed [441390ms]
+2026-03-21 19:22:09.199 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  14d →   14e] TrackedGitDocument(TextDocument(plaintext, dirty=false, file:///c:/Users/ASUS/Documents/GitHub/OpenBCI_GUI/OpenBCI_GUI/data/EEG_Sample_Data/Deprecated/openBCI_2013-12-24_meditation.txt)).initialize — failed [441390ms]
+2026-03-21 19:22:09.199 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  157 →   158] GitDocumentTracker.get — failed [440798ms]
+2026-03-21 19:22:09.200 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  15d →   15e] GitDocumentTracker.get — failed [435599ms]
+2026-03-21 19:22:09.200 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  163 →   164] GitDocumentTracker.get — failed [433368ms]
+2026-03-21 19:22:09.200 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  169 →   16a] GitDocumentTracker.get — failed [432223ms]
+2026-03-21 19:22:09.200 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  16f →   170] GitDocumentTracker.get — failed [404869ms]
+2026-03-21 19:22:09.200 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  175 →   176] GitDocumentTracker.get — failed [385850ms]
+2026-03-21 19:22:09.200 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  17e →   17f] GitDocumentTracker.get — failed [367370ms]
+2026-03-21 19:22:09.200 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  184 →   185] GitDocumentTracker.get — failed [365213ms]
+2026-03-21 19:22:09.200 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  18a →   18b] GitDocumentTracker.get — failed [364051ms]
+2026-03-21 19:22:09.200 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  190 →   191] GitDocumentTracker.get — failed [356200ms]
+2026-03-21 19:22:09.200 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  196 →   197] GitDocumentTracker.get — failed [355805ms]
+2026-03-21 19:22:09.200 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  19e →   19f] GitDocumentTracker.get — failed [47ms]
+2026-03-21 19:22:09.201 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  12a →   14d] GitDocumentTracker.addCore — failed [441391ms]
+2026-03-21 19:22:09.202 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  12a →   157] LineTracker.updateState — failed [440800ms]
+2026-03-21 19:22:09.202 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  12a →   15d] LineTracker.updateState — failed [435602ms]
+2026-03-21 19:22:09.202 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  12a →   163] LineTracker.updateState — failed [433371ms]
+2026-03-21 19:22:09.202 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  12a →   169] LineTracker.updateState — failed [432225ms]
+2026-03-21 19:22:09.203 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  12a →   16f] LineTracker.updateState — failed [404871ms]
+2026-03-21 19:22:09.203 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  12a →   175] LineTracker.updateState — failed [385852ms]
+2026-03-21 19:22:09.203 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  12a →   17e] LineTracker.updateState — failed [367373ms]
+2026-03-21 19:22:09.203 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  12a →   184] LineTracker.updateState — failed [365216ms]
+2026-03-21 19:22:09.203 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  12a →   18a] LineTracker.updateState — failed [364053ms]
+2026-03-21 19:22:09.203 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  12a →   190] LineTracker.updateState — failed [356202ms]
+2026-03-21 19:22:09.203 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  12a →   196] LineTracker.updateState — failed [355808ms]
+2026-03-21 19:22:09.203 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  12a →   19e] LineTracker.updateState — failed [49ms]
+2026-03-21 19:22:09.206 [info] [Window] Extension host (LocalProcess pid: 1400) is responsive.
+2026-03-21 19:22:12.773 [info] [Window] Extension host (LocalProcess pid: 1400) is unresponsive.
+2026-03-21 19:22:14.767 [info] [Window] UNRESPONSIVE extension host: starting to profile NOW
+2026-03-21 19:22:19.888 [warning] [Window] UNRESPONSIVE extension host: 'github.copilot-chat' took 82.68818151545607% of 4139.396ms, saved PROFILE here: 'file:///c%3A/Users/ASUS/AppData/Local/Temp/exthost-1e3c6d.cpuprofile'
+2026-03-21 19:24:29.288 [info] [Window] Extension host (LocalProcess pid: 1400) is responsive.
+2026-03-21 19:24:33.409 [info] [Window] Extension host (LocalProcess pid: 1400) is unresponsive.
+2026-03-21 19:24:37.103 [info] [Window] UNRESPONSIVE extension host: starting to profile NOW
+2026-03-21 19:24:42.628 [warning] [Window] UNRESPONSIVE extension host: 'github.copilot-chat' took 66.5481376089142% of 3565.956ms, saved PROFILE here: 'file:///c%3A/Users/ASUS/AppData/Local/Temp/exthost-9334ae.cpuprofile'
+2026-03-21 19:26:29.496 [info] [Window] Extension host (LocalProcess pid: 1400) is responsive.
+2026-03-21 19:27:05.220 [info] [Window] Extension host (LocalProcess pid: 1400) is unresponsive.
+2026-03-21 19:27:07.459 [info] [Window] UNRESPONSIVE extension host: starting to profile NOW
+2026-03-21 19:27:12.602 [warning] [Window] UNRESPONSIVE extension host: 'github.copilot-chat' took 86.00928602031091% of 4314.163ms, saved PROFILE here: 'file:///c%3A/Users/ASUS/AppData/Local/Temp/exthost-69a200.cpuprofile'
+2026-03-21 19:28:09.182 [info] [Window] Extension host (LocalProcess pid: 1400) is responsive.
+2026-03-21 19:28:09.310 [info] [GitHub Copilot Chat] Fetched model metadata in 99810ms 01822150-f5a6-41e3-8c92-25c2694b8818
+2026-03-21 19:28:13.223 [info] [Window] Extension host (LocalProcess pid: 1400) is unresponsive.
+2026-03-21 19:28:16.915 [info] [Window] UNRESPONSIVE extension host: starting to profile NOW
+2026-03-21 19:28:22.047 [warning] [Window] UNRESPONSIVE extension host: 'github.copilot-chat' took 72.57502965516223% of 3637.909ms, saved PROFILE here: 'file:///c%3A/Users/ASUS/AppData/Local/Temp/exthost-a5ec1e.cpuprofile'
+2026-03-21 19:29:33.247 [info] [GitHub Copilot Chat] Summarized doc to fit token budget (48072.253745859365 / 127997): 192115 + 119 + 6
+2026-03-21 19:29:33.253 [info] [Window] Extension host (LocalProcess pid: 1400) is responsive.
+2026-03-21 19:29:33.254 [info] [Extension Host] ExtensionService#_doActivateExtension ms-python.vscode-pylance, startup: false, activationEvent: 'onMcpCollection:pylanceMcp'
+2026-03-21 19:29:33.893 [info] [GitHub Copilot Chat] Request ID for failed request: 196910ef-996d-4f9f-bccb-7e6799f62b44
+2026-03-21 19:29:33.899 [info] [GitHub Copilot Chat] ccreq:674ab994.copilotmd | markdown
+2026-03-21 19:29:33.958 [error] [GitHub Copilot Chat] Server error: 402 {"error":{"message":"You have no quota","code":"quota_exceeded"}}
+2026-03-21 19:29:33.965 [info] [GitHub Copilot Chat] ccreq:f4d54679.copilotmd | quotaExceeded | gpt-4o-mini-2024-07-18 | 184499ms | [progressMessages]
+2026-03-21 19:29:33.965 [warning] [GitHub Copilot Chat] [InlineChatProgressMessages] Failed to fetch messages for generate: You have no quota
+2026-03-21 19:29:33.971 [info] [GitHub Copilot Chat] Request ID for failed request: e7883939-7551-4f46-a37f-594fda355818
+2026-03-21 19:29:33.983 [error] [GitHub Copilot Chat] Server error: 402 {"error":{"message":"You have no quota","code":"quota_exceeded"}}
+2026-03-21 19:29:33.987 [info] [GitHub Copilot Chat] ccreq:e5350c60.copilotmd | quotaExceeded | gpt-4o-mini-2024-07-18 | 84821ms | [progressMessages]
+2026-03-21 19:29:33.987 [warning] [GitHub Copilot Chat] [InlineChatProgressMessages] Failed to fetch messages for edit: You have no quota
+2026-03-21 19:29:34.333 [info] [Extension Host] ExtensionService#_doActivateExtension ms-python.python, startup: false, activationEvent: 'api', root cause: ms-python.vscode-pylance
+2026-03-21 19:29:34.598 [info] [GitHub Copilot Chat] Request ID for failed request: 5942d562-2ba1-4b85-850e-248fa7ee273e
+2026-03-21 19:29:34.660 [error] [GitHub Copilot Chat] Server error: 402 {"error":{"message":"You have no quota","code":"quota_exceeded"}}
+2026-03-21 19:29:34.664 [info] [GitHub Copilot Chat] ccreq:e6d7bd81.copilotmd | quotaExceeded | gpt-4o-mini-2024-07-18 | 577ms | [title]
+2026-03-21 19:29:34.664 [error] [GitHub Copilot Chat] Failed to fetch conversation title because of response type (quotaExceeded) and reason (You have no quota)
+2026-03-21 19:29:34.680 [info] [Extension Host] ExtensionService#_doActivateExtension ms-python.vscode-python-envs, startup: false, activationEvent: 'api', root cause: ms-python.python
+2026-03-21 19:29:34.897 [info] [GitHub Copilot Chat] Request ID for failed request: 4b450a3e-a397-42a1-a1c9-38debad433d8
+2026-03-21 19:29:34.899 [error] [GitHub Copilot Chat] Server error: 402 {"error":{"message":"You have no quota","code":"quota_exceeded"}}
+2026-03-21 19:29:34.903 [info] [GitHub Copilot Chat] ccreq:da471072.copilotmd | quotaExceeded | claude-haiku-4.5 | 315ms | [inline/edit]
+2026-03-21 19:29:34.919 [info] [GitHub Copilot Chat] [ToolCallingLoop] Stop hook result: shouldContinue=false, reasons=undefined
+2026-03-21 19:29:34.930 [info] [Python] Environment discovery is managed by the Python Environments extension (ms-python.vscode-python-envs). Check the "Python Environments" output channel for environment-specific logs.
+2026-03-21 19:29:34.933 [info] [Python Environments] Python-envs extension version: 1.23.10791017
+2026-03-21 19:29:34.933 [info] [Python Environments] 
+=== Python Envs Configuration Levels ===
+2026-03-21 19:29:34.933 [info] [Python Environments] {
+  "section": "Python Envs Configuration Levels",
+  "defaultEnvManager": {
+    "workspaceFolderValue": "undefined",
+    "workspaceValue": "undefined",
+    "globalValue": "undefined",
+    "defaultValue": "ms-python.python:venv"
+  },
+  "defaultPackageManager": {
+    "workspaceFolderValue": "undefined",
+    "workspaceValue": "undefined",
+    "globalValue": "undefined",
+    "defaultValue": "ms-python.python:pip"
+  }
+}
+2026-03-21 19:29:34.933 [info] [Python Environments] [pet] Starting Python Locator c:\Users\ASUS\.vscode\extensions\ms-python.vscode-python-envs-1.23.10791017-win32-x64\python-env-tools\bin\pet.exe server
+2026-03-21 19:29:35.024 [info] [Python] [test-by-project] Activating project-based testing mode
+2026-03-21 19:29:35.024 [info] [Python] [test-by-project] Discovering projects for workspace: c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI
+2026-03-21 19:29:35.025 [info] [Python] Native locator: Refresh started
+2026-03-21 19:29:35.025 [info] [Python] [test-by-project] Found 1 total Python projects from API
+2026-03-21 19:29:35.025 [info] [Python] [test-by-project] Filtered to 1 projects in workspace
+2026-03-21 19:29:35.025 [info] [Python] [test-by-project] Creating adapter for: OpenBCI_GUI at file:///c%3A/Users/ASUS/Documents/GitHub/OpenBCI_GUI
+2026-03-21 19:29:35.043 [info] [Python Environments] [pet] configure: Sending configuration update: {"workspaceDirectories":["c:\\Users\\ASUS\\Documents\\GitHub\\OpenBCI_GUI"],"environmentDirectories":["c:/Users/ASUS/Documents/GitHub/OpenBCI_GUI/**/.venv"],"pipenvExecutable":"pipenv","poetryExecutable":"poetry","cacheDirectory":"c:\\Users\\ASUS\\AppData\\Roaming\\Code\\User\\globalStorage\\ms-python.vscode-python-envs\\pythonLocator"}
+2026-03-21 19:29:35.277 [info] [Python] > pyenv which python
+2026-03-21 19:29:35.277 [info] [Python] cwd: .
+2026-03-21 19:29:35.494 [error] [Python Environments] [pet] [2m   0.599526500s[0m [33m WARN[0m [2mpet_windows_registry::environments[0m[2m:[0m Failed to open HKLM\Software\Python, Os { code: 2, kind: NotFound, message: "The system cannot find the file specified." }
+
+2026-03-21 19:29:35.526 [info] [Python Environments] Discovered env: C:\Users\ASUS\AppData\Local\Python\pythoncore-3.14-64\python.exe
+2026-03-21 19:29:35.580 [info] [Python Environments] Discovered env: c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI\Networking-Test-Kit\BrainFlow\.venv\Scripts\python.exe
+2026-03-21 19:29:35.666 [info] [Python Environments] Resolved environment during PET refresh: c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI\Networking-Test-Kit\BrainFlow\.venv\Scripts\python.exe
+2026-03-21 19:29:36.593 [info] [GitHub Authentication] Getting sessions for codespace,gist,notifications,project,read:org,read:packages,read:project,read:user,repo,user:email,workflow,write:packages...
+2026-03-21 19:29:36.594 [info] [GitHub Authentication] Got 1 sessions for codespace,gist,notifications,project,read:org,read:packages,read:project,read:user,repo,user:email,workflow,write:packages...
+2026-03-21 19:29:36.641 [info] [GitHub Copilot Chat] Dropped current selection (12285 / 12285 tokens)
+2026-03-21 19:29:36.659 [info] [GitHub Copilot Chat] Dropped current selection (13600 / 108801 tokens)
+2026-03-21 19:29:37.445 [info] [Python Environments] [pet] Telemetry:  {"event":"RefreshPerformance","data":{"refreshPerformance":{"total":1963,"breakdown":{"GlobalVirtualEnvs":102,"Locators":1963,"Path":49,"Workspaces":57},"locators":{"Conda":1959,"PipEnv":2,"Pixi":0,"Poetry":2,"PyEnv":1,"Uv":0,"Venv":0,"VirtualEnv":0,"VirtualEnvWrapper":0,"WinPython":148,"WindowsRegistry":38,"WindowsStore":4}}}}
+2026-03-21 19:29:37.448 [info] [Python Environments] Found venv environment: .venv (3.14.3)
+2026-03-21 19:29:37.465 [info] [Python] Active interpreter [c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI]:  c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI\Networking-Test-Kit\BrainFlow\.venv\Scripts\python.exe
+2026-03-21 19:29:37.465 [info] [Python] [test-by-project] Registered 1 project(s) for c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI
+2026-03-21 19:29:37.475 [info] [Python] [test-by-project] Activated 1 project(s) for c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI
+2026-03-21 19:29:37.477 [info] [Python] [test-by-project] Subscribed to Python project changes
+2026-03-21 19:29:37.553 [error] [Python Environments] [pet] [2m   2.560154600s[0m [33m WARN[0m [2mpet_windows_registry::environments[0m[2m:[0m Failed to open HKLM\Software\Python, Os { code: 2, kind: NotFound, message: "The system cannot find the file specified." }
+
+2026-03-21 19:29:37.562 [info] [Python Environments] Python API: Changed environment from undefined to .venv (3.14.3) for: c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI
+2026-03-21 19:29:37.562 [info] [Python Environments] Internal: Changed environment from undefined to .venv (3.14.3) for: c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI
+2026-03-21 19:29:37.577 [info] [GitHub Copilot Chat] Request ID for failed request: 38e40bf4-7f52-403b-abda-a69dc3c2cd2a
+2026-03-21 19:29:37.580 [error] [GitHub Copilot Chat] Server error: 402 {"error":{"message":"You have no quota","code":"quota_exceeded"}}
+2026-03-21 19:29:37.587 [info] [GitHub Copilot Chat] ccreq:32272f00.copilotmd | quotaExceeded | grok-code-fast-1 | 809ms | [panel/explain]
+2026-03-21 19:29:37.664 [info] [GitHub Copilot Chat] [ToolCallingLoop] Stop hook result: shouldContinue=false, reasons=undefined
+2026-03-21 19:29:37.686 [info] [Python Environments] Discovered env: C:\Users\ASUS\AppData\Local\Python\pythoncore-3.14-64\python.exe
+2026-03-21 19:29:37.698 [info] [Python Environments] Discovered env: c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI\Networking-Test-Kit\BrainFlow\.venv\Scripts\python.exe
+2026-03-21 19:29:37.766 [info] [Python Environments] Resolved environment during PET refresh: c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI\Networking-Test-Kit\BrainFlow\.venv\Scripts\python.exe
+2026-03-21 19:29:37.956 [info] [Python Environments] [pet] Telemetry:  {"event":"RefreshPerformance","data":{"refreshPerformance":{"total":492,"breakdown":{"GlobalVirtualEnvs":72,"Locators":492,"Path":34,"Workspaces":56},"locators":{"Conda":485,"PipEnv":3,"Pixi":0,"Poetry":2,"PyEnv":0,"Uv":0,"Venv":0,"VirtualEnv":0,"VirtualEnvWrapper":0,"WinPython":90,"WindowsRegistry":19,"WindowsStore":0}}}}
+2026-03-21 19:29:37.961 [error] [Python Environments] [pet] [2m   3.073285500s[0m [33m WARN[0m [2mpet_windows_registry::environments[0m[2m:[0m Failed to open HKLM\Software\Python, Os { code: 2, kind: NotFound, message: "The system cannot find the file specified." }
+
+2026-03-21 19:29:37.975 [info] [Python Environments] Discovered env: C:\Users\ASUS\AppData\Local\Python\pythoncore-3.14-64\python.exe
+2026-03-21 19:29:38.008 [info] [Python Environments] Discovered env: c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI\Networking-Test-Kit\BrainFlow\.venv\Scripts\python.exe
+2026-03-21 19:29:38.062 [info] [Python Environments] Resolved environment during PET refresh: c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI\Networking-Test-Kit\BrainFlow\.venv\Scripts\python.exe
+2026-03-21 19:29:38.115 [info] [Python Language Server] Client: Pylance client (2026.1.1) started with python extension (2026.4.0)
+2026-03-21 19:29:38.367 [info] [Python Environments] [pet] Telemetry:  {"event":"RefreshPerformance","data":{"refreshPerformance":{"total":405,"breakdown":{"GlobalVirtualEnvs":47,"Locators":404,"Path":21,"Workspaces":35},"locators":{"Conda":401,"PipEnv":2,"Pixi":0,"Poetry":2,"PyEnv":1,"Uv":0,"Venv":0,"VirtualEnv":0,"VirtualEnvWrapper":0,"WinPython":84,"WindowsRegistry":14,"WindowsStore":2}}}}
+2026-03-21 19:29:38.370 [info] [Python Environments] Found venv environment: .venv (3.14.3)
+2026-03-21 19:29:38.381 [info] [Python] Native locator: Refresh finished in 3358 ms
+2026-03-21 19:29:38.383 [error] [Python Environments] [pet] [2m   3.484714200s[0m [33m WARN[0m [2mpet_windows_registry::environments[0m[2m:[0m Failed to open HKLM\Software\Python, Os { code: 2, kind: NotFound, message: "The system cannot find the file specified." }
+
+2026-03-21 19:29:38.386 [info] [Python Environments] Python API: Changed environment from .venv (3.14.3) to .venv (3.14.3) for: c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI
+2026-03-21 19:29:38.386 [info] [Python Environments] Internal: Changed environment from .venv (3.14.3) to .venv (3.14.3) for: c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI
+2026-03-21 19:29:38.391 [info] [Python Environments] Discovered env: C:\Users\ASUS\AppData\Local\Python\pythoncore-3.14-64\python.exe
+2026-03-21 19:29:38.420 [info] [Python Environments] Discovered env: c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI\Networking-Test-Kit\BrainFlow\.venv\Scripts\python.exe
+2026-03-21 19:29:38.465 [info] [Python Environments] Resolved environment during PET refresh: c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI\Networking-Test-Kit\BrainFlow\.venv\Scripts\python.exe
+2026-03-21 19:29:38.695 [info] [Python Environments] Conda not found, turning off conda features. [Error: Conda not found
+	at F (c:\Users\ASUS\.vscode\extensions\ms-python.vscode-python-envs-1.23.10791017-win32-x64\dist\extension.js:2:589558)
+	at runNextTicks (node:internal/process/task_queues:65:5)
+	at process.processImmediate (node:internal/timers:453:9)
+	at process.callbackTrampoline (node:internal/async_hooks:130:17)
+	at async L (c:\Users\ASUS\.vscode\extensions\ms-python.vscode-python-envs-1.23.10791017-win32-x64\dist\extension.js:2:589683)
+	at async t.registerCondaFeatures (c:\Users\ASUS\.vscode\extensions\ms-python.vscode-python-envs-1.23.10791017-win32-x64\dist\extension.js:2:609488)
+	at async t.safeRegister (c:\Users\ASUS\.vscode\extensions\ms-python.vscode-python-envs-1.23.10791017-win32-x64\dist\extension.js:2:280467)
+	at async Promise.all (index 1)
+	at async Immediate.<anonymous> (c:\Users\ASUS\.vscode\extensions\ms-python.vscode-python-envs-1.23.10791017-win32-x64\dist\extension.js:2:733663)]
+2026-03-21 19:29:38.698 [info] [Python Environments] [pet] Telemetry:  {"event":"RefreshPerformance","data":{"refreshPerformance":{"total":324,"breakdown":{"GlobalVirtualEnvs":48,"Locators":324,"Path":33,"Workspaces":43},"locators":{"Conda":321,"PipEnv":2,"Pixi":0,"Poetry":2,"PyEnv":0,"Uv":0,"Venv":0,"VirtualEnv":0,"VirtualEnvWrapper":0,"WinPython":69,"WindowsRegistry":19,"WindowsStore":1}}}}
+2026-03-21 19:29:38.700 [error] [Python Environments] [pet] [2m   3.813651000s[0m [33m WARN[0m [2mpet_windows_registry::environments[0m[2m:[0m Failed to open HKLM\Software\Python, Os { code: 2, kind: NotFound, message: "The system cannot find the file specified." }
+
+2026-03-21 19:29:38.713 [info] [Python Environments] Discovered env: C:\Users\ASUS\AppData\Local\Python\pythoncore-3.14-64\python.exe
+2026-03-21 19:29:38.738 [info] [Python Environments] Discovered env: c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI\Networking-Test-Kit\BrainFlow\.venv\Scripts\python.exe
+2026-03-21 19:29:38.775 [info] [Python Environments] Resolved environment during PET refresh: c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI\Networking-Test-Kit\BrainFlow\.venv\Scripts\python.exe
+2026-03-21 19:29:39.020 [info] [Python Environments] Pipenv not found
+2026-03-21 19:29:39.021 [info] [Python Environments] Pipenv not found, turning off pipenv features. If you have pipenv installed in a non-standard location, set the "python.pipenvPath" setting.
+2026-03-21 19:29:39.024 [info] [Python Environments] [pet] Telemetry:  {"event":"RefreshPerformance","data":{"refreshPerformance":{"total":319,"breakdown":{"GlobalVirtualEnvs":37,"Locators":319,"Path":18,"Workspaces":30},"locators":{"Conda":317,"PipEnv":2,"Pixi":0,"Poetry":2,"PyEnv":0,"Uv":0,"Venv":0,"VirtualEnv":0,"VirtualEnvWrapper":0,"WinPython":57,"WindowsRegistry":12,"WindowsStore":0}}}}
+2026-03-21 19:29:39.027 [error] [Python Environments] [pet] [2m   4.140365300s[0m [33m WARN[0m [2mpet_windows_registry::environments[0m[2m:[0m Failed to open HKLM\Software\Python, Os { code: 2, kind: NotFound, message: "The system cannot find the file specified." }
+
+2026-03-21 19:29:39.040 [info] [Python Environments] Discovered env: C:\Users\ASUS\AppData\Local\Python\pythoncore-3.14-64\python.exe
+2026-03-21 19:29:39.068 [info] [Python Environments] Discovered env: c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI\Networking-Test-Kit\BrainFlow\.venv\Scripts\python.exe
+2026-03-21 19:29:39.110 [info] [Python Environments] Resolved environment during PET refresh: c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI\Networking-Test-Kit\BrainFlow\.venv\Scripts\python.exe
+2026-03-21 19:29:39.133 [info] [Python Language Server] (18708): Server root directory: file:///c%3A/Users/ASUS/.vscode/extensions/ms-python.vscode-pylance-2026.1.1/dist
+2026-03-21 19:29:39.138 [info] [Python Language Server] (18708): Pylance language server 2026.1.1 (pyright version 1.1.408, commit 138238b4) starting
+2026-03-21 19:29:39.163 [info] [Python Language Server] (18708): Starting service instance "OpenBCI_GUI" for workspace "c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI"
+2026-03-21 19:29:39.390 [info] [Python Environments] Poetry not found, turning off poetry features.
+2026-03-21 19:29:39.394 [info] [Python Environments] [pet] Telemetry:  {"event":"RefreshPerformance","data":{"refreshPerformance":{"total":360,"breakdown":{"GlobalVirtualEnvs":41,"Locators":360,"Path":21,"Workspaces":30},"locators":{"Conda":357,"PipEnv":2,"Pixi":0,"Poetry":2,"PyEnv":1,"Uv":0,"Venv":0,"VirtualEnv":0,"VirtualEnvWrapper":0,"WinPython":62,"WindowsRegistry":12,"WindowsStore":0}}}}
+2026-03-21 19:29:39.398 [error] [Python Environments] [pet] [2m   4.510753100s[0m [33m WARN[0m [2mpet_windows_registry::environments[0m[2m:[0m Failed to open HKLM\Software\Python, Os { code: 2, kind: NotFound, message: "The system cannot find the file specified." }
+
+2026-03-21 19:29:39.413 [info] [Python Environments] Discovered env: C:\Users\ASUS\AppData\Local\Python\pythoncore-3.14-64\python.exe
+2026-03-21 19:29:39.553 [info] [Python Environments] Discovered env: c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI\Networking-Test-Kit\BrainFlow\.venv\Scripts\python.exe
+2026-03-21 19:29:39.673 [info] [Python Environments] Resolved environment during PET refresh: c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI\Networking-Test-Kit\BrainFlow\.venv\Scripts\python.exe
+2026-03-21 19:29:39.901 [info] [Python Environments] Pyenv not found, turning off pyenv features.
+2026-03-21 19:29:39.906 [info] [Python Environments] [interpreterSelection] Applying initial environment selection for 1 workspace folder(s)
+2026-03-21 19:29:39.925 [info] [Python Environments] [pet] Telemetry:  {"event":"RefreshPerformance","data":{"refreshPerformance":{"total":504,"breakdown":{"GlobalVirtualEnvs":83,"Locators":504,"Path":26,"Workspaces":205},"locators":{"Conda":498,"PipEnv":1,"Pixi":0,"Poetry":3,"PyEnv":0,"Uv":0,"Venv":0,"VirtualEnv":0,"VirtualEnvWrapper":0,"WinPython":63,"WindowsRegistry":15,"WindowsStore":0}}}}
+2026-03-21 19:29:39.926 [info] [Python Environments] [interpreterSelection] OpenBCI_GUI: .venv (3.14.3) (source: autoDiscovery)
+2026-03-21 19:29:39.936 [info] [Python Environments] [interpreterSelection] global: Python 3.14.3 (source: autoDiscovery)
+2026-03-21 19:29:39.943 [info] [Python] Send text to terminal: & c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI\Networking-Test-Kit\BrainFlow\.venv\Scripts\Activate.ps1
+2026-03-21 19:29:39.944 [info] [Python Environments] Terminal is activated: c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI\Networking-Test-Kit\BrainFlow\.venv\Scripts\python.exe
+2026-03-21 19:29:39.957 [info] [Python Environments] Environment discovery complete: 2 environments found (Global: 1, venv: 1)
+2026-03-21 19:29:39.959 [info] [Python Environments] Python API: Changed environment from undefined to Python 3.14.3 for: global
+2026-03-21 19:29:39.959 [info] [Python Environments] Internal: Changed environment from undefined to Python 3.14.3 for: global
+2026-03-21 19:29:41.769 [info] [Python Language Server] (18708): Loading background bundle file:///c%3A/Users/ASUS/.vscode/extensions/ms-python.vscode-pylance-2026.1.1/dist/copilot-background.bundle.js into file:///c%3A/Users/ASUS/Documents/GitHub/OpenBCI_GUI...
+2026-03-21 19:29:41.807 [info] [Python] Starting Pylance language server.
+2026-03-21 19:29:42.158 [info] [Python Language Server] (18708): FG(OpenBCI_GUI): Setting environmentName for service "OpenBCI_GUI": ".venv (3.14.3)"
+2026-03-21 19:29:42.159 [info] [Python Language Server] (18708): FG(OpenBCI_GUI): Setting pythonPath for service "OpenBCI_GUI": "c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI\Networking-Test-Kit\BrainFlow\.venv\Scripts\python.exe"
+2026-03-21 19:29:42.163 [info] [Python Language Server] (18708): FG(OpenBCI_GUI): No include entries specified; assuming c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI
+2026-03-21 19:29:42.165 [info] [Python Language Server] (18708): FG(OpenBCI_GUI): Auto-excluding **/node_modules
+2026-03-21 19:29:42.166 [info] [Python Language Server] (18708): FG(OpenBCI_GUI): Auto-excluding **/__pycache__
+2026-03-21 19:29:42.166 [info] [Python Language Server] (18708): FG(OpenBCI_GUI): Auto-excluding **/.*
+2026-03-21 19:29:42.624 [info] [Python Language Server] (18708): FG(OpenBCI_GUI): Assuming Python version 3.14.3.final.0
+2026-03-21 19:29:43.552 [info] [Python Language Server] (18708): [Editable Installs] Starting dynamic pth file resolution for Python: c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI\Networking-Test-Kit\BrainFlow\.venv\Scripts\python.exe
+2026-03-21 19:29:43.578 [info] [Python Language Server] (18708): [Editable Installs] No sandbox available for Python c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI\Networking-Test-Kit\BrainFlow\.venv\Scripts\python.exe. Dynamic pth file resolution requires Python 3.13 or later.
+2026-03-21 19:29:43.589 [warning] [Extension Host] DiagnosticCollection with name 'Pylance' does already exist.
+2026-03-21 19:29:45.433 [info] [Python Language Server] (18708): FG(OpenBCI_GUI): Found 26 source files
+2026-03-21 19:29:45.478 [info] [Python Language Server] (18708): PQ(OpenBCI_GUI): Priority queue background worker(2) root directory: file:///c%3A/Users/ASUS/.vscode/extensions/ms-python.vscode-pylance-2026.1.1/dist
+2026-03-21 19:29:45.478 [info] [Python Language Server] (18708): PQ(OpenBCI_GUI): Priority queue background worker(2) started
+2026-03-21 19:29:45.483 [info] [Python Language Server] (18708): Settings have not changed. Skipping update.
+2026-03-21 19:29:45.489 [warning] [Extension Host] DiagnosticCollection with name 'Pylance' does already exist.
+2026-03-21 19:29:45.491 [info] [Python Language Server] (18708): Starting Mcp server id:3324 ...
+2026-03-21 19:29:45.552 [info] [Python Language Server] (18708): Settings have not changed. Skipping update.
+2026-03-21 19:29:45.557 [warning] [Extension Host] DiagnosticCollection with name 'Pylance' does already exist.
+2026-03-21 19:29:45.559 [info] [Python Language Server] (18708): Settings have not changed. Skipping update.
+2026-03-21 19:29:45.564 [warning] [Extension Host] DiagnosticCollection with name 'Pylance' does already exist.
+2026-03-21 19:29:45.580 [info] [Python Language Server] (18708): Settings have not changed. Skipping update.
+2026-03-21 19:30:57.843 [info] [Window] ChatService#cancelCurrentRequestForSession: No pending request was found for session vscode-chat-session://local/YjVjMDlmMzAtMDc4OS00YzBiLWI4ZjItOWZjYWRjMGRiYWFl. requestInProgress=false, pendingRequests=0
+2026-03-21 19:30:57.844 [info] [Window] ChatService#cancelCurrentRequestForSession: No pending request was found for session vscode-chat-session://local/YjVjMDlmMzAtMDc4OS00YzBiLWI4ZjItOWZjYWRjMGRiYWFl. requestInProgress=false, pendingRequests=0
+2026-03-21 19:30:58.122 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  1b0 →   1b1] GitDocumentTracker.get — failed [0ms]
+2026-03-21 19:30:58.122 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  12a →   1b0] LineTracker.updateState — failed [0ms]
+2026-03-21 19:31:11.419 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  1b6 →   1b7] GitDocumentTracker.get — failed [0ms]
+2026-03-21 19:31:11.419 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  12a →   1b6] LineTracker.updateState — failed [0ms]
+2026-03-21 19:31:13.227 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  1bc →   1bd] GitDocumentTracker.get — failed [0ms]
+2026-03-21 19:31:13.227 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  12a →   1bc] LineTracker.updateState — failed [0ms]
+2026-03-21 19:31:16.089 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  1c2 →   1c3] GitDocumentTracker.get — failed [0ms]
+2026-03-21 19:31:16.089 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  12a →   1c2] LineTracker.updateState — failed [0ms]
+2026-03-21 19:43:48.046 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:43:48.047 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:43:48.048 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:43:48.048 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:43:49.995 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  1cc →   1cd] GitDocumentTracker.get — failed [0ms]
+2026-03-21 19:43:49.995 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  12a →   1cc] LineTracker.updateState — failed [1ms]
+2026-03-21 19:44:01.663 [info] [JSON Language Server] read schema from vscode: vscode://schemas/settings/user
+2026-03-21 19:44:02.054 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.extension-editing, startup: false, activationEvent: 'onLanguage:json'
+2026-03-21 19:44:02.128 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.npm, startup: false, activationEvent: 'onLanguage:json'
+2026-03-21 19:44:02.246 [info] [JSON Language Server] read schema from vscode: vscode://schemas/settings/resourceLanguage
+2026-03-21 19:44:02.250 [info] [JSON Language Server] read schema from vscode: vscode://schemas/ignoredSettings
+2026-03-21 19:44:02.252 [info] [JSON Language Server] read schema from vscode: vscode://schemas/launch
+2026-03-21 19:44:02.262 [info] [JSON Language Server] read schema from vscode: vscode://schemas/token-styling
+2026-03-21 19:44:02.264 [info] [JSON Language Server] read schema from vscode: vscode://schemas/textmate-colors
+2026-03-21 19:44:02.265 [info] [JSON Language Server] read schema from vscode: vscode://schemas/workbench-colors
+2026-03-21 19:44:03.334 [info] [JSON Language Server] schema change detected vscode://schemas/settings/user
+2026-03-21 19:44:03.338 [info] [JSON Language Server] read schema from vscode: vscode://schemas/settings/user
+2026-03-21 19:44:04.292 [info] [JSON Language Server] cancelled
+2026-03-21 19:44:04.295 [info] [JSON Language Server] read schema from vscode: vscode://schemas/settings/user
+2026-03-21 19:44:04.404 [info] [JSON Language Server] schema change detected vscode://schemas/settings/user
+2026-03-21 19:44:04.442 [info] [JSON Language Server] read schema from vscode: vscode://schemas/settings/resourceLanguage
+2026-03-21 19:44:04.443 [info] [JSON Language Server] read schema from vscode: vscode://schemas/ignoredSettings
+2026-03-21 19:44:04.450 [info] [JSON Language Server] read schema from vscode: vscode://schemas/launch
+2026-03-21 19:44:04.462 [info] [JSON Language Server] read schema from vscode: vscode://schemas/token-styling
+2026-03-21 19:44:04.463 [info] [JSON Language Server] read schema from vscode: vscode://schemas/textmate-colors
+2026-03-21 19:44:04.464 [info] [JSON Language Server] read schema from vscode: vscode://schemas/workbench-colors
+2026-03-21 19:44:04.649 [info] [JSON Language Server] cancelled
+2026-03-21 19:44:04.652 [info] [JSON Language Server] read schema from vscode: vscode://schemas/settings/user
+2026-03-21 19:44:05.117 [info] [JSON Language Server] schema change detected vscode://schemas/settings/user
+2026-03-21 19:44:05.148 [info] [JSON Language Server] read schema from vscode: vscode://schemas/settings/user
+2026-03-21 19:44:07.521 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-21 19:44:07.524 [info] [JSON Language Server] read schema from vscode: vscode://schemas/settings/user
+2026-03-21 19:44:07.725 [info] [JSON Language Server] read schema from vscode: vscode://schemas/launch
+2026-03-21 19:44:20.226 [info] [JSON Language Server] schema change detected vscode://schemas/settings/user
+2026-03-21 19:44:32.604 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:44:32.604 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:44:32.606 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:44:32.606 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:44:33.121 [info] [GitHub Copilot Chat] [fetchCompletions] Request 6c450dd2-2c80-41e3-a9f0-a92557a20a93 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 401 status after 602.8859000001103ms
+2026-03-21 19:44:33.229 [warning] [GitHub Copilot Chat] [fetchCompletions] Response status was 401: unauthorized: token expired
+
+2026-03-21 19:44:33.273 [info] [GitHub Copilot Chat] ccreq:d199d905.copilotmd | markdown
+2026-03-21 19:44:33.287 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:44:33.287 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:44:33.288 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:44:33.288 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:44:33.289 [info] [Microsoft Authentication] [getSessions] [499b84ac-1321-427f-aa17-267ca6975798/.default offline_access] starting
+2026-03-21 19:44:33.289 [info] [Microsoft Authentication] [getSessions] [499b84ac-1321-427f-aa17-267ca6975798/.default offline_access] returned 0 session(s)
+2026-03-21 19:44:33.319 [info] [GitHub Authentication] Getting sessions for read:user,repo,user:email,workflow...
+2026-03-21 19:44:33.319 [info] [GitHub Authentication] Got 1 sessions for read:user,repo,user:email,workflow...
+2026-03-21 19:44:33.325 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:44:33.325 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:44:33.330 [info] [GitHub Authentication] Getting sessions for read:user,repo,user:email,workflow...
+2026-03-21 19:44:33.330 [info] [GitHub Authentication] Got 1 sessions for read:user,repo,user:email,workflow...
+2026-03-21 19:44:33.332 [info] [GitHub Copilot Chat] Logged in as gpgvision93-max
+2026-03-21 19:44:33.784 [info] [GitHub Copilot Chat] Got Copilot token for gpgvision93-max
+2026-03-21 19:44:33.784 [info] [GitHub Copilot Chat] Copilot Chat: 0.40.1, VS Code: 1.112.0
+2026-03-21 19:44:33.821 [info] [GitHub Copilot Chat] AuthenticationService: firing onDidAuthenticationChange from handleAuthChangeEvent. Has token: true
+2026-03-21 19:44:33.821 [info] [GitHub Copilot Chat] copilot token sku: free_limited_copilot
+2026-03-21 19:44:33.821 [info] [GitHub Copilot Chat] ConversationFeature: onDidAuthenticationChange has token: true
+2026-03-21 19:44:33.821 [info] [GitHub Copilot Chat] [code-referencing] Public code references are enabled.
+2026-03-21 19:44:33.854 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:44:33.854 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:44:33.855 [info] [Microsoft Authentication] [getSessions] [499b84ac-1321-427f-aa17-267ca6975798/.default offline_access] starting
+2026-03-21 19:44:33.855 [info] [Microsoft Authentication] [getSessions] [499b84ac-1321-427f-aa17-267ca6975798/.default offline_access] returned 0 session(s)
+2026-03-21 19:44:33.855 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:44:33.855 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:44:33.860 [info] [GitHub Authentication] Getting sessions for read:user,repo,user:email,workflow...
+2026-03-21 19:44:33.860 [info] [GitHub Authentication] Got 1 sessions for read:user,repo,user:email,workflow...
+2026-03-21 19:44:33.869 [info] [GitHub Copilot Chat] AuthenticationService: firing onDidAuthenticationChange from handleAuthChangeEvent. Has token: true
+2026-03-21 19:44:33.869 [info] [GitHub Copilot Chat] copilot token sku: free_limited_copilot
+2026-03-21 19:44:33.869 [info] [GitHub Copilot Chat] ConversationFeature: onDidAuthenticationChange has token: true
+2026-03-21 19:44:33.869 [info] [GitHub Copilot Chat] [code-referencing] Public code references are enabled.
+2026-03-21 19:44:33.879 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:44:33.879 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:44:33.887 [info] [GitHub Authentication] Getting sessions for read:user,repo,user:email,workflow...
+2026-03-21 19:44:33.887 [info] [GitHub Authentication] Got 1 sessions for read:user,repo,user:email,workflow...
+2026-03-21 19:44:34.688 [info] [GitHub Copilot Chat] Fetched model metadata in 875ms ecf62b69-00b3-4e3b-b206-cc500a2ee391
+2026-03-21 19:44:34.933 [info] [GitHub Copilot Chat] ccreq:4190d3bc.copilotmd | markdown
+2026-03-21 19:44:35.019 [info] [JSON Language Server] schema change detected vscode://schemas/settings/user
+2026-03-21 19:45:17.386 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  1e3 →   1e4] GitDocumentTracker.get — failed [0ms]
+2026-03-21 19:45:17.386 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  12a →   1e3] LineTracker.updateState — failed [0ms]
+2026-03-21 19:45:17.420 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:45:17.420 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:45:17.584 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:45:17.584 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:45:27.670 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:45:27.670 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:45:27.672 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:45:27.672 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:45:38.638 [info] [Window] ChatService#cancelCurrentRequestForSession: No pending request was found for session vscode-chat-session://local/NGE4NGViZjQtNDdkYi00NGI1LWJlNTktYmE4ZjljZDI2ZjQ4. requestInProgress=false, pendingRequests=0
+2026-03-21 19:45:40.149 [info] [JSON Language Server] schema change detected vscode://schemas/settings/user
+2026-03-21 19:45:41.134 [info] [GitHub Copilot Chat] Request ID for failed request: 6f61f1da-6e26-4383-870c-e637899940b5
+2026-03-21 19:45:41.135 [error] [GitHub Copilot Chat] Server error: 402 {"error":{"message":"You have no quota","code":"quota_exceeded"}}
+2026-03-21 19:45:41.140 [info] [GitHub Copilot Chat] ccreq:eb57156b.copilotmd | quotaExceeded | gpt-4o-mini-2024-07-18 | 805ms | [title]
+2026-03-21 19:45:41.140 [error] [GitHub Copilot Chat] Failed to fetch conversation title because of response type (quotaExceeded) and reason (You have no quota)
+2026-03-21 19:45:41.490 [info] [GitHub Authentication] Getting sessions for codespace,gist,notifications,project,read:org,read:packages,read:project,read:user,repo,user:email,workflow,write:packages...
+2026-03-21 19:45:41.490 [info] [GitHub Authentication] Got 1 sessions for codespace,gist,notifications,project,read:org,read:packages,read:project,read:user,repo,user:email,workflow,write:packages...
+2026-03-21 19:45:45.504 [info] [GitHub Copilot Chat] Request ID for failed request: 9703b50a-997a-49fb-b121-45ad9e0ef8ea
+2026-03-21 19:45:45.505 [error] [GitHub Copilot Chat] Server error: 402 {"error":{"message":"You have no quota","code":"quota_exceeded"}}
+2026-03-21 19:45:45.510 [info] [GitHub Copilot Chat] ccreq:59360c53.copilotmd | quotaExceeded | grok-code-fast-1 | 299ms | [panel/explain]
+2026-03-21 19:45:45.515 [info] [GitHub Copilot Chat] [ToolCallingLoop] Stop hook result: shouldContinue=false, reasons=undefined
+2026-03-21 19:45:59.263 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  203 →   204] GitDocumentTracker.get — failed [0ms]
+2026-03-21 19:45:59.266 [error] [Window] Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms: Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms
+	at Timeout._onTimeout (c:\Users\ASUS\.vscode\extensions\eamodio.gitlens-17.11.1\dist\gitlens.js:2613:86299)
+	at listOnTimeout (node:internal/timers:588:17)
+	at process.processTimers (node:internal/timers:523:7)
+2026-03-21 19:45:59.296 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  205 →   206] GitDocumentTracker.get — failed [0ms]
+2026-03-21 19:45:59.297 [error] [GitLens] Canceled: Operation cancelled; Gate timeout: findRepositoryUri exceeded 300000ms   [  1f7 →   205] LineTracker.updateState — failed [0ms]
+2026-03-21 19:46:05.669 [info] [GitHub Copilot Chat] [CopilotCLIMCPHandler] loadMcpConfig called. CLIMCPServerEnabled=false
+2026-03-21 19:46:05.743 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:46:05.743 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:46:05.751 [info] [GitHub Authentication] Getting sessions for read:user,repo,user:email,workflow...
+2026-03-21 19:46:05.751 [info] [GitHub Authentication] Got 1 sessions for read:user,repo,user:email,workflow...
+2026-03-21 19:46:05.759 [info] [GitHub Copilot Chat] [CopilotCLISession] Passing 1 MCP server(s) to SDK: [github]
+2026-03-21 19:46:05.760 [info] [GitHub Copilot Chat] [CopilotCLISession]   github: type=http
+2026-03-21 19:46:51.751 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:46:51.751 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:46:51.777 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:46:51.777 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:47:26.198 [warning] [GitLens] [gate] findRepositoryUri has been pending for 90+ seconds (possible deadlock) — prop=$gate$findRepositoryUri$[{"$mid":1,"fsPath":"c:\\Users\\ASUS\\Documents\\GitHub\\OpenBCI_GUI\\OpenBCI_GUI\\data\\EEG_Sample_Data\\Deprecated\\OpenBCI-sampleData-1-blinks-jawClench-alpha.txt","_sep":1,"external":"file:///c%3A/Users/ASUS/Documents/GitHub/OpenBCI_GUI/OpenBCI_GUI/data/EEG_Sample_Data/Deprecated/OpenBCI-sampleData-1-blinks-jawClench-alpha.txt","path":"/c:/Users/ASUS/Documents/GitHub/OpenBCI_GUI/OpenBCI_GUI/data/EEG_Sample_Data/Deprecated/OpenBCI-sampleData-1-blinks-jawClench-alpha.txt","scheme":"file"},null]
+2026-03-21 19:47:31.277 [warning] [GitLens] [gate] findRepositoryUri has been pending for 90+ seconds (possible deadlock) — prop=$gate$findRepositoryUri$[{"$mid":1,"fsPath":"c:\\Users\\ASUS\\Documents\\GitHub\\OpenBCI_GUI\\OpenBCI_GUI\\data\\EEG_Sample_Data\\Deprecated\\OpenBCI-sampleData-2-meditation.txt","_sep":1,"external":"file:///c%3A/Users/ASUS/Documents/GitHub/OpenBCI_GUI/OpenBCI_GUI/data/EEG_Sample_Data/Deprecated/OpenBCI-sampleData-2-meditation.txt","path":"/C:/Users/ASUS/Documents/GitHub/OpenBCI_GUI/OpenBCI_GUI/data/EEG_Sample_Data/Deprecated/OpenBCI-sampleData-2-meditation.txt","scheme":"file"},null]
+2026-03-21 19:48:51.440 [info] [GitHub Copilot Chat] [CurrentChange] Full documents: 15250701 tokens, 110905 budget
+2026-03-21 19:48:51.481 [info] [GitHub Copilot Chat] [CurrentChange] Reduced OpenBCI-sampleData-2-meditation.txt to defintions: 57774 tokens, 110905 budget
+2026-03-21 19:48:53.160 [info] [GitHub Copilot Chat] Request ID for failed request: 36f7ae46-fba5-4f62-8769-1316fac05823
+2026-03-21 19:48:53.161 [error] [GitHub Copilot Chat] Server error: 402 {"error":{"message":"You have no quota","code":"quota_exceeded"}}
+2026-03-21 19:48:53.169 [info] [GitHub Copilot Chat] ccreq:cacd8ec0.copilotmd | quotaExceeded | gpt-4.1 | 1521ms | [feedbackGenerator]
+2026-03-21 19:48:55.600 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:48:55.600 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:48:55.760 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:48:55.760 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:48:56.213 [warning] [GitLens] [gate] findRepositoryUri has been pending for 180+ seconds (possible deadlock) — prop=$gate$findRepositoryUri$[{"$mid":1,"fsPath":"c:\\Users\\ASUS\\Documents\\GitHub\\OpenBCI_GUI\\OpenBCI_GUI\\data\\EEG_Sample_Data\\Deprecated\\OpenBCI-sampleData-1-blinks-jawClench-alpha.txt","_sep":1,"external":"file:///c%3A/Users/ASUS/Documents/GitHub/OpenBCI_GUI/OpenBCI_GUI/data/EEG_Sample_Data/Deprecated/OpenBCI-sampleData-1-blinks-jawClench-alpha.txt","path":"/c:/Users/ASUS/Documents/GitHub/OpenBCI_GUI/OpenBCI_GUI/data/EEG_Sample_Data/Deprecated/OpenBCI-sampleData-1-blinks-jawClench-alpha.txt","scheme":"file"},null]
+2026-03-21 19:49:01.289 [warning] [GitLens] [gate] findRepositoryUri has been pending for 180+ seconds (possible deadlock) — prop=$gate$findRepositoryUri$[{"$mid":1,"fsPath":"c:\\Users\\ASUS\\Documents\\GitHub\\OpenBCI_GUI\\OpenBCI_GUI\\data\\EEG_Sample_Data\\Deprecated\\OpenBCI-sampleData-2-meditation.txt","_sep":1,"external":"file:///c%3A/Users/ASUS/Documents/GitHub/OpenBCI_GUI/OpenBCI_GUI/data/EEG_Sample_Data/Deprecated/OpenBCI-sampleData-2-meditation.txt","path":"/C:/Users/ASUS/Documents/GitHub/OpenBCI_GUI/OpenBCI_GUI/data/EEG_Sample_Data/Deprecated/OpenBCI-sampleData-2-meditation.txt","scheme":"file"},null]
+2026-03-21 19:49:54.283 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:49:54.283 [info] [GitHub Authentication] Got 4 sessions for ...
+2026-03-21 19:49:54.288 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-03-21 19:49:54.288 [info] [GitHub Authentication] Got 4 sessions for ...

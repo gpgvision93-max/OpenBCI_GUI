@@ -1,0 +1,439 @@
+2026-03-25 23:34:06.706 [info] [Main] update#setState idle
+2026-03-25 23:34:17.565 [info] [Cloud Changes] Prompting to enable cloud changes, has application previously launched from Continue On flow: false
+2026-03-25 23:34:18.704 [info] [Remote Tunnel Service] No other tunnel running
+2026-03-25 23:34:36.959 [info] [Main] update#setState checking for updates
+2026-03-25 23:34:37.420 [info] [Main] update#setState idle
+2026-03-25 23:35:55.266 [info] [Main] Extension host with pid 5656 exited with code: 0, signal: unknown.
+2026-03-25 23:36:05.360 [info] [Cloud Changes] Prompting to enable cloud changes, has application previously launched from Continue On flow: false
+2026-03-25 23:37:53.141 [info] [Cloud Changes] Prompting to enable cloud changes, has application previously launched from Continue On flow: false
+2026-03-25 23:39:55.238 [info] [Main] Extension host with pid 13520 exited with code: 0, signal: unknown.
+2026-03-25 23:40:09.966 [info] [Cloud Changes] Prompting to enable cloud changes, has application previously launched from Continue On flow: false
+2026-03-25 23:58:34.514 [info] [Main] Extension host with pid 13984 exited with code: 0, signal: unknown.
+2026-03-25 23:58:43.189 [info] [Cloud Changes] Prompting to enable cloud changes, has application previously launched from Continue On flow: false
+2026-03-26 00:08:10.742 [info] [Window] Started local extension host with pid 14076.
+2026-03-26 00:08:16.502 [info] [Window] Settings Sync: Account status changed from uninitialized to unavailable
+2026-03-26 00:08:16.678 [info] [Window] Extension host (LocalProcess pid: 14076) is unresponsive.
+2026-03-26 00:08:17.042 [info] [Cloud Changes] Prompting to enable cloud changes, has application previously launched from Continue On flow: false
+2026-03-26 00:08:17.946 [warning] [Window] MCP migration: Failed to parse MCP config from vscode-userdata:/c%3A/Users/ASUS/AppData/Roaming/Code/User/settings.json: Unexpected token '}', ..."e": 
+    }
+}" is not valid JSON
+2026-03-26 00:08:17.997 [error] [Window] [Extension Host] (node:14076) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `Code --trace-deprecation ...` to show where the warning was created)
+2026-03-26 00:08:18.000 [error] [Window] [Extension Host] (node:14076) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+2026-03-26 00:08:18.090 [info] [Window] [perf] Render performance baseline is 76ms
+2026-03-26 00:08:19.470 [info] [Window] Extension host (LocalProcess pid: 14076) is responsive.
+2026-03-26 00:08:22.592 [error] [Window] [Extension Host] Failed to load message bundle for file c:\Users\ASUS\.vscode\extensions\ms-edgedevtools.vscode-edge-devtools-2.1.10\out\extension
+2026-03-26 00:08:22.596 [error] [Window] [Extension Host] Failed to load message bundle for file c:\Users\ASUS\.vscode\extensions\ms-edgedevtools.vscode-edge-devtools-2.1.10\out\extension
+2026-03-26 00:08:22.608 [error] [Window] [Extension Host] Failed to load message bundle for file c:\Users\ASUS\.vscode\extensions\ms-edgedevtools.vscode-edge-devtools-2.1.10\out\extension
+2026-03-26 00:08:22.612 [error] [Window] [Extension Host] Failed to load message bundle for file c:\Users\ASUS\.vscode\extensions\ms-edgedevtools.vscode-edge-devtools-2.1.10\out\extension
+2026-03-26 00:08:22.617 [error] [Window] [Extension Host] Failed to load message bundle for file c:\Users\ASUS\.vscode\extensions\ms-edgedevtools.vscode-edge-devtools-2.1.10\out\extension
+2026-03-26 00:08:22.619 [error] [Window] [Extension Host] Failed to load message bundle for file c:\Users\ASUS\.vscode\extensions\ms-edgedevtools.vscode-edge-devtools-2.1.10\out\extension
+2026-03-26 00:08:22.621 [error] [Window] [Extension Host] Failed to load message bundle for file c:\Users\ASUS\.vscode\extensions\ms-edgedevtools.vscode-edge-devtools-2.1.10\out\extension
+2026-03-26 00:08:22.622 [error] [Window] [Extension Host] Failed to load message bundle for file c:\Users\ASUS\.vscode\extensions\ms-edgedevtools.vscode-edge-devtools-2.1.10\out\extension
+2026-03-26 00:08:23.456 [warning] [Window] SettingsEditor2: Settings not included in settingsLayout.ts: extensions.requestTimeout, github.copilot.chat.agent.terminal.allowList, github.copilot.chat.agent.terminal.denyList, terminal.integrated.developer.devMode, terminal.integrated.developer.ptyHost.latency, terminal.integrated.developer.ptyHost.startupDelay, terminal.integrated.enableKittyKeyboardProtocol, terminal.integrated.enableWin32InputMode, chat.artifacts.enabled, chat.autopilot.enabled, chat.autoReply, chat.contextUsage.enabled, chat.customizations.harnessSelector.enabled, chat.customizationsMenu.enabled, chat.editing.revealNextChangeOnResolve, chat.experimentalSessionsWindowOverride, chat.exploreAgent.defaultModel, chat.growthNotification.enabled, chat.pluginLocations, chat.plugins.enabled, chat.plugins.marketplaces, chat.statusWidget.anonymous, chat.subagents.allowInvocationsFromSubagents, chat.upvoteAnimation, chat.useClaudeHooks, chat.useCustomAgentHooks, chat.useCustomizationsInParentRepositories, imageCarousel.chat.enabled, imageCarousel.explorerContextMenu.enabled, accessibility.signals.chatResponseReceived, accessibility.signals.chatUserActionRequired
+2026-03-26 00:08:25.470 [info] [GitHub Copilot Chat] [GitExtensionServiceImpl] Initializing Git extension service.
+2026-03-26 00:08:25.470 [info] [GitHub Copilot Chat] ConversationFeature: Waiting for copilot token to activate conversation feature
+2026-03-26 00:08:25.746 [info] [Python] Environment discovery is managed by the Python Environments extension (ms-python.vscode-python-envs). Check the "Python Environments" output channel for environment-specific logs.
+2026-03-26 00:08:25.746 [info] [Python] [test-by-project] Activating project-based testing mode
+2026-03-26 00:08:25.746 [info] [Python] [test-by-project] Discovering projects for workspace: c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI
+2026-03-26 00:08:25.747 [info] [Python] Native locator: Refresh started
+2026-03-26 00:08:25.747 [info] [Python] [test-by-project] Found 1 total Python projects from API
+2026-03-26 00:08:25.747 [info] [Python] [test-by-project] Filtered to 1 projects in workspace
+2026-03-26 00:08:25.747 [info] [Python] [test-by-project] Creating adapter for: OpenBCI_GUI at file:///c%3A/Users/ASUS/Documents/GitHub/OpenBCI_GUI
+2026-03-26 00:08:25.753 [info] [Python] > conda info --json
+2026-03-26 00:08:25.753 [info] [Python] > pyenv which python
+2026-03-26 00:08:25.753 [info] [Python] cwd: .
+2026-03-26 00:08:28.629 [info] [GitHub Copilot Chat] [CopilotCLI] OpenTelemetry enabled: exporter=file, source=github.copilot
+2026-03-26 00:08:28.690 [info] [GitHub Copilot Chat] Using the Electron fetcher.
+2026-03-26 00:08:28.824 [info] [GitHub Copilot Chat] [CopilotCLI] MCP server started. Lock file: C:\Users\ASUS\.copilot\ide\93180300-2496-40ce-a824-2879d114de00.lock
+2026-03-26 00:08:28.824 [info] [GitHub Copilot Chat] [CopilotCLI] Server URI: pipe:%5C%5C.%5Cpipe%5Cmcp-66780ffc-dc9c-4dc5-9aa2-de18b6cda546.sock#%2Fmcp
+2026-03-26 00:08:28.952 [info] [GitHub Copilot Chat] Logged in as gpgvision93-max
+2026-03-26 00:08:29.147 [info] [GitHub] Log level: Info
+2026-03-26 00:08:29.282 [info] [Python] Active interpreter [c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI]:  c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI\Networking-Test-Kit\BrainFlow\.venv\Scripts\python.exe
+2026-03-26 00:08:29.283 [info] [Python] [test-by-project] Registered 1 project(s) for c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI
+2026-03-26 00:08:29.295 [info] [Python] [test-by-project] Activated 1 project(s) for c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI
+2026-03-26 00:08:29.297 [info] [Python] [test-by-project] Subscribed to Python project changes
+2026-03-26 00:08:29.626 [info] [GitHub Copilot Chat] Got Copilot token for gpgvision93-max
+2026-03-26 00:08:29.626 [info] [GitHub Copilot Chat] Copilot Chat: 0.41.1, VS Code: 1.113.0
+2026-03-26 00:08:29.669 [info] [GitHub Copilot Chat] [context keys] Setting context key: github.copilot-chat.activated
+2026-03-26 00:08:29.677 [info] [GitHub Copilot Chat] activationBlocker from 'languageModelAccess' took for 4659ms
+2026-03-26 00:08:30.615 [info] [GitHub Copilot Chat] Fetched model metadata in 5539ms 24b3a1c5-66eb-4114-9e4e-f1ec5d486ca4
+2026-03-26 00:08:30.707 [info] [Python Language Server] Client: Pylance client (2026.1.1) started with python extension (2026.4.0)
+2026-03-26 00:08:31.160 [info] [GitHub Copilot Chat] AuthenticationService: firing onDidAuthenticationChange from handleAuthChangeEvent. Has token: true
+2026-03-26 00:08:31.160 [info] [GitHub Copilot Chat] copilot token sku: monthly_subscriber_quota
+2026-03-26 00:08:31.160 [info] [GitHub Copilot Chat] ConversationFeature: Activating contributions
+2026-03-26 00:08:31.160 [info] [GitHub Copilot Chat] GitHub.vscode-pull-request-github extension is not yet activated.
+2026-03-26 00:08:31.227 [info] [GitHub Copilot Chat] Registering default platform agent...
+2026-03-26 00:08:31.230 [info] [GitHub Copilot Chat] ConversationFeature: onDidAuthenticationChange has token: true
+2026-03-26 00:08:31.231 [info] [GitHub Copilot Chat] [code-referencing] Public code references are enabled.
+2026-03-26 00:08:31.238 [info] [GitHub Copilot Chat] activationBlocker from 'conversationFeature' took for 6249ms
+2026-03-26 00:08:31.295 [info] [GitHub Copilot Chat] GithubAvailableEmbeddingTypesManager: Got embeddings. Primary: metis-1024-I16-Binary. Deprecated: 
+2026-03-26 00:08:31.304 [info] [GitHub Copilot Chat] WorkspaceChunkSearchService: using embedding type metis-1024-I16-Binary
+2026-03-26 00:08:31.393 [info] [GitHub Copilot Chat] Latest entry: ccreq:latest.copilotmd
+2026-03-26 00:08:31.395 [info] [GitHub Copilot Chat] ccreq:6a0d78fc.copilotmd | markdown
+2026-03-26 00:08:31.452 [info] [GitHub Copilot Chat] BYOK: Copilot Chat known models list fetched successfully.
+2026-03-26 00:08:31.518 [info] [Python Language Server] (15304): Server root directory: file:///c%3A/Users/ASUS/.vscode/extensions/ms-python.vscode-pylance-2026.1.1/dist
+2026-03-26 00:08:31.537 [info] [Python Language Server] (15304): Pylance language server 2026.1.1 (pyright version 1.1.408, commit 138238b4) starting
+2026-03-26 00:08:31.552 [info] [Python Language Server] (15304): Starting service instance "OpenBCI_GUI" for workspace "c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI"
+2026-03-26 00:08:31.768 [info] [GitHub Copilot Chat] Fetched model metadata in 291ms abeb818d-dc1e-44a5-9193-61483a890f35
+2026-03-26 00:08:31.816 [info] [GitHub Copilot Chat] ccreq:739ffe98.copilotmd | markdown
+2026-03-26 00:08:32.015 [info] [Python] Native locator: Refresh finished in 7900 ms
+2026-03-26 00:08:32.373 [info] [GitHub Copilot Chat] [GitExtensionServiceImpl] Successfully activated the vscode.git extension.
+2026-03-26 00:08:32.373 [info] [GitHub Copilot Chat] [GitExtensionServiceImpl] Enablement state of the vscode.git extension: false.
+2026-03-26 00:08:32.405 [info] [Python] Send text to terminal: & c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI\Networking-Test-Kit\BrainFlow\.venv\Scripts\Activate.ps1
+2026-03-26 00:08:35.211 [info] [JSON Language Server] read schema from vscode: vscode://schemas/settings/user
+2026-03-26 00:08:36.368 [info] [JSON Language Server] read schema from vscode: vscode://schemas/settings/resourceLanguage
+2026-03-26 00:08:36.375 [info] [JSON Language Server] schema change detected vscode://schemas/settings/user
+2026-03-26 00:08:36.425 [info] [JSON Language Server] schema change detected vscode://schemas/settings/user
+2026-03-26 00:08:36.481 [info] [JSON Language Server] read schema from vscode: vscode://schemas/ignoredSettings
+2026-03-26 00:08:36.980 [info] [JSON Language Server] read schema from vscode: vscode://schemas/launch
+2026-03-26 00:08:36.982 [info] [Python Language Server] (15304): Loading background bundle file:///c%3A/Users/ASUS/.vscode/extensions/ms-python.vscode-pylance-2026.1.1/dist/copilot-background.bundle.js into file:///c%3A/Users/ASUS/Documents/GitHub/OpenBCI_GUI...
+2026-03-26 00:08:37.015 [info] [JSON Language Server] read schema from vscode: vscode://schemas/token-styling
+2026-03-26 00:08:37.070 [info] [JSON Language Server] read schema from vscode: vscode://schemas/textmate-colors
+2026-03-26 00:08:37.089 [info] [Python] Starting Pylance language server.
+2026-03-26 00:08:37.139 [info] [JSON Language Server] read schema from vscode: vscode://schemas/workbench-colors
+2026-03-26 00:08:37.939 [info] [JSON Language Server] cancelled
+2026-03-26 00:08:38.086 [info] [JSON Language Server] read schema from vscode: vscode://schemas/settings/user
+2026-03-26 00:08:38.091 [info] [Python Language Server] (15304): Starting Mcp server id:5887 ...
+2026-03-26 00:08:38.130 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): Setting environmentName for service "OpenBCI_GUI": ".venv (3.14.3)"
+2026-03-26 00:08:38.136 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): Setting pythonPath for service "OpenBCI_GUI": "c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI\Networking-Test-Kit\BrainFlow\.venv\Scripts\python.exe"
+2026-03-26 00:08:38.139 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): No include entries specified; assuming c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI
+2026-03-26 00:08:38.280 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): Auto-excluding **/node_modules
+2026-03-26 00:08:38.282 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): Auto-excluding **/__pycache__
+2026-03-26 00:08:38.283 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): Auto-excluding **/.*
+2026-03-26 00:08:39.158 [info] [JSON Language Server] schema change detected vscode://schemas/settings/user
+2026-03-26 00:08:39.174 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): Assuming Python version 3.14.3.final.0
+2026-03-26 00:08:39.312 [info] [JSON Language Server] schema change detected vscode://schemas/settings/user
+2026-03-26 00:08:39.319 [info] [JSON Language Server] read schema from vscode: vscode://schemas/settings/user
+2026-03-26 00:08:39.506 [info] [JSON Language Server] read schema from vscode: vscode://schemas/settings/resourceLanguage
+2026-03-26 00:08:39.507 [info] [JSON Language Server] read schema from vscode: vscode://schemas/ignoredSettings
+2026-03-26 00:08:39.519 [info] [JSON Language Server] read schema from vscode: vscode://schemas/launch
+2026-03-26 00:08:39.528 [info] [JSON Language Server] read schema from vscode: vscode://schemas/token-styling
+2026-03-26 00:08:39.529 [info] [JSON Language Server] read schema from vscode: vscode://schemas/textmate-colors
+2026-03-26 00:08:39.530 [info] [JSON Language Server] read schema from vscode: vscode://schemas/workbench-colors
+2026-03-26 00:08:39.969 [info] [JSON Language Server] cancelled
+2026-03-26 00:08:39.978 [info] [JSON Language Server] read schema from vscode: vscode://schemas/settings/user
+2026-03-26 00:08:40.177 [info] [JSON Language Server] schema change detected vscode://schemas/settings/user
+2026-03-26 00:08:40.224 [info] [Python Language Server] (15304): [Editable Installs] Starting dynamic pth file resolution for Python: c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI\Networking-Test-Kit\BrainFlow\.venv\Scripts\python.exe
+2026-03-26 00:08:40.235 [info] [Python Language Server] (15304): [Editable Installs] No sandbox available for Python c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI\Networking-Test-Kit\BrainFlow\.venv\Scripts\python.exe. Dynamic pth file resolution requires Python 3.13 or later.
+2026-03-26 00:08:40.255 [info] [JSON Language Server] read schema from vscode: vscode://schemas/settings/resourceLanguage
+2026-03-26 00:08:40.265 [info] [JSON Language Server] read schema from vscode: vscode://schemas/ignoredSettings
+2026-03-26 00:08:40.355 [info] [JSON Language Server] read schema from vscode: vscode://schemas/launch
+2026-03-26 00:08:40.366 [info] [JSON Language Server] read schema from vscode: vscode://schemas/token-styling
+2026-03-26 00:08:40.367 [info] [JSON Language Server] read schema from vscode: vscode://schemas/textmate-colors
+2026-03-26 00:08:40.369 [info] [JSON Language Server] read schema from vscode: vscode://schemas/workbench-colors
+2026-03-26 00:08:40.883 [info] [JSON Language Server] schema change detected vscode://schemas/settings/user
+2026-03-26 00:08:40.961 [info] [JSON Language Server] cancelled
+2026-03-26 00:08:40.968 [info] [JSON Language Server] read schema from vscode: vscode://schemas/settings/user
+2026-03-26 00:08:42.662 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): Found 21 source files
+2026-03-26 00:08:42.663 [info] [JSON Language Server] schema change detected vscode://schemas/settings/user
+2026-03-26 00:08:42.671 [info] [Python Language Server] (15304): PQ(OpenBCI_GUI): Priority queue background worker(2) root directory: file:///c%3A/Users/ASUS/.vscode/extensions/ms-python.vscode-pylance-2026.1.1/dist
+2026-03-26 00:08:42.672 [info] [Python Language Server] (15304): PQ(OpenBCI_GUI): Priority queue background worker(2) started
+2026-03-26 00:08:42.675 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): Setting environmentName for service "OpenBCI_GUI": "Python 3.14.3"
+2026-03-26 00:08:42.675 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): Setting pythonPath for service "OpenBCI_GUI": "c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI\Networking-Test-Kit\BrainFlow\.venv\Scripts\python.exe"
+2026-03-26 00:08:42.676 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): No include entries specified; assuming c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI
+2026-03-26 00:08:42.676 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): Auto-excluding **/node_modules
+2026-03-26 00:08:42.677 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): Auto-excluding **/__pycache__
+2026-03-26 00:08:42.677 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): Auto-excluding **/.*
+2026-03-26 00:08:42.846 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): Assuming Python version 3.14.3.final.0
+2026-03-26 00:08:43.703 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 00:08:45.895 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): Found 21 source files
+2026-03-26 00:08:45.927 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): Setting environmentName for service "OpenBCI_GUI": ".venv (3.14.3)"
+2026-03-26 00:08:45.928 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): Setting pythonPath for service "OpenBCI_GUI": "c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI\Networking-Test-Kit\BrainFlow\.venv\Scripts\python.exe"
+2026-03-26 00:08:45.930 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): No include entries specified; assuming c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI
+2026-03-26 00:08:45.931 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): Auto-excluding **/node_modules
+2026-03-26 00:08:45.932 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): Auto-excluding **/__pycache__
+2026-03-26 00:08:45.933 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): Auto-excluding **/.*
+2026-03-26 00:08:46.225 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): Assuming Python version 3.14.3.final.0
+2026-03-26 00:08:48.659 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): Found 21 source files
+2026-03-26 00:08:48.692 [info] [Python Language Server] (15304): Settings have not changed. Skipping update.
+2026-03-26 00:08:48.704 [info] [Python Language Server] (15304): Settings have not changed. Skipping update.
+2026-03-26 00:08:48.710 [info] [Python Language Server] (15304): Settings have not changed. Skipping update.
+2026-03-26 00:08:50.390 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): IDX(OpenBCI_GUI): Indexer background runner(3) root directory: file:///c%3A/Users/ASUS/.vscode/extensions/ms-python.vscode-pylance-2026.1.1/dist (index)
+2026-03-26 00:08:50.391 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): IDX(OpenBCI_GUI): Indexing(3) started
+2026-03-26 00:08:50.576 [info] [GitHub Copilot Chat] message 0 returned. finish reason: [stop]
+2026-03-26 00:08:50.587 [info] [GitHub Copilot Chat] request done: requestId: [90734a90-1d9e-4dc6-88b2-9c4cebc03843] model deployment ID: []
+2026-03-26 00:08:50.591 [info] [GitHub Copilot Chat] ccreq:10b4366e.copilotmd | success | gpt-4.1 -> gpt-4.1-2025-04-14 | 2303ms | [settingsEditorSearchSuggestions]
+2026-03-26 00:08:51.357 [info] [GitHub Copilot Chat] message 0 returned. finish reason: [stop]
+2026-03-26 00:08:51.360 [info] [GitHub Copilot Chat] request done: requestId: [697b450e-cca4-47d1-b2de-a72194276cf4] model deployment ID: []
+2026-03-26 00:08:51.362 [info] [GitHub Copilot Chat] ccreq:9db39626.copilotmd | success | gpt-4.1 -> gpt-4.1-2025-04-14 | 3089ms | [settingsEditorSearchSuggestions]
+2026-03-26 00:08:53.414 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): IDX(OpenBCI_GUI): Long operation: scan packages file:///c%3A/Users/ASUS/Documents/GitHub/OpenBCI_GUI (2222ms)
+2026-03-26 00:08:53.414 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): IDX(OpenBCI_GUI): scanned(3) 10 files over 1 exec env
+2026-03-26 00:08:53.824 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): IDX(OpenBCI_GUI): indexed(3) 10 files over 1 exec env
+2026-03-26 00:08:53.831 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): IDX(OpenBCI_GUI): Indexing finished(3).
+2026-03-26 00:09:47.902 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 00:09:49.810 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 00:09:51.329 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 00:09:53.945 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 00:09:56.121 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 00:10:04.300 [info] [Python] Send text to terminal: & c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI\Networking-Test-Kit\BrainFlow\.venv\Scripts\Activate.ps1
+2026-03-26 00:10:22.289 [info] [Python] Send text to terminal: & c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI\Networking-Test-Kit\BrainFlow\.venv\Scripts\Activate.ps1
+2026-03-26 00:11:50.209 [info] [JSON Language Server] schema change detected vscode://schemas/ignoredSettings
+2026-03-26 00:11:50.365 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 00:11:50.372 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 00:11:51.026 [info] [JSON Language Server] schema change detected vscode://schemas/settings/user
+2026-03-26 00:11:51.059 [info] [JSON Language Server] schema change detected vscode://schemas/settings/resourceLanguage
+2026-03-26 00:11:51.215 [info] [JSON Language Server] schema change detected vscode://schemas/ignoredSettings
+2026-03-26 00:11:52.133 [info] [JSON Language Server] schema change detected vscode://schemas/settings/user
+2026-03-26 00:11:58.546 [info] [JSON Language Server] schema change detected vscode://schemas/settings/user
+2026-03-26 00:15:13.582 [info] [Python] Send text to terminal: & c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI\Networking-Test-Kit\BrainFlow\.venv\Scripts\Activate.ps1
+2026-03-26 00:15:27.354 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 00:15:32.996 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 00:15:38.236 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 00:15:41.670 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 00:16:15.924 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 00:16:38.156 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 00:16:48.821 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 00:16:56.893 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 00:17:10.584 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 00:17:18.071 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 00:17:27.026 [error] [Window] TreeError [DebugRepl] Tree input not set: Error: TreeError [DebugRepl] Tree input not set
+    at Xu._updateChildren (vscode-file://vscode-app/c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/cfbea10c5f/resources/app/out/vs/workbench/workbench.desktop.main.js:861:33763)
+    at Xu.updateChildren (vscode-file://vscode-app/c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/cfbea10c5f/resources/app/out/vs/workbench/workbench.desktop.main.js:861:33440)
+    at DSe.value (vscode-file://vscode-app/c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/cfbea10c5f/resources/app/out/vs/workbench/workbench.desktop.main.js:3614:39866)
+    at E._deliver (vscode-file://vscode-app/c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/cfbea10c5f/resources/app/out/vs/workbench/workbench.desktop.main.js:405:3066)
+    at E._deliverQueue (vscode-file://vscode-app/c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/cfbea10c5f/resources/app/out/vs/workbench/workbench.desktop.main.js:405:3155)
+    at E.fire (vscode-file://vscode-app/c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/cfbea10c5f/resources/app/out/vs/workbench/workbench.desktop.main.js:405:3490)
+    at vU.setVisible (vscode-file://vscode-app/c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/cfbea10c5f/resources/app/out/vs/workbench/workbench.desktop.main.js:1009:3636)
+    at vscode-file://vscode-app/c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/cfbea10c5f/resources/app/out/vs/workbench/workbench.desktop.main.js:1031:17308
+    at Array.map (<anonymous>)
+    at Tc.setVisible (vscode-file://vscode-app/c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/cfbea10c5f/resources/app/out/vs/workbench/workbench.desktop.main.js:1031:17299)
+    at n.setVisible (vscode-file://vscode-app/c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/cfbea10c5f/resources/app/out/vs/workbench/workbench.desktop.main.js:1132:8008)
+    at P2.showComposite (vscode-file://vscode-app/c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/cfbea10c5f/resources/app/out/vs/workbench/workbench.desktop.main.js:1256:132979)
+    at P2.showComposite (vscode-file://vscode-app/c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/cfbea10c5f/resources/app/out/vs/workbench/workbench.desktop.main.js:1263:10761)
+    at P2.doOpenComposite (vscode-file://vscode-app/c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/cfbea10c5f/resources/app/out/vs/workbench/workbench.desktop.main.js:1256:131054)
+    at P2.openComposite (vscode-file://vscode-app/c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/cfbea10c5f/resources/app/out/vs/workbench/workbench.desktop.main.js:1256:130627)
+    at P2.doOpenPaneComposite (vscode-file://vscode-app/c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/cfbea10c5f/resources/app/out/vs/workbench/workbench.desktop.main.js:1263:17636)
+    at P2.openPaneComposite (vscode-file://vscode-app/c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/cfbea10c5f/resources/app/out/vs/workbench/workbench.desktop.main.js:1263:17203)
+    at HZ.run (vscode-file://vscode-app/c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/cfbea10c5f/resources/app/out/vs/workbench/workbench.desktop.main.js:1263:8523)
+    at is.runAction (vscode-file://vscode-app/c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/cfbea10c5f/resources/app/out/vs/workbench/workbench.desktop.main.js:411:30834)
+    at is.run (vscode-file://vscode-app/c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/cfbea10c5f/resources/app/out/vs/workbench/workbench.desktop.main.js:411:30737)
+    at IDe.onClick (vscode-file://vscode-app/c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/cfbea10c5f/resources/app/out/vs/workbench/workbench.desktop.main.js:849:17488)
+    at HTMLLIElement.<anonymous> (vscode-file://vscode-app/c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/cfbea10c5f/resources/app/out/vs/workbench/workbench.desktop.main.js:849:17175)
+2026-03-26 00:17:33.351 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 00:17:35.472 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 00:17:36.304 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 00:17:48.353 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 00:18:03.103 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 00:18:50.463 [info] [GitHub Copilot Chat] Fetched model metadata in 2402ms 710f39d7-688c-4a17-9d27-034c6e958792
+2026-03-26 00:18:51.083 [info] [GitHub Copilot Chat] ccreq:9409d17c.copilotmd | markdown
+2026-03-26 00:18:52.674 [info] [GitHub Copilot Chat] message 0 returned. finish reason: [stop]
+2026-03-26 00:18:52.678 [info] [GitHub Copilot Chat] request done: requestId: [11a0e51a-0a2b-44b4-abbf-3a66df0ffd3a] model deployment ID: []
+2026-03-26 00:18:52.680 [info] [GitHub Copilot Chat] ccreq:aaf3a812.copilotmd | success | gpt-4o-mini-2024-07-18 | 563ms | [intentDetection]
+2026-03-26 00:18:53.594 [info] [GitHub Copilot Chat] message 0 returned. finish reason: [stop]
+2026-03-26 00:18:53.603 [info] [GitHub Copilot Chat] request done: requestId: [b03513e8-96e8-4415-a902-c15e0d8cc3f9] model deployment ID: []
+2026-03-26 00:18:53.606 [info] [GitHub Copilot Chat] ccreq:9016f738.copilotmd | success | gpt-4o-mini-2024-07-18 | 801ms | [progressMessages]
+2026-03-26 00:18:53.715 [info] [GitHub Copilot Chat] message 0 returned. finish reason: [stop]
+2026-03-26 00:18:53.720 [info] [GitHub Copilot Chat] request done: requestId: [aa3956a8-3bae-4cd5-8cd0-078aa36fb964] model deployment ID: []
+2026-03-26 00:18:53.722 [info] [GitHub Copilot Chat] ccreq:0f724a18.copilotmd | success | gpt-4o-mini-2024-07-18 | 925ms | [progressMessages]
+2026-03-26 00:18:55.666 [info] [GitHub Copilot Chat] Summarized doc to fit token budget (90185.9 / 127997): 265 + 0 + 0
+2026-03-26 00:19:01.924 [info] [GitHub Copilot Chat] [messagesAPI] message 0 returned. finish reason: [stop]
+2026-03-26 00:19:02.145 [info] [GitHub Copilot Chat] ccreq:35b097cb.copilotmd | success | claude-haiku-4.5 -> claude-haiku-4-5-20251001 | 6412ms | [inline/generate]
+2026-03-26 00:19:02.213 [info] [GitHub Copilot Chat] [ToolCallingLoop] Stop hook result: shouldContinue=false, reasons=undefined
+2026-03-26 00:19:06.149 [info] [Window] ChatService#cancelCurrentRequestForSession: No pending request was found for session vscode-chat-session://local/ZWFjMjI2MWItNDBlMC00ZTQyLWE5MGMtMTkyMzBhZWUxZDBi. requestInProgress=false, pendingRequests=0
+2026-03-26 00:19:56.434 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 00:20:15.948 [info] [GitHub Copilot Chat] Dropped current selection (12285 / 12285 tokens)
+2026-03-26 00:20:16.071 [info] [GitHub Copilot Chat] Dropped current selection (33999 / 271997 tokens)
+2026-03-26 00:20:17.992 [info] [GitHub Copilot Chat] message 0 returned. finish reason: [stop]
+2026-03-26 00:20:17.995 [info] [GitHub Copilot Chat] request done: requestId: [8d36402a-3a77-4511-bb1f-5755e828f7e8] model deployment ID: []
+2026-03-26 00:20:17.998 [info] [GitHub Copilot Chat] ccreq:8fd0425a.copilotmd | success | gpt-4o-mini-2024-07-18 | 1553ms | [title]
+2026-03-26 00:20:21.619 [info] [GitHub Copilot Chat] ccreq:7890d3cd.copilotmd | success | gpt-5.4 -> gpt-5.4-2026-03-05 | 5024ms | [panel/explain]
+2026-03-26 00:20:21.641 [info] [GitHub Copilot Chat] [ToolCallingLoop] Stop hook result: shouldContinue=false, reasons=undefined
+2026-03-26 00:21:30.475 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 00:21:43.378 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 00:21:50.694 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 00:21:57.039 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 00:23:00.984 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 00:23:08.233 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 00:24:11.603 [error] [Window] [Extension Host] Failed to fetch remote embeddings cache from https://embeddings.vscode-cdn.net/text-3-small/v1.113/tools/latest.txt
+2026-03-26 00:24:11.610 [error] [Window] [Extension Host] Response status: 404, status text: 
+2026-03-26 00:24:12.064 [error] [Window] [Extension Host] Failed to fetch remote embeddings cache from https://embeddings.vscode-cdn.net/text-3-small/v1.113/tools/core.json
+2026-03-26 00:24:12.065 [error] [Window] [Extension Host] Response status: 404, status text: 
+2026-03-26 00:24:12.142 [warning] [GitHub Copilot Chat] [virtual-tools] Had to drop 2 tools due to limit constraints
+2026-03-26 00:24:12.144 [warning] [GitHub Copilot Chat] [virtual-tools] Had to drop 2 tools due to limit constraints
+2026-03-26 00:24:12.746 [warning] [GitHub Copilot Chat] [virtual-tools] Had to drop 2 tools due to limit constraints
+2026-03-26 00:24:18.626 [info] [GitHub Copilot Chat] message 0 returned. finish reason: [stop]
+2026-03-26 00:24:18.634 [info] [GitHub Copilot Chat] request done: requestId: [74fccd29-1dfd-483f-89ae-3e0517871d27] model deployment ID: []
+2026-03-26 00:24:18.642 [info] [GitHub Copilot Chat] ccreq:ba62fe93.copilotmd | success | gpt-4o-mini-2024-07-18 | 5844ms | [summarizeVirtualTools]
+2026-03-26 00:24:22.708 [info] [Window] Extension host (LocalProcess pid: 14076) is unresponsive.
+2026-03-26 00:24:28.884 [info] [Window] UNRESPONSIVE extension host: starting to profile NOW
+2026-03-26 00:24:33.493 [info] [Window] Extension host (LocalProcess pid: 14076) is responsive.
+2026-03-26 00:24:33.494 [info] [Window] UNRESPONSIVE extension host: received responsive event and cancelling profiling session
+2026-03-26 00:24:33.714 [warning] [Window] UNRESPONSIVE extension host: 'github.copilot-chat' took 86.12955912958593% of 3984.536ms, saved PROFILE here: 'file:///c%3A/Users/ASUS/AppData/Local/Temp/exthost-afb779.cpuprofile'
+2026-03-26 00:24:34.301 [info] [GitHub Copilot Chat] [ConversationHistorySummarizer] [full] summarization prompt rendered in 202ms.
+2026-03-26 00:24:51.502 [info] [GitHub Copilot Chat] ccreq:8045e676.copilotmd | success | gpt-5-mini -> gpt-5-mini-2025-08-07 | 17195ms | [summarizeConversationHistory-full]
+2026-03-26 00:24:58.071 [info] [Window] Extension host (LocalProcess pid: 14076) is unresponsive.
+2026-03-26 00:25:01.022 [info] [Window] UNRESPONSIVE extension host: starting to profile NOW
+2026-03-26 00:25:01.835 [info] [Window] Extension host (LocalProcess pid: 14076) is responsive.
+2026-03-26 00:25:01.836 [info] [Window] UNRESPONSIVE extension host: received responsive event and cancelling profiling session
+2026-03-26 00:25:02.037 [warning] [Window] UNRESPONSIVE extension host: 'github.copilot-chat' took 93.61762816488677% of 768.01ms, saved PROFILE here: 'file:///c%3A/Users/ASUS/AppData/Local/Temp/exthost-aec6d6.cpuprofile'
+2026-03-26 00:25:14.882 [info] [GitHub Copilot Chat] ccreq:5b99e929.copilotmd | success | gpt-5-mini -> gpt-5-mini-2025-08-07 | 12912ms | [panel/editAgent]
+2026-03-26 00:25:34.974 [info] [GitHub Copilot Chat] ccreq:277b166f.copilotmd | success | gpt-5-mini -> gpt-5-mini-2025-08-07 | 19432ms | [panel/editAgent]
+2026-03-26 00:25:43.051 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 00:25:47.844 [info] [GitHub Copilot Chat] ccreq:59f298d8.copilotmd | success | gpt-5-mini -> gpt-5-mini-2025-08-07 | 12723ms | [panel/editAgent]
+2026-03-26 00:25:51.006 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 00:25:57.171 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 00:26:01.272 [info] [GitHub Copilot Chat] ccreq:aa3df255.copilotmd | success | gpt-5-mini -> gpt-5-mini-2025-08-07 | 13222ms | [panel/editAgent]
+2026-03-26 00:26:01.406 [error] [Window] [LanguageModelToolsService#invokeTool] Error from tool copilot_applyPatch with parameters {"input":"*** Begin Patch\n*** Add File: OpenBCI_GUI/tools/encode_neural_to_text.py\n+#!/usr/bin/env python3\n+\"\"\"Simple encoder for OpenBCI-style EEG sample text files.\n+\n+Produces CSV, JSONL, or per-sample base64-packed binary of channel values.\n+\n+Usage:\n+  python encode_neural_to_text.py --input input.txt --output out.jsonl --format jsonl\n+\"\"\"\n+import argparse\n+import csv\n+import json\n+import os\n+import struct\n+import base64\n+\n+\n+def parse_header(lines):\n+    meta = {}\n+    for l in lines:\n+        if not l.startswith('%'):\n+            break\n+        if '=' in l:\n+            k, v = l[1:].strip().split('=', 1)\n+            meta[k.strip()] = v.strip()\n+    if 'Number of channels' in meta:\n+        try:\n+            meta['num_channels'] = int(meta['Number of channels'])\n+        except Exception:\n+            meta['num_channels'] = None\n+    else:\n+        meta['num_channels'] = None\n+    return meta\n+\n+\n+def parse_line(line, num_channels):\n+    # split on commas, keep tokens\n+    toks = [t.strip() for t in line.strip().split(',') if t.strip()!='']\n+    if not toks:\n+        return None\n+\n+    # detect trailing timestamp/time string\n+    timestamp_ms = None\n+    timestr = None\n+    if len(toks) >= 2 and (':' in toks[-1]) and toks[-2].isdigit():\n+        try:\n+            timestamp_ms = int(float(toks[-2]))\n+            timestr = toks[-1]\n+            toks = toks[:-2]\n+        except Exception:\n+            pass\n+\n+    # first token may be sample index\n+    idx = None\n+    try:\n+        maybe_idx = int(toks[0])\n+        idx = maybe_idx\n+        data_start = 1\n+    except Exception:\n+        data_start = 0\n+\n+    # collect channel values\n+    channels = []\n+    if num_channels is None:\n+        # fallback: take first 8 values or as many as available\n+        count = min(8, max(0, len(toks) - data_start))\n+    else:\n+        count = min(num_channels, max(0, len(toks) - data_start))\n+\n+    for i in range(count):\n+        try:\n+            channels.append(float(toks[data_start + i]))\n+        except Exception:\n+            channels.append(None)\n+\n+    # remaining tokens after channels considered aux\n+    aux = []\n+    for j in range(data_start + count, len(toks)):\n+        try:\n+            aux.append(float(toks[j]))\n+        except Exception:\n+            aux.append(toks[j])\n+\n+    return {\n+        'index': idx,\n+        'channels': channels,\n+        'aux': aux,\n+        'timestamp_ms': timestamp_ms,\n+        'time_str': timestr,\n+    }\n+\n+\n+def encode_base64_int32(samples):\n+    # pack channels as little-endian int32 per sample, return base64 bytes (single blob)\n+    buf = bytearray()\n+    for s in samples:\n+        for v in s['channels']:\n+            if v is None:\n+                buf += struct.pack('<i', 0)\n+            else:\n+                # cast float to int\n+                buf += struct.pack('<i', int(v))\n+    return base64.b64encode(bytes(buf)).decode('ascii')\n+\n+\n+def main():\n+    p = argparse.ArgumentParser()\n+    p.add_argument('--input', '-i', required=True)\n+    p.add_argument('--output', '-o', required=True)\n+    p.add_argument('--format', '-f', choices=['jsonl', 'csv', 'base64'], default='jsonl')\n+    p.add_argument('--num-channels', type=int, default=None)\n+    args = p.parse_args()\n+\n+    with open(args.input, 'r', encoding='utf-8', errors='ignore') as fh:\n+        lines = [l.rstrip('\\n') for l in fh]\n+\n+    meta = parse_header(lines)\n+    num_channels = args.num_channels if args.num_channels is not None else meta.get('num_channels')\n+\n+    # find first non-header line\n+    data_lines = [l for l in lines if not l.startswith('%') and l.strip()!='']\n+    samples = []\n+    for line in data_lines:\n+        parsed = parse_line(line, num_channels)\n+        if parsed:\n+            samples.append(parsed)\n+\n+    outdir = os.path.dirname(args.output)\n+    if outdir and not os.path.exists(outdir):\n+        os.makedirs(outdir, exist_ok=True)\n+\n+    if args.format == 'jsonl':\n+        with open(args.output, 'w', encoding='utf-8') as out:\n+            for s in samples:\n+                out.write(json.dumps(s) + '\\n')\n+\n+    elif args.format == 'csv':\n+        # columns: index, ch0..chN-1, aux0..M-1, timestamp_ms, time_str\n+        max_aux = max((len(s['aux']) for s in samples), default=0)\n+        chan_count = max((len(s['channels']) for s in samples), default=0)\n+        headers = ['index'] + [f'ch{i}' for i in range(chan_count)] + [f'aux{i}' for i in range(max_aux)] + ['timestamp_ms', 'time_str']\n+        with open(args.output, 'w', newline='', encoding='utf-8') as out:\n+            w = csv.writer(out)\n+            w.writerow(headers)\n+            for s in samples:\n+                row = [s['index']] + s['channels'] + s['aux'] + [s['timestamp_ms'], s['time_str']]\n+                # pad\n+                if len(row) < len(headers):\n+                    row += [None] * (len(headers) - len(row))\n+                w.writerow(row)\n+\n+    elif args.format == 'base64':\n+        b64 = encode_base64_int32(samples)\n+        with open(args.output, 'w', encoding='utf-8') as out:\n+            out.write(b64 + '\\n')\n+\n+    print(f'Wrote {len(samples)} samples to {args.output}')\n+\n+\n+if __name__ == '__main__':\n+    main()\n+\n*** End Patch","explanation":"Add Python encoder script to tools to parse OpenBCI text data and output JSONL/CSV/base64."}:
+Invalid input path: OpenBCI_GUI/tools/encode_neural_to_text.py. Be sure to use an absolute path.: Error: Invalid input path: OpenBCI_GUI/tools/encode_neural_to_text.py. Be sure to use an absolute path.
+	at tc (c:\Users\ASUS\.vscode\extensions\github.copilot-chat-0.41.1\dist\extension.js:1957:1922)
+	at c:\Users\ASUS\.vscode\extensions\github.copilot-chat-0.41.1\dist\extension.js:2052:9291
+	at Array.map (<anonymous>)
+	at ixe.generatePatchConfirmationDetails (c:\Users\ASUS\.vscode\extensions\github.copilot-chat-0.41.1\dist\extension.js:2052:9266)
+	at async b_ (c:\Users\ASUS\.vscode\extensions\github.copilot-chat-0.41.1\dist\extension.js:1970:683)
+	at async Nw.$prepareToolInvocation (file:///c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/cfbea10c5f/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:591:4967)
+2026-03-26 00:26:01.416 [error] [GitHub Copilot Chat] Error from tool apply_patch with args {"input":"*** Begin Patch\n*** Add File: OpenBCI_GUI/tools/encode_neural_to_text.py\n+#!/usr/bin/env python3\n+\"\"\"Simple encoder for OpenBCI-style EEG sample text files.\n+\n+Produces CSV, JSONL, or per-sample base64-packed binary of channel values.\n+\n+Usage:\n+  python encode_neural_to_text.py --input input.txt --output out.jsonl --format jsonl\n+\"\"\"\n+import argparse\n+import csv\n+import json\n+import os\n+import struct\n+import base64\n+\n+\n+def parse_header(lines):\n+    meta = {}\n+    for l in lines:\n+        if not l.startswith('%'):\n+            break\n+        if '=' in l:\n+            k, v = l[1:].strip().split('=', 1)\n+            meta[k.strip()] = v.strip()\n+    if 'Number of channels' in meta:\n+        try:\n+            meta['num_channels'] = int(meta['Number of channels'])\n+        except Exception:\n+            meta['num_channels'] = None\n+    else:\n+        meta['num_channels'] = None\n+    return meta\n+\n+\n+def parse_line(line, num_channels):\n+    # split on commas, keep tokens\n+    toks = [t.strip() for t in line.strip().split(',') if t.strip()!='']\n+    if not toks:\n+        return None\n+\n+    # detect trailing timestamp/time string\n+    timestamp_ms = None\n+    timestr = None\n+    if len(toks) >= 2 and (':' in toks[-1]) and toks[-2].isdigit():\n+        try:\n+            timestamp_ms = int(float(toks[-2]))\n+            timestr = toks[-1]\n+            toks = toks[:-2]\n+        except Exception:\n+            pass\n+\n+    # first token may be sample index\n+    idx = None\n+    try:\n+        maybe_idx = int(toks[0])\n+        idx = maybe_idx\n+        data_start = 1\n+    except Exception:\n+        data_start = 0\n+\n+    # collect channel values\n+    channels = []\n+    if num_channels is None:\n+        # fallback: take first 8 values or as many as available\n+        count = min(8, max(0, len(toks) - data_start))\n+    else:\n+        count = min(num_channels, max(0, len(toks) - data_start))\n+\n+    for i in range(count):\n+        try:\n+            channels.append(float(toks[data_start + i]))\n+        except Exception:\n+            channels.append(None)\n+\n+    # remaining tokens after channels considered aux\n+    aux = []\n+    for j in range(data_start + count, len(toks)):\n+        try:\n+            aux.append(float(toks[j]))\n+        except Exception:\n+            aux.append(toks[j])\n+\n+    return {\n+        'index': idx,\n+        'channels': channels,\n+        'aux': aux,\n+        'timestamp_ms': timestamp_ms,\n+        'time_str': timestr,\n+    }\n+\n+\n+def encode_base64_int32(samples):\n+    # pack channels as little-endian int32 per sample, return base64 bytes (single blob)\n+    buf = bytearray()\n+    for s in samples:\n+        for v in s['channels']:\n+            if v is None:\n+                buf += struct.pack('<i', 0)\n+            else:\n+                # cast float to int\n+                buf += struct.pack('<i', int(v))\n+    return base64.b64encode(bytes(buf)).decode('ascii')\n+\n+\n+def main():\n+    p = argparse.ArgumentParser()\n+    p.add_argument('--input', '-i', required=True)\n+    p.add_argument('--output', '-o', required=True)\n+    p.add_argument('--format', '-f', choices=['jsonl', 'csv', 'base64'], default='jsonl')\n+    p.add_argument('--num-channels', type=int, default=None)\n+    args = p.parse_args()\n+\n+    with open(args.input, 'r', encoding='utf-8', errors='ignore') as fh:\n+        lines = [l.rstrip('\\n') for l in fh]\n+\n+    meta = parse_header(lines)\n+    num_channels = args.num_channels if args.num_channels is not None else meta.get('num_channels')\n+\n+    # find first non-header line\n+    data_lines = [l for l in lines if not l.startswith('%') and l.strip()!='']\n+    samples = []\n+    for line in data_lines:\n+        parsed = parse_line(line, num_channels)\n+        if parsed:\n+            samples.append(parsed)\n+\n+    outdir = os.path.dirname(args.output)\n+    if outdir and not os.path.exists(outdir):\n+        os.makedirs(outdir, exist_ok=True)\n+\n+    if args.format == 'jsonl':\n+        with open(args.output, 'w', encoding='utf-8') as out:\n+            for s in samples:\n+                out.write(json.dumps(s) + '\\n')\n+\n+    elif args.format == 'csv':\n+        # columns: index, ch0..chN-1, aux0..M-1, timestamp_ms, time_str\n+        max_aux = max((len(s['aux']) for s in samples), default=0)\n+        chan_count = max((len(s['channels']) for s in samples), default=0)\n+        headers = ['index'] + [f'ch{i}' for i in range(chan_count)] + [f'aux{i}' for i in range(max_aux)] + ['timestamp_ms', 'time_str']\n+        with open(args.output, 'w', newline='', encoding='utf-8') as out:\n+            w = csv.writer(out)\n+            w.writerow(headers)\n+            for s in samples:\n+                row = [s['index']] + s['channels'] + s['aux'] + [s['timestamp_ms'], s['time_str']]\n+                # pad\n+                if len(row) < len(headers):\n+                    row += [None] * (len(headers) - len(row))\n+                w.writerow(row)\n+\n+    elif args.format == 'base64':\n+        b64 = encode_base64_int32(samples)\n+        with open(args.output, 'w', encoding='utf-8') as out:\n+            out.write(b64 + '\\n')\n+\n+    print(f'Wrote {len(samples)} samples to {args.output}')\n+\n+\n+if __name__ == '__main__':\n+    main()\n+\n*** End Patch","explanation":"Add Python encoder script to tools to parse OpenBCI text data and output JSONL/CSV/base64."}: Invalid input path: OpenBCI_GUI/tools/encode_neural_to_text.py. Be sure to use an absolute path.: Error: Invalid input path: OpenBCI_GUI/tools/encode_neural_to_text.py. Be sure to use an absolute path.
+	at tc (c:\Users\ASUS\.vscode\extensions\github.copilot-chat-0.41.1\dist\extension.js:1957:1922)
+	at c:\Users\ASUS\.vscode\extensions\github.copilot-chat-0.41.1\dist\extension.js:2052:9291
+	at Array.map (<anonymous>)
+	at ixe.generatePatchConfirmationDetails (c:\Users\ASUS\.vscode\extensions\github.copilot-chat-0.41.1\dist\extension.js:2052:9266)
+	at async b_ (c:\Users\ASUS\.vscode\extensions\github.copilot-chat-0.41.1\dist\extension.js:1970:683)
+	at async Nw.$prepareToolInvocation (file:///c:/Users/ASUS/AppData/Local/Programs/Microsoft%20VS%20Code/cfbea10c5f/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:591:4967)
+2026-03-26 00:26:21.042 [info] [GitHub Copilot Chat] ccreq:ac2968cc.copilotmd | success | gpt-5-mini -> gpt-5-mini-2025-08-07 | 19430ms | [panel/editAgent]
+2026-03-26 00:26:23.852 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): Found 22 source files
+2026-03-26 00:26:25.591 [info] [GitHub Copilot Chat] ccreq:4ad079c3.copilotmd | success | gpt-5-mini -> gpt-5-mini-2025-08-07 | 4304ms | [panel/editAgent]
+2026-03-26 00:26:27.703 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 00:26:28.194 [info] [GitHub Copilot Chat] ccreq:bfd0b27f.copilotmd | success | gpt-5-mini -> gpt-5-mini-2025-08-07 | 2422ms | [panel/editAgent]
+2026-03-26 00:26:34.426 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 00:26:47.822 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 00:27:11.463 [info] [GitHub Copilot Chat] [CopilotCLIMCPHandler] loadMcpConfig called. CLIMCPServerEnabled=true
+2026-03-26 00:27:11.464 [info] [GitHub Copilot Chat] [CopilotCLIMCPHandler] MCP server forwarding is enabled, using gateway configuration
+2026-03-26 00:27:11.716 [info] [Window] [McpGateway][Workbench] Creating local gateway via main process
+2026-03-26 00:27:11.837 [info] [Window] [McpGateway][Workbench] Local gateway created with 3 server(s)
+2026-03-26 00:27:11.851 [info] [GitHub Copilot Chat] [CopilotCLISession] Passing 3 MCP server(s) to SDK: [github, io_github_github_github-mcp-server, pylance_mcp_server]
+2026-03-26 00:27:11.851 [info] [GitHub Copilot Chat] [CopilotCLISession]   github: type=http
+2026-03-26 00:27:11.851 [info] [GitHub Copilot Chat] [CopilotCLISession]   io_github_github_github-mcp-server: type=http
+2026-03-26 00:27:11.851 [info] [GitHub Copilot Chat] [CopilotCLISession]   pylance_mcp_server: type=http
+2026-03-26 00:27:11.918 [info] [GitHub Copilot Chat] [CopilotCLI] OpenTelemetry SDK initialized successfully
+2026-03-26 00:27:11.918 [info] [GitHub Copilot Chat] [CopilotCLI] OpenTelemetry tracker created for session 1b674625-2a21-4e9c-8225-8541282ff8a5
+2026-03-26 00:27:13.141 [info] [GitHub Copilot Chat] [CopilotCLI] Closing session 1b674625-2a21-4e9c-8225-8541282ff8a5
+2026-03-26 00:27:13.143 [info] [Window] [McpGateway][Workbench] Disposing local gateway: ffd30134-017d-4203-af9c-5e0c9a1ad428
+2026-03-26 00:27:13.192 [info] [GitHub Copilot Chat] [CopilotCLI] Workspace initialized: 1b674625-2a21-4e9c-8225-8541282ff8a5 (checkpoints: 0)
+2026-03-26 00:34:36.978 [info] [Main] update#setState checking for updates
+2026-03-26 00:34:37.633 [info] [Main] update#setState idle
+2026-03-26 00:36:29.172 [warning] [Window] MCP migration: Failed to parse MCP config from vscode-userdata:/c%3A/Users/ASUS/AppData/Roaming/Code/User/settings.json: Unexpected token '}', ..."e": 
+    }
+}" is not valid JSON
+2026-03-26 00:36:29.174 [warning] [Window] MCP migration: Failed to parse MCP config from vscode-userdata:/c%3A/Users/ASUS/AppData/Roaming/Code/User/settings.json: Unexpected token '}', ..."e": 
+    }
+}" is not valid JSON
+2026-03-26 00:44:30.747 [error] [GitHub Copilot Chat] Error connecting to debug client on \\.\pipe\: Error: connect ENOTSOCK \\.\pipe\
+2026-03-26 00:45:44.968 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 00:45:49.798 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 00:57:50.754 [info] [Window] ChatService#cancelCurrentRequestForSession: No pending request was found for session vscode-chat-session://local/OGM2ZTEyYWMtOWZhNi00ZDljLWI3MGMtMDYyOTNiM2UzNjBm. requestInProgress=false, pendingRequests=0
+2026-03-26 00:57:51.934 [info] [GitHub Copilot Chat] Logged in as gpgvision93-max
+2026-03-26 00:57:52.392 [info] [GitHub Copilot Chat] Got Copilot token for gpgvision93-max
+2026-03-26 00:57:52.392 [info] [GitHub Copilot Chat] Copilot Chat: 0.41.1, VS Code: 1.113.0
+2026-03-26 00:57:52.455 [info] [GitHub Copilot Chat] AuthenticationService: firing onDidAuthenticationChange from handleAuthChangeEvent. Has token: true
+2026-03-26 00:57:52.456 [info] [GitHub Copilot Chat] copilot token sku: monthly_subscriber_quota
+2026-03-26 00:57:52.456 [info] [GitHub Copilot Chat] ConversationFeature: onDidAuthenticationChange has token: true
+2026-03-26 00:57:52.456 [info] [GitHub Copilot Chat] [code-referencing] Public code references are enabled.
+2026-03-26 00:57:53.315 [info] [GitHub Copilot Chat] Fetched model metadata in 2026ms 21cefb5c-fcea-4427-9c88-b0f076dd2600
+2026-03-26 00:57:53.647 [info] [GitHub Copilot Chat] ccreq:8fab34a6.copilotmd | markdown
+2026-03-26 00:57:56.817 [info] [GitHub Copilot Chat] ccreq:19d1fa49.copilotmd | success | gpt-5.1 -> capi-cus-ptuc-h100-gpt-51 | 2526ms | [panel/explain]
+2026-03-26 00:57:56.830 [info] [GitHub Copilot Chat] [ToolCallingLoop] Stop hook result: shouldContinue=false, reasons=undefined
+2026-03-26 00:58:18.012 [warning] [GitHub Copilot Chat] [virtual-tools] Had to drop 2 tools due to limit constraints
+2026-03-26 00:58:18.012 [warning] [GitHub Copilot Chat] [virtual-tools] Had to drop 2 tools due to limit constraints
+2026-03-26 00:58:18.013 [warning] [GitHub Copilot Chat] [virtual-tools] Had to drop 2 tools due to limit constraints
+2026-03-26 00:58:21.146 [info] [GitHub Copilot Chat] [ConversationHistorySummarizer] [full] summarization prompt rendered in 133ms.
+2026-03-26 00:58:24.733 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 00:58:24.784 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 00:58:24.852 [info] [Python Language Server] (15304): virtual workspace: vscode-chat-code-block:/
+2026-03-26 00:58:24.876 [info] [Python Language Server] (15304): Starting service instance "<default>" for workspace "vscode-chat-code-block:/"
+2026-03-26 00:58:25.538 [info] [Python Language Server] (15304): FG(<default>): Setting environmentName for service "<default>": "Python 3.14.3"
+2026-03-26 00:58:25.539 [info] [Python Language Server] (15304): FG(<default>): No include entries specified; assuming vscode-chat-code-block:/
+2026-03-26 00:58:25.540 [info] [Python Language Server] (15304): FG(<default>): Auto-excluding **/node_modules
+2026-03-26 00:58:25.541 [info] [Python Language Server] (15304): FG(<default>): Auto-excluding **/__pycache__
+2026-03-26 00:58:25.541 [info] [Python Language Server] (15304): FG(<default>): Auto-excluding **/.*
+2026-03-26 00:58:25.995 [info] [GitHub Copilot Chat] message 0 returned. finish reason: [stop]
+2026-03-26 00:58:25.998 [info] [GitHub Copilot Chat] request done: requestId: [3c468ed7-a05a-465e-86f5-d74b36be7933] model deployment ID: []
+2026-03-26 00:58:26.000 [info] [GitHub Copilot Chat] ccreq:d99ed54f.copilotmd | success | gpt-4o-mini -> gpt-4o-mini-2024-07-18 | 542ms | [copilotLanguageModelWrapper]
+2026-03-26 00:58:26.015 [info] [GitHub Copilot Chat] message 0 returned. finish reason: [stop]
+2026-03-26 00:58:26.022 [info] [GitHub Copilot Chat] request done: requestId: [f93a488a-d7c2-40c3-8407-6b4fefec5092] model deployment ID: []
+2026-03-26 00:58:26.024 [info] [GitHub Copilot Chat] ccreq:ac6013ff.copilotmd | success | gpt-4o-mini -> gpt-4o-mini-2024-07-18 | 561ms | [copilotLanguageModelWrapper]
+2026-03-26 00:58:26.509 [info] [Python Language Server] (15304): FG(<default>): Assuming Python version 3.14.3.final.0
+2026-03-26 00:58:27.498 [info] [Python Language Server] (15304): [Editable Installs] Starting dynamic pth file resolution for Python: 
+2026-03-26 00:58:27.695 [info] [Python Language Server] (15304): [Editable Installs] No sandbox available for Python . Dynamic pth file resolution requires Python 3.13 or later.
+2026-03-26 00:58:30.079 [error] [Python Language Server] (15304): FG(<default>): File or directory "vscode-chat-code-block:/" does not exist.
+2026-03-26 00:58:30.080 [info] [Python Language Server] (15304): FG(<default>): No source files found.
+2026-03-26 00:58:30.608 [info] [Python] Send text to terminal: & c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI\Networking-Test-Kit\BrainFlow\.venv\Scripts\Activate.ps1
+2026-03-26 00:58:35.582 [info] [JSON Language Server] schema change detected vscode://schemas/settings/resourceLanguage
+2026-03-26 00:58:35.647 [info] [JSON Language Server] schema change detected vscode://schemas/ignoredSettings
+2026-03-26 00:58:35.876 [info] [JSON Language Server] schema change detected vscode://schemas/settings/user
+2026-03-26 00:58:36.509 [info] [JSON Language Server] schema change detected vscode://schemas/settings/user
+2026-03-26 00:58:37.499 [info] [JSON Language Server] schema change detected vscode://schemas/settings/user
+2026-03-26 00:58:38.576 [info] [JSON Language Server] schema change detected vscode://schemas/settings/user
+2026-03-26 00:58:39.290 [info] [JSON Language Server] schema change detected vscode://schemas/settings/user
+2026-03-26 00:58:42.262 [info] [GitHub Copilot Chat] ccreq:59b65dbc.copilotmd | success | gpt-5.1 -> capi-cus-ptuc-h100-gpt-51 | 21114ms | [summarizeConversationHistory-full]
+2026-03-26 00:58:47.452 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 00:58:53.513 [info] [GitHub Copilot Chat] message 0 returned. finish reason: [stop]
+2026-03-26 00:58:53.516 [info] [GitHub Copilot Chat] request done: requestId: [f66de319-6ff7-4888-ad92-c3d8ea37e01a] model deployment ID: []
+2026-03-26 00:58:53.517 [info] [GitHub Copilot Chat] ccreq:24bc7320.copilotmd | success | gpt-4o-mini -> gpt-4o-mini-2024-07-18 | 547ms | [copilotLanguageModelWrapper]
+2026-03-26 00:58:53.586 [info] [GitHub Copilot Chat] ccreq:b29ffb07.copilotmd | success | gpt-5.1 -> capi-cus-ptuc-h100-gpt-51 | 9735ms | [panel/editAgent]
+2026-03-26 00:58:59.412 [info] [GitHub Copilot Chat] ccreq:91ab05e8.copilotmd | success | gpt-5.1 -> capi-cus-ptuc-h100-gpt-51 | 5262ms | [panel/editAgent]
+2026-03-26 00:58:59.443 [info] [GitHub Copilot Chat] [ToolCallingLoop] Stop hook result: shouldContinue=false, reasons=undefined
+2026-03-26 01:00:19.085 [warning] [Window] SettingsEditor2: Settings not included in settingsLayout.ts: extensions.requestTimeout, github.copilot.chat.agent.terminal.allowList, github.copilot.chat.agent.terminal.denyList, terminal.integrated.developer.devMode, terminal.integrated.developer.ptyHost.latency, terminal.integrated.developer.ptyHost.startupDelay, terminal.integrated.enableKittyKeyboardProtocol, terminal.integrated.enableWin32InputMode, chat.artifacts.enabled, chat.autopilot.enabled, chat.autoReply, chat.contextUsage.enabled, chat.customizations.harnessSelector.enabled, chat.customizationsMenu.enabled, chat.editing.revealNextChangeOnResolve, chat.experimentalSessionsWindowOverride, chat.exploreAgent.defaultModel, chat.growthNotification.enabled, chat.pluginLocations, chat.plugins.enabled, chat.plugins.marketplaces, chat.statusWidget.anonymous, chat.subagents.allowInvocationsFromSubagents, chat.upvoteAnimation, chat.useClaudeHooks, chat.useCustomAgentHooks, chat.useCustomizationsInParentRepositories, imageCarousel.chat.enabled, imageCarousel.explorerContextMenu.enabled, accessibility.signals.chatResponseReceived, accessibility.signals.chatUserActionRequired
+2026-03-26 01:00:23.240 [info] [GitHub Copilot Chat] message 0 returned. finish reason: [stop]
+2026-03-26 01:00:23.243 [info] [GitHub Copilot Chat] request done: requestId: [b9117fbb-1ab0-4232-87a5-700d4335599c] model deployment ID: []
+2026-03-26 01:00:23.244 [info] [GitHub Copilot Chat] ccreq:bf51156f.copilotmd | success | gpt-4.1 -> gpt-4.1-2025-04-14 | 1514ms | [settingsEditorSearchSuggestions]
+2026-03-26 01:01:28.193 [info] [JSON Language Server] read schema from vscode: vscode://schemas/settings/user
+2026-03-26 01:01:28.850 [info] [JSON Language Server] read schema from vscode: vscode://schemas/settings/resourceLanguage
+2026-03-26 01:01:28.852 [info] [JSON Language Server] read schema from vscode: vscode://schemas/ignoredSettings
+2026-03-26 01:01:28.870 [info] [JSON Language Server] read schema from vscode: vscode://schemas/launch
+2026-03-26 01:01:28.873 [info] [JSON Language Server] read schema from vscode: vscode://schemas/token-styling
+2026-03-26 01:01:28.874 [info] [JSON Language Server] read schema from vscode: vscode://schemas/textmate-colors
+2026-03-26 01:01:28.874 [info] [JSON Language Server] read schema from vscode: vscode://schemas/workbench-colors
+2026-03-26 01:01:29.398 [info] [JSON Language Server] schema change detected vscode://schemas/settings/user
+2026-03-26 01:01:29.404 [info] [JSON Language Server] read schema from vscode: vscode://schemas/settings/user
+2026-03-26 01:01:41.212 [info] [GitHub Copilot Chat] [messagesAPI] message 0 returned. finish reason: [stop]
+2026-03-26 01:01:41.228 [info] [GitHub Copilot Chat] ccreq:188d1ea8.copilotmd | success | claude-haiku-4.5 -> claude-haiku-4-5-20251001 | 2298ms | [inline/fix]
+2026-03-26 01:01:41.244 [info] [GitHub Copilot Chat] [ToolCallingLoop] Stop hook result: shouldContinue=false, reasons=undefined
+2026-03-26 01:01:41.774 [error] [Python] Unable to find workspace for given file
+2026-03-26 01:01:41.789 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): Setting environmentName for service "OpenBCI_GUI": ".venv (3.14.3)"
+2026-03-26 01:01:41.790 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): Setting pythonPath for service "OpenBCI_GUI": "c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI\Networking-Test-Kit\BrainFlow\.venv\Scripts\python.exe"
+2026-03-26 01:01:41.792 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): No include entries specified; assuming c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI
+2026-03-26 01:01:41.792 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): Auto-excluding **/node_modules
+2026-03-26 01:01:41.793 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): Auto-excluding **/__pycache__
+2026-03-26 01:01:41.793 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): Auto-excluding **/.*
+2026-03-26 01:01:42.104 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): Assuming Python version 3.14.3.final.0
+2026-03-26 01:01:45.315 [info] [Window] ChatService#cancelCurrentRequestForSession: No pending request was found for session vscode-chat-session://local/NTQ1ZmMyMDEtY2JlZS00NjQ4LTkxNjUtNzFiNThiMTJiYzUz. requestInProgress=false, pendingRequests=0
+2026-03-26 01:01:45.556 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): Found 22 source files
+2026-03-26 01:01:45.564 [error] [Python] Unable to find workspace for given file
+2026-03-26 01:01:45.572 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): IDX(OpenBCI_GUI): Indexer background runner(4) root directory: file:///c%3A/Users/ASUS/.vscode/extensions/ms-python.vscode-pylance-2026.1.1/dist (index)
+2026-03-26 01:01:45.573 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): IDX(OpenBCI_GUI): Indexing(4) started
+2026-03-26 01:01:45.573 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): IDX(OpenBCI_GUI): scanned(4) 10 files over 1 exec env
+2026-03-26 01:01:45.813 [info] [Python Language Server] (15304): Settings have not changed. Skipping update.
+2026-03-26 01:01:45.951 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): IDX(OpenBCI_GUI): indexed(4) 10 files over 1 exec env
+2026-03-26 01:01:45.968 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): IDX(OpenBCI_GUI): Indexing finished(4).
+2026-03-26 01:03:27.426 [info] [GitHub Copilot Chat] ccreq:d8b340ec.copilotmd | markdown
+2026-03-26 01:03:30.807 [info] [GitHub Copilot Chat] ccreq:5669f223.copilotmd | markdown
+2026-03-26 01:03:31.357 [info] [GitHub Copilot Chat] ccreq:a33f0e2f.copilotmd | markdown
+2026-03-26 01:04:17.430 [info] [JSON Language Server] schema change detected vscode://schemas/settings/user
+2026-03-26 01:04:17.434 [info] [JSON Language Server] read schema from vscode: vscode://schemas/settings/user
+2026-03-26 01:04:38.095 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 01:04:38.712 [info] [JSON Language Server] schema change detected vscode://schemas/settings/user
+2026-03-26 01:04:57.403 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 01:05:15.065 [info] [JSON Language Server] schema change detected vscode://schemas/launch
+2026-03-26 01:05:43.519 [error] [Python] Unable to find workspace for given file
+2026-03-26 01:05:43.533 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): Setting environmentName for service "OpenBCI_GUI": ".venv (3.14.3)"
+2026-03-26 01:05:43.533 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): Setting pythonPath for service "OpenBCI_GUI": "c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI\Networking-Test-Kit\BrainFlow\.venv\Scripts\python.exe"
+2026-03-26 01:05:43.534 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): No include entries specified; assuming c:\Users\ASUS\Documents\GitHub\OpenBCI_GUI
+2026-03-26 01:05:43.534 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): Auto-excluding **/node_modules
+2026-03-26 01:05:43.534 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): Auto-excluding **/__pycache__
+2026-03-26 01:05:43.535 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): Auto-excluding **/.*
+2026-03-26 01:05:43.777 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): Assuming Python version 3.14.3.final.0
+2026-03-26 01:05:47.134 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): Found 22 source files
+2026-03-26 01:05:47.144 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): IDX(OpenBCI_GUI): Indexer background runner(5) root directory: file:///c%3A/Users/ASUS/.vscode/extensions/ms-python.vscode-pylance-2026.1.1/dist (index)
+2026-03-26 01:05:47.145 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): IDX(OpenBCI_GUI): Indexing(5) started
+2026-03-26 01:05:47.146 [info] [Python Language Server] (15304): Settings have not changed. Skipping update.
+2026-03-26 01:05:47.213 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): IDX(OpenBCI_GUI): scanned(5) 10 files over 1 exec env
+2026-03-26 01:05:47.673 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): IDX(OpenBCI_GUI): indexed(5) 10 files over 1 exec env
+2026-03-26 01:05:47.684 [info] [Python Language Server] (15304): FG(OpenBCI_GUI): IDX(OpenBCI_GUI): Indexing finished(5).
+2026-03-26 01:05:50.053 [info] [Window] ChatService#cancelCurrentRequestForSession: No pending request was found for session vscode-chat-session://local/OGM2ZTEyYWMtOWZhNi00ZDljLWI3MGMtMDYyOTNiM2UzNjBm. requestInProgress=false, pendingRequests=0
+2026-03-26 01:06:00.781 [info] [GitHub Copilot Chat] [ConversationHistorySummarizer] [full] summarization prompt rendered in 10ms.
+2026-03-26 01:06:30.095 [info] [GitHub Copilot Chat] ccreq:c0c3aee3.copilotmd | success | gpt-5.1 -> capi-cus-ptuc-h100-gpt-51 | 29319ms | [summarizeConversationHistory-full]
+2026-03-26 01:07:19.819 [trace] [JSON Language Server] Sending notification '$/setTrace'.
+2026-03-26 01:07:28.642 [trace] [JSON Language Server] Sending notification 'textDocument/didClose'.
+2026-03-26 01:07:28.642 [trace] [JSON Language Server] Sending notification 'json/schemaContent'.
+2026-03-26 01:07:28.643 [trace] [JSON Language Server] Received request 'workspace/diagnostic/refresh - (84)'.
+2026-03-26 01:07:28.644 [trace] [JSON Language Server] Sending response 'workspace/diagnostic/refresh - (84)'. Processing request took 1ms

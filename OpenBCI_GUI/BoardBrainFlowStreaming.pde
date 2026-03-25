@@ -101,6 +101,7 @@ class BoardBrainFlowStreaming extends BoardBrainFlow {
         final int minSampleIndex = 0;
         final int maxSampleIndex = 255;
         return new PacketLossTracker(getSampleIndexChannel(), getTimestampChannel(),
+                                    ()
                                     minSampleIndex, maxSampleIndex);
     }
 
