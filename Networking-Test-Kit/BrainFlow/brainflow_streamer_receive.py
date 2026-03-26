@@ -4,6 +4,8 @@
 # This test accepts a stream from the Synthetic mode in the OpenBCI GUI.
 
 import time
+from collections import Counter
+from dataclasses import dataclass
 from brainflow.board_shim import (
     BoardShim,
     BrainFlowInputParams,
@@ -26,6 +28,7 @@ class ChannelFeatures:
 class NeuralFeedbackTextTransformer:
     def __init__(self, max_channels=4):
         self.max_channels = max_channels
+        self.history = []
 
     def transform(self, master_board_id, data):
         eeg_channels = BoardShim.get_eeg_channels(master_board_id)
@@ -63,12 +66,14 @@ class NeuralFeedbackTextTransformer:
         state_label, interpretation = self._infer_state(
             average_stddev, average_peak_to_peak, average_abs_delta
         )
+        self.history.append(state_label)
+        smoothed = Counter(self.history).most_common(1)[0][0]
 
         lines = [
             "Neural feedback text summary",
             f"Window length: {window_seconds:.2f} seconds",
             f"Samples per channel: {sample_count}",
-            f"Detected state: {state_label}",
+            f"Detected state: {smoothed}",
             f"Interpretation: {interpretation}",
             "Channel highlights:",
         ]
