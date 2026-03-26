@@ -124,6 +124,15 @@ OpenGL acceleration is required.
 
 - For more on GUI troubleshooting, head over to the [GUI Troublshooting Doc](https://docs.openbci.com/Troubleshooting/GUI_Troubleshooting/).
 
+## Transformer text generation example
+
+This repository includes a minimal GPT-2 style Transformer (`newfile.py`) plus a sample script (`run_generate.py`) that autogenerates text using the Hugging Face GPT-2 tokenizer. To try it out:
+
+1. Install Python dependencies in a fresh environment: `pip install torch transformers`
+2. From the repository root, run: `python run_generate.py`
+
+> Note: Unless you load trained weights into the model, output will be random text because the Transformer initializes with random parameters.
+
 ## Diagram
 
 Here is a Work-in-progress diagram outlining the most important parts of the GUI. Created using https://app.diagrams.net/.
