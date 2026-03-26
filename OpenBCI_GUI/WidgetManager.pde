@@ -28,6 +28,7 @@ W_PacketLoss w_packetLoss;
 W_Focus w_focus;
 W_EMGJoystick w_emgJoystick;
 W_Marker w_marker;
+W_BrainStateText w_brainStateText;
 
 //ADD YOUR WIDGET TO WIDGETS OF WIDGETMANAGER
 void setupWidgets(PApplet _this, ArrayList<Widget> w){
@@ -129,6 +130,10 @@ void setupWidgets(PApplet _this, ArrayList<Widget> w){
     w_template1 = new W_template(_this);
     w_template1.setTitle("Widget Template 1");
     addWidget(w_template1, w);
+
+    w_brainStateText = new W_BrainStateText(_this);
+    w_brainStateText.setTitle("Brain State Text");
+    addWidget(w_brainStateText, w);
 
     
 
