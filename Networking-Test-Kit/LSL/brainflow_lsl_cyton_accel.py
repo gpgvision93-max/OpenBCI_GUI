@@ -1,21 +1,20 @@
 import argparse
 import time
-import numpy as np
-import brainflow
-from brainflow.board_shim import BoardShim, BrainFlowInputParams, LogLevels, BoardIds
+import numpy as np # type: ignore # pyright: ignore[reportMissingImports]
+import brainflow.board_shim
 from brainflow.data_filter import DataFilter, FilterTypes, AggOperations
 from pylsl import StreamInfo, StreamOutlet
 
 #from queue import Queue
-BoardShim.enable_dev_board_logger()
-params = BrainFlowInputParams()
+brainflow.board_shim.BoardShim.enable_dev_board_logger()
+params = brainflow.board_shim.BrainFlowInputParams()
 params.serial_port = '/dev/cu.usbserial-DM00D7TW'
-board = BoardShim(BoardIds.CYTON_BOARD.value, params) # added cyton board id here
-srate = board.get_sampling_rate(BoardIds.CYTON_BOARD.value)
+board = brainflow.board_shim.BoardShim(brainflow.board_shim.BoardIds.CYTON_BOARD.value, params) # added cyton board id here
+srate = board.get_sampling_rate(brainflow.board_shim.BoardIds.CYTON_BOARD.value)
 board.prepare_session()
 board.start_stream()
-eeg_chan = BoardShim.get_eeg_channels(BoardIds.CYTON_BOARD.value)
-aux_chan = BoardShim.get_accel_channels(BoardIds.CYTON_BOARD.value)
+eeg_chan = brainflow.board_shim.BoardShim.get_eeg_channels(brainflow.board_shim.BoardIds.CYTON_BOARD.value)
+aux_chan = brainflow.board_shim.BoardShim.get_accel_channels(brainflow.board_shim.BoardIds.CYTON_BOARD.value)
 
 print('EEG channels:')
 print(eeg_chan)
