@@ -138,7 +138,7 @@ class NeuralFeedbackTextTransformer:
         return math.sqrt(variance)
 
     def _mean_abs_delta(self, values):
-        deltas = [abs(current - previous) for previous, current in zip(values, values[1:])]
+        deltas = [abs(next_value - current) for current, next_value in zip(values, values[1:])]
         return self._mean(deltas)
 
 
