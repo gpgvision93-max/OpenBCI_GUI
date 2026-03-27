@@ -156,3 +156,29 @@ Send messages to IP 137.110.96.253, port 8888.
 ```
 python udp_send.py --ip=137.110.96.253 --port=8888
 ```
+
+___
+<a name="LSL"/>
+## LSL
+<a name="LSL-Flask"/>
+### LSL + Flask (phone text output)
+Run **lsl_flask_text_server.py** to bridge an LSL EEG stream into a Flask endpoint that an iPhone (or any phone) can poll over WiFi for text summaries.
+
+**Dependencies**:
+```
+pip install Flask==3.0.3 pylsl
+```
+
+**Example** (listen for an EEG stream and expose summaries at http://<pc-ip>:5000/text):
+```
+python LSL/lsl_flask_text_server.py --stream-type EEG --host 0.0.0.0 --port 5000
+```
+
+**Optional Arguments**:
+```
+--stream-name      - specify an LSL stream name instead of type
+--window-seconds   - window length for each summary (Default = 2.0)
+--update-interval  - seconds between summary refreshes (Default = 1.0)
+--max-channels     - number of EEG channels to summarize (Default = 4)
+--channel-labels   - comma-separated channel labels
+```
