@@ -181,4 +181,5 @@ python LSL/lsl_flask_text_server.py --stream-type EEG --host 0.0.0.0 --port 5000
 --update-interval  - seconds between summary refreshes (Default = 1.0)
 --max-channels     - number of EEG channels to summarize (Default = 4)
 --channel-labels   - comma-separated channel labels
+--fallback-sample-rate - sample rate to assume when LSL does not report one (Default = 250.0)
 ```

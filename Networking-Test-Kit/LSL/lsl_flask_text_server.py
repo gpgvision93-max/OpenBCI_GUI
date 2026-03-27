@@ -143,7 +143,7 @@ class LslTextServer:
     ):
         self.inlet = inlet
         self.sample_rate = sample_rate
-        self.window_samples = max(1, int(window_seconds * sample_rate)) if sample_rate else 0
+        self.window_samples = max(1, int(window_seconds * sample_rate))
         self.update_interval = update_interval
         self.channel_labels = channel_labels
         self.transformer = NeuralFeedbackTextTransformer(max_channels=max_channels)
@@ -219,7 +219,8 @@ def create_app(server):
                 "summary": server.summary(),
                 "timestamp": time.time(),
                 "sample_rate": server.sample_rate,
-                "window_samples": len(server.buffer),
+                "window_samples": server.window_samples,
+                "buffered_samples": len(server.buffer),
             }
         )
 
@@ -253,12 +254,19 @@ def main():
     )
     parser.add_argument("--host", default="0.0.0.0")
     parser.add_argument("--port", type=int, default=5000)
+    parser.add_argument(
+        "--fallback-sample-rate",
+        type=float,
+        default=250.0,
+        help="Sample rate to assume when LSL does not report one.",
+    )
     args = parser.parse_args()
 
     stream = _resolve_stream(args.stream_type, args.stream_name, args.timeout)
     inlet = StreamInlet(stream)
     info = inlet.info()
-    sample_rate = info.nominal_srate() or 0.0
+    reported_rate = info.nominal_srate()
+    sample_rate = reported_rate if reported_rate else args.fallback_sample_rate
     channel_labels = [label.strip() for label in args.channel_labels.split(",") if label.strip()]
 
     server = LslTextServer(
