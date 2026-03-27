@@ -26,6 +26,12 @@ class ChannelFeatures:
 
 
 class NeuralFeedbackTextTransformer:
+    ACTIVATION_WEIGHT_STDDEV = 1.0
+    ACTIVATION_WEIGHT_PEAK_TO_PEAK = 0.5
+    ACTIVATION_WEIGHT_ABS_DELTA = 1.0
+    LOW_ACTIVATION_THRESHOLD = 20.0
+    MODERATE_ACTIVATION_THRESHOLD = 60.0
+
     def __init__(self, max_channels=4):
         self.max_channels = max_channels
 
@@ -100,14 +106,19 @@ class NeuralFeedbackTextTransformer:
         return "\n".join(lines)
 
     def _infer_state(self, average_stddev, average_peak_to_peak, average_abs_delta):
-        activation_score = average_stddev + (0.5 * average_peak_to_peak) + average_abs_delta
+        """Heuristic scoring for quick feedback; tuned for typical OpenBCI EEG scales."""
+        activation_score = (
+            (self.ACTIVATION_WEIGHT_STDDEV * average_stddev)
+            + (self.ACTIVATION_WEIGHT_PEAK_TO_PEAK * average_peak_to_peak)
+            + (self.ACTIVATION_WEIGHT_ABS_DELTA * average_abs_delta)
+        )
 
-        if activation_score < 20:
+        if activation_score < self.LOW_ACTIVATION_THRESHOLD:
             return (
                 "steady / low-activation",
                 "Signal changes are relatively small, which usually corresponds to a calm or stable feedback window.",
             )
-        if activation_score < 60:
+        if activation_score < self.MODERATE_ACTIVATION_THRESHOLD:
             return (
                 "balanced / moderate-activation",
                 "Signal energy is present without large swings, suggesting a moderately engaged feedback window.",
