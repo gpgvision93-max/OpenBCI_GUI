@@ -147,7 +147,7 @@ class LslTextServer:
         self.update_interval = update_interval
         self.channel_labels = channel_labels
         self.transformer = NeuralFeedbackTextTransformer(max_channels=max_channels)
-        self.buffer = deque(maxlen=self.window_samples or None)
+        self.buffer = deque(maxlen=self.window_samples)
         self.latest_summary = "Waiting for EEG samples..."
         self.last_update = 0.0
         self._stop = threading.Event()
@@ -175,7 +175,7 @@ class LslTextServer:
             if (
                 self.buffer
                 and (now - self.last_update) >= self.update_interval
-                and (not self.window_samples or len(self.buffer) >= self.window_samples)
+                and len(self.buffer) >= self.window_samples
             ):
                 samples = list(self.buffer)
                 self.latest_summary = self.transformer.transform(
