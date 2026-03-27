@@ -133,15 +133,21 @@ class NeuralFeedbackTextTransformer:
         return sum(values) / len(values)
 
     def _stddev(self, values):
+        if len(values) <= 1:
+            return 0.0
         mean_value = self._mean(values)
         variance = sum((value - mean_value) ** 2 for value in values) / (len(values) - 1)
         return math.sqrt(variance)
 
     def _mean_abs_delta(self, values):
+        if len(values) <= 1:
+            return 0.0
         deltas = [
             abs(next_value - current_value)
             for current_value, next_value in zip(values, values[1:])
         ]
+        if not deltas:
+            return 0.0
         return self._mean(deltas)
 
 
