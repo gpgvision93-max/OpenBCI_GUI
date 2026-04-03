@@ -3,7 +3,9 @@
 # When used with the OpenBCI GUI, the same version (or very close) should be used on both sides.
 # This test accepts a stream from the Synthetic mode in the OpenBCI GUI.
 
+import math
 import time
+from dataclasses import dataclass
 from brainflow.board_shim import (
     BoardShim,
     BrainFlowInputParams,
