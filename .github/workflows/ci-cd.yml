@@ -1,0 +1,76 @@
+name: CI/CD Pipeline
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [master, development]
+  push:
+    branches: [master, development]
+
+permissions:
+  contents: read
+
+jobs:
+  python-lint-test:
+    name: Python Lint & Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+          cache: 'pip'
+
+      - name: Install flake8
+        run: pip install flake8
+
+      - name: Lint Networking scripts
+        # Report issues without failing (pre-existing issues in networking scripts)
+        run: |
+          flake8 Networking-Test-Kit/ \
+            --max-line-length=120 \
+            --extend-ignore=E501 \
+            --exclude=Networking-Test-Kit/LSL/OpenBCI_LSL_Stream_Test.m \
+            --exit-zero
+
+      - name: Lint training scripts
+        run: flake8 training/ --max-line-length=120 --extend-ignore=E501
+
+  train-eeg-model:
+    name: Train EEG Transformer Model
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+          cache: 'pip'
+
+      - name: Install training dependencies
+        run: pip install -r training/requirements.txt
+
+      - name: Train EEG transformer
+        run: python training/train_eeg_transformer.py
+
+      - name: Verify model artifacts
+        run: |
+          test -f training/models/eeg_transformer.tflite || (echo "eeg_transformer.tflite not found" && exit 1)
+          test -f training/models/eeg_scaler.pkl        || (echo "eeg_scaler.pkl not found" && exit 1)
+          echo "Model artifacts verified."
+
+      - name: Upload model artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: eeg-model-artifacts
+          path: |
+            training/models/eeg_transformer.tflite
+            training/models/eeg_scaler.pkl
+          retention-days: 30
