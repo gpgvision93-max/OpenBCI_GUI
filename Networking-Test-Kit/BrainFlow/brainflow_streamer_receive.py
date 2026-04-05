@@ -3,7 +3,10 @@
 # When used with the OpenBCI GUI, the same version (or very close) should be used on both sides.
 # This test accepts a stream from the Synthetic mode in the OpenBCI GUI.
 
+import math
 import time
+from dataclasses import dataclass
+
 from brainflow.board_shim import (
     BoardShim,
     BrainFlowInputParams,
@@ -11,6 +14,37 @@ from brainflow.board_shim import (
     BrainFlowPresets,
 )
 from brainflow.data_filter import DataFilter
+
+
+def get_battery_status(master_board_id, data):
+    """Return a battery status string read from the board data.
+
+    Returns a message describing the current battery level together with a
+    plain-language label (Full / Medium / Low / Critical).  If the board does
+    not expose a battery channel the function returns an informational string
+    instead of raising an exception.
+    """
+    try:
+        battery_channel = BoardShim.get_battery_channel(master_board_id)
+    except Exception:
+        return "Battery channel not available for this board."
+
+    battery_values = data[battery_channel]
+    if len(battery_values) == 0:
+        return "Battery data not available."
+
+    level = float(battery_values[-1])
+
+    if level >= 75:
+        label = "Full"
+    elif level >= 50:
+        label = "Medium"
+    elif level >= 25:
+        label = "Low"
+    else:
+        label = "Critical"
+
+    return f"Battery level: {level:.1f}% ({label})"
 
 
 @dataclass
@@ -138,6 +172,9 @@ def main():
     board.stop_stream()
     board.release_session()
     DataFilter.write_file(data_default, "default.csv", "w")
+
+    battery_status = get_battery_status(master_board_id, data_default)
+    print(battery_status)
 
     transformer = NeuralFeedbackTextTransformer()
     text_summary = transformer.transform(master_board_id, data_default)
