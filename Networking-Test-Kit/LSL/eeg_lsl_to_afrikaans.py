@@ -21,7 +21,7 @@ EN_TO_AF = {
     "UP": "OP",
     "DOWN": "AF",
     "HELLO": "HALLO",
-    "BYE": "TOTSIE",
+    "BYE": "TOTSIENS",
 }
 
 
@@ -48,6 +48,12 @@ def main():
     if not streams:
         raise RuntimeError("No LSL EEG stream found.")
     inlet = StreamInlet(streams[0])
+    stream_channel_count = inlet.info().channel_count()
+    if stream_channel_count != CHANNELS:
+        print(
+            f"Warning: stream has {stream_channel_count} channels but CHANNELS={CHANNELS}. "
+            "Samples with fewer than CHANNELS channels will be skipped."
+        )
     print("Connected to EEG stream.")
 
     print("Loading transformer model...")
@@ -89,8 +95,8 @@ def main():
 
                 predicted_label_eng = (
                     model.labels[predicted_class]
-                    if hasattr(model, "labels")
-                    else str(predicted_class)
+                    if hasattr(model, "labels") and 0 <= predicted_class < len(model.labels)
+                    else "UNKNOWN"
                 )
                 af_label = EN_TO_AF.get(predicted_label_eng, predicted_label_eng)
                 print(f"Afrikaans Prediction: {af_label}")
