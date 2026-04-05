@@ -959,7 +959,8 @@ class TutorialSelector {
     private Button customWidgets;
     private Button openbciForum;
     private Button ftdiBufferFix;
-    private final int NUM_TUTORIAL_BUTTONS = 6;
+    private Button gettingStartedAfrikaans;
+    private final int NUM_TUTORIAL_BUTTONS = 7;
 
     TutorialSelector() {
         w = 180;
@@ -980,6 +981,8 @@ class TutorialSelector {
 
         int buttonNumber = 0;
         createGettingStartedButton("gettingStarted", "Getting Started", x + margin, y + margin*(buttonNumber+1) + b_h*(buttonNumber), b_w, b_h);
+        buttonNumber++;
+        createGettingStartedAfrikaansButton("gettingStartedAfrikaans", "Getting Started (Afrikaans)", x + margin, y + margin*(buttonNumber+1) + b_h*(buttonNumber), b_w, b_h);
         buttonNumber++;
         createTestingImpedanceButton("testingImpedance", "Testing Impedance", x + margin, y + margin*(buttonNumber+1) + b_h*(buttonNumber), b_w, b_h);
         buttonNumber++;
@@ -1084,6 +1087,17 @@ class TutorialSelector {
             }
         });
         gettingStarted.setDescription("Need help getting started? Click here to view the official OpenBCI Getting Started guides.");
+    }
+
+    private void createGettingStartedAfrikaansButton(String name, String text, int _x, int _y, int _w, int _h) {
+        gettingStartedAfrikaans = createButton(tutorial_cp5, name, text, _x, _y, _w, _h);
+        gettingStartedAfrikaans.onRelease(new CallbackListener() {
+            public void controlEvent(CallbackEvent theEvent) {
+                openURLInBrowser("https://translate.google.com/translate?sl=en&tl=af&u=https://docs.openbci.com/GettingStarted/GettingStartedLanding/");
+                toggleVisibility(); //shut layoutSelector if something is selected
+            }
+        });
+        gettingStartedAfrikaans.setDescription("Nuut hier? Klik hier vir die OpenBCI Aan die gang-gids in Afrikaans (Google Translate), geskik vir foon en rekenaar.");
     }
 
     private void createTestingImpedanceButton(String name, String text, int _x, int _y, int _w, int _h) {
