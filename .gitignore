@@ -27,3 +27,8 @@ libGanglionLib.so
 libGanglionScan.so
 libunicorn.so
 OpenBCI_GUI/out/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
