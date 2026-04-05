@@ -1,0 +1,3 @@
+# This directory holds generated model artifacts produced by train_eeg_transformer.py:
+#   eeg_transformer.tflite  - TensorFlow Lite inference model
+#   eeg_scaler.pkl          - fitted sklearn StandardScaler
