@@ -22,7 +22,7 @@ EN_TO_AF = {
     "DOWN": "AF",
     "HELLO": "HALLO",
     "BYE": "TOTSIE",
-}
+
 
 
 def load_model(model_path, device):
