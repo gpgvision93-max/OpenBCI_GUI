@@ -1,0 +1,99 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: '3.16.0'
+        channel: stable
+    
+    - name: Install dependencies
+      run: |
+        flutter pub get
+        flutter gen-l10n
+    
+    - name: Run tests
+      run: |
+        flutter test
+        [ $(flutter test --machine | jq -s '[.[] | select(.result == "pass")] | length') -eq 100 ]
+    
+    - name: Analyze code
+      run: flutter analyze
+    
+    - name: Format code
+      run: flutter format --set-exit-if-changed .
+    
+    - name: Build Android APK
+      run: flutter build apk --debug
+    
+    - name: Build iOS (if on macOS)
+      if: runner.os == 'macOS'
+      run: flutter build ios --debug
+      
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    permissions:
+      contents: read
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Flutter
+      uses: subosito/flutter-action@v2
+    
+    - name: Build and release APK
+      run: |
+        flutter pub get
+        flutter build apk --release
+        # Upload to GitHub Releases (requires setup)
+    
+  train-model:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    permissions:
+      contents: read
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    
+    - name: Install training dependencies
+      run: |
+        cd training
+        pip install -r requirements.txt
+        pip install onnx-tf tensorflow-lite-converter
+    
+    - name: Train model
+      run: |
+        cd training
+        python train_eeg_transformer.py
+        # This will generate the .tflite model
+    
+    - name: Upload trained model
+      uses: actions/upload-artifact@v3
+      with:
+        name: eeg-model
+        path: |
+          training/models/eeg_transformer.tflite
+          training/models/eeg_scaler.pkl
