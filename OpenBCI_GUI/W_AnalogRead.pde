@@ -386,6 +386,7 @@ class AnalogReadBar{
         for (int i=0; i < nPoints; i++) {
             float timey = calcTimeAxis(i);
             float value = (float)allData.get(i)[channels[auxValuesPosition]];
+            value = constrain(value, 0, 1024); 
             analogReadPoints.set(i, timey, value, "");
         }
 

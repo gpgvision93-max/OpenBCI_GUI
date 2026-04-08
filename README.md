@@ -41,18 +41,22 @@ So, if even the very best researchers and hackers buy OpenBCI, there is still a 
 
 The OpenBCI GUI will:
 
-* Visualize data from every OpenBCI device: [Ganglion][link_shop_ganglion], [Cyton][link_shop_cyton], [Cyton with Daisy][link_shop_cyton_daisy], and the [WiFi Shield][link_shop_wifi_shield]
+* Visualize data from every OpenBCI device: 
+  * [Ganglion](https://shop.openbci.com/products/ganglion-board)
+  * [Cyton](https://shop.openbci.com/collections/frontpage/products/cyton-biosensing-board-8-channel),
+  * [Cyton with Daisy](https://shop.openbci.com/collections/frontpage/products/cyton-daisy-biosensing-boards-16-channel)
 * Run as a native application on macOS, Windows, and Linux.
 * Provide filters and other data processing tools to quickly clean raw data in real time
 * Provide a networking system to move data out of GUI into other apps over UDP, OSC, LSL, and Serial.
 * Provide a widget framework that allows users to create their own experiments.
 * Provide the ability to output data into a saved file for later offline processing.
 
+
 Using the OpenBCI GUI allows you, the user, to quickly visualize and use your OpenBCI device. Further it should allow you to build on our powerful framework to implement your own great ideas!
 
 ## Who are we?
 
-Mainly, we are OpenBCI. The original code writer was Chip Audette, along with Conor Russomanno and Joel Murphy. AJ Keller, Gabriel Diaz, Richard Waltman, and Daniel Lasry have all made major contributions as well. 
+Mainly, we are OpenBCI. The original code writer was Chip Audette, along with Conor Russomanno and Joel Murphy. AJ Keller, Gabriel Diaz, Daniel Lasry, and Richard Waltman and  have all made major contributions as well. 
 
 ## What do we need?
 
@@ -79,11 +83,13 @@ If you want to report a problem or suggest an enhancement, we'd love for you to 
 
 You might be interested in:
 
-* A tutorial to [make your own GUI Widget][link_gui_widget_tutorial]
-* Purchase a [Cyton][link_shop_cyton] | [Ganglion][link_shop_ganglion] | [WiFi Shield][link_shop_wifi_shield] from [OpenBCI][link_openbci]
+* A tutorial to [make your own GUI Widget](https://docs.openbci.com/Software/OpenBCISoftware/GUIWidgets/#custom-widget)
+* Purchase any one of the devices from our website [OpenBCI](https://shop.openbci.com/collections/frontpage): 
+  * [Ganglion](https://shop.openbci.com/products/ganglion-board)
+  * [Cyton](https://shop.openbci.com/collections/frontpage/products/cyton-biosensing-board-8-channel)
+  * [Cyton with Daisy](https://shop.openbci.com/collections/frontpage/products/cyton-daisy-biosensing-boards-16-channel)
 
 And of course, you'll want to know our:
-
 * [Contributors' guidelines](CONTRIBUTING.md)
 * [Roadmap](ROADMAP.md)
 
@@ -93,9 +99,9 @@ Thank you so much (Danke schön! Merci beaucoup!) for visiting the project and w
 
 ## Installing
 
-Follow the guide to [Run the OpenBCI GUI From Processing IDE][link_gui_run_from_processing]. If you find issues in the guide, please [suggest changes](https://github.com/OpenBCI/Docs/edit/master/OpenBCI%20Software/01-OpenBCI_GUI.md)!
+Follow the guide to [run the OpenBCI GUI From Processing IDE](https://docs.openbci.com/Software/OpenBCISoftware/GUIDocs/#running-the-openbci-gui-from-the-processing-ide). If you find issues in the guide, please [suggest changes](https://github.com/OpenBCI/Docs/edit/master/OpenBCI%20Software/01-OpenBCI_GUI.md)!
 
-**Important: Please use Processing 3.5.4 or 3.5.3 for all operating systems.** Processing 4 is not ready for our use in production at this time.
+**Note: Now compatible with Processing 4!**
 
 ### System Requirements
 #### Hardware
@@ -105,12 +111,11 @@ Follow the guide to [Run the OpenBCI GUI From Processing IDE][link_gui_run_from_
 
 #### Platforms
 OpenBCI GUI has been tested on the following platforms:
-- OS X 10.8.5 or later
-- Windows 8.1 and 10 (64-bit)
-- Linux Ubuntu Desktop 18
+- OS X 10.15.7 or later
+- Windows 8.1, 10, and 11 (64-bit)
+- Linux Ubuntu Desktop 18 or later
 
 OpenGL acceleration is required.
-
 
 ## Troubleshooting
 - **When making an issue here on GitHub, please use an Issue or New Feature Template.** Otherwise, the issue will be closed and you will be asked to make a new issue using a template. This maintains a standard of communication and helps resolve issues in a timely manner.
@@ -139,3 +144,4 @@ MIT
 - [Cyton+Daisy Boards](https://shop.openbci.com/collections/frontpage/products/cyton-daisy-biosensing-boards-16-channel)
 - [GUI Widget Tutorial](https://docs.openbci.com/Software/OpenBCISoftware/GUIWidgets/#custom-widget)
 - [Run GUI from Processing IDE](https://docs.openbci.com/Software/OpenBCISoftware/GUIDocs/#running-the-openbci-gui-from-the-processing-ide)
+https://shop.openbci.com/collections/frontpage/products/pre-order-ganglion-board
